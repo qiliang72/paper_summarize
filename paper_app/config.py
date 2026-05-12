@@ -144,5 +144,5 @@ def load_config() -> AppConfig:
                 ],
             ),
         ],
-        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite"),
     )
