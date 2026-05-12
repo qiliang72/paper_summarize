@@ -20,6 +20,7 @@ def fill_summaries(
     retry_count: int = 2,
     retry_delay_seconds: float = 30,
     limit: int | None = None,
+    failure_threshold: int = 2,
     verbose: bool = True,
 ) -> list[dict]:
     papers = read_paper_store(store_path)
@@ -30,6 +31,7 @@ def fill_summaries(
         retry_count=retry_count,
         retry_delay_seconds=retry_delay_seconds,
         limit=limit,
+        failure_threshold=failure_threshold,
         verbose=verbose,
     )
     write_paper_store(summarized, store_path)
@@ -44,6 +46,7 @@ def main() -> int:
     parser.add_argument("--retry-count", type=int, default=int(os.getenv("GEMINI_RETRY_COUNT", "2")))
     parser.add_argument("--retry-delay-seconds", type=float, default=float(os.getenv("GEMINI_RETRY_DELAY_SECONDS", "30")))
     parser.add_argument("--limit", type=int, default=None, help="Maximum number of incomplete papers to generate in this run.")
+    parser.add_argument("--failure-threshold", type=int, default=int(os.getenv("GEMINI_FAILURE_THRESHOLD", "2")))
     parser.add_argument("--quiet", action="store_true", help="Hide per-paper progress output.")
     args = parser.parse_args()
 
@@ -56,6 +59,7 @@ def main() -> int:
         retry_count=args.retry_count,
         retry_delay_seconds=args.retry_delay_seconds,
         limit=args.limit,
+        failure_threshold=args.failure_threshold,
         verbose=not args.quiet,
     )
     missing_after = sum(1 for paper in summarized if not paper.get("abstract_zh") or not paper.get("summary_zh"))

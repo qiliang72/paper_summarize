@@ -128,6 +128,7 @@ def summarize_papers(
     retry_count: int = 2,
     retry_delay_seconds: float = 30,
     limit: int | None = None,
+    failure_threshold: int = 2,
     verbose: bool = True,
 ) -> list[dict]:
     if load_dotenv is not None:
@@ -146,6 +147,8 @@ def summarize_papers(
 
     summarized = []
     generated_count = 0
+    consecutive_api_failures = 0
+    api_disabled = False
     total = len(papers)
     for index, paper in enumerate(papers, start=1):
         updated = dict(paper)
@@ -159,6 +162,13 @@ def summarize_papers(
         if limit is not None and generated_count >= limit:
             if verbose:
                 print(f"[{index}/{total}] defer {arxiv_id}: run limit {limit} reached.", flush=True)
+            summarized.append(updated)
+            continue
+
+        if api_disabled and client is not None:
+            updated["summary_error"] = f"Gemini API skipped after {failure_threshold} consecutive failures in this run."
+            if verbose:
+                print(f"[{index}/{total}] skip {arxiv_id}: Gemini API disabled after consecutive failures.", flush=True)
             summarized.append(updated)
             continue
 
@@ -178,6 +188,7 @@ def summarize_papers(
                     print(f"[{index}/{total}] generate {arxiv_id} with Gemini.", flush=True)
                 summary = _summarize_with_retries(client, config.gemini_model, updated, retry_count, retry_delay_seconds)
                 updated.pop("summary_error", None)
+                consecutive_api_failures = 0
             updated["abstract_zh"] = summary.abstract_zh
             updated["summary_zh"] = summary.summary_zh
             generated_count += 1
@@ -185,8 +196,17 @@ def summarize_papers(
                 print(f"[{index}/{total}] done {arxiv_id}.", flush=True)
         except Exception as exc:
             updated["summary_error"] = str(exc)
+            if client is not None:
+                consecutive_api_failures += 1
+                if consecutive_api_failures >= failure_threshold:
+                    api_disabled = True
             if verbose:
                 print(f"[{index}/{total}] error {arxiv_id}: {exc}", flush=True)
+                if api_disabled:
+                    print(
+                        f"[circuit-breaker] Gemini API disabled after {consecutive_api_failures} consecutive failures.",
+                        flush=True,
+                    )
             fallback = _fallback_summary(updated.get("abstract_en", ""))
             updated["abstract_zh"] = updated.get("abstract_zh", "")
             updated["summary_zh"] = fallback.summary_zh
@@ -203,6 +223,7 @@ def main() -> int:
     parser.add_argument("--retry-count", type=int, default=int(os.getenv("GEMINI_RETRY_COUNT", "2")))
     parser.add_argument("--retry-delay-seconds", type=float, default=float(os.getenv("GEMINI_RETRY_DELAY_SECONDS", "30")))
     parser.add_argument("--limit", type=int, default=None, help="Maximum number of incomplete papers to generate in this run.")
+    parser.add_argument("--failure-threshold", type=int, default=int(os.getenv("GEMINI_FAILURE_THRESHOLD", "2")))
     parser.add_argument("--quiet", action="store_true", help="Hide per-paper progress output.")
     args = parser.parse_args()
 
@@ -214,6 +235,7 @@ def main() -> int:
         retry_count=args.retry_count,
         retry_delay_seconds=args.retry_delay_seconds,
         limit=args.limit,
+        failure_threshold=args.failure_threshold,
         verbose=not args.quiet,
     )
     write_json(args.output, summarized)
