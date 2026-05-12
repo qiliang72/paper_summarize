@@ -68,7 +68,7 @@ def load_config() -> AppConfig:
     if load_dotenv is not None:
         load_dotenv(ROOT_DIR / ".env")
     return AppConfig(
-        max_results=int(os.getenv("MAX_RESULTS", "20")),
+        max_results=int(os.getenv("MAX_RESULTS", "100")),
         overfetch_factor=int(os.getenv("ARXIV_OVERFETCH_FACTOR", "4")),
         arxiv_num_retries=int(os.getenv("ARXIV_NUM_RETRIES", "1")),
         arxiv_request_timeout=float(os.getenv("ARXIV_REQUEST_TIMEOUT", "20")),

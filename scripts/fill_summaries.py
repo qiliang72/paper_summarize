@@ -16,7 +16,7 @@ from scripts.summarize_gemini import summarize_papers
 def fill_summaries(
     store_path: Path = PAPERS_STORE_PATH,
     offline: bool = False,
-    delay_seconds: float = 0,
+    delay_seconds: float = 5,
     retry_count: int = 2,
     retry_delay_seconds: float = 30,
     limit: int | None = None,
@@ -40,7 +40,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Fill missing Chinese translations and summaries in the long-term paper store.")
     parser.add_argument("--store", type=Path, default=PAPERS_STORE_PATH)
     parser.add_argument("--offline", action="store_true", help="Skip Gemini calls and generate fallback summaries.")
-    parser.add_argument("--delay-seconds", type=float, default=float(os.getenv("GEMINI_DELAY_SECONDS", "0")))
+    parser.add_argument("--delay-seconds", type=float, default=float(os.getenv("GEMINI_DELAY_SECONDS", "5")))
     parser.add_argument("--retry-count", type=int, default=int(os.getenv("GEMINI_RETRY_COUNT", "2")))
     parser.add_argument("--retry-delay-seconds", type=float, default=float(os.getenv("GEMINI_RETRY_DELAY_SECONDS", "30")))
     parser.add_argument("--limit", type=int, default=None, help="Maximum number of incomplete papers to generate in this run.")

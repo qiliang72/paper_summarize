@@ -124,7 +124,7 @@ def _summarize_with_retries(client, model: str, paper: dict, retry_count: int, r
 def summarize_papers(
     papers: list[dict],
     offline: bool = False,
-    delay_seconds: float = 0,
+    delay_seconds: float = 5,
     retry_count: int = 2,
     retry_delay_seconds: float = 30,
     limit: int | None = None,
@@ -199,7 +199,7 @@ def main() -> int:
     parser.add_argument("--input", type=Path, default=CLASSIFIED_PAPERS_PATH)
     parser.add_argument("--output", type=Path, default=SUMMARIZED_PAPERS_PATH)
     parser.add_argument("--offline", action="store_true", help="Skip Gemini calls and generate fallback summaries.")
-    parser.add_argument("--delay-seconds", type=float, default=float(os.getenv("GEMINI_DELAY_SECONDS", "0")))
+    parser.add_argument("--delay-seconds", type=float, default=float(os.getenv("GEMINI_DELAY_SECONDS", "5")))
     parser.add_argument("--retry-count", type=int, default=int(os.getenv("GEMINI_RETRY_COUNT", "2")))
     parser.add_argument("--retry-delay-seconds", type=float, default=float(os.getenv("GEMINI_RETRY_DELAY_SECONDS", "30")))
     parser.add_argument("--limit", type=int, default=None, help="Maximum number of incomplete papers to generate in this run.")
