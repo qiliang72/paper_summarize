@@ -13,7 +13,7 @@
           <h1>arXiv 自动驾驶论文</h1>
           <p id="statusText">读取状态中...</p>
         </div>
-        <button id="runButton" type="button">更新论文</button>
+        <button id="runButton" type="button">补摘要并导出</button>
       </header>
 
       <section class="toolbar" aria-label="表格筛选">
@@ -55,7 +55,7 @@
           </thead>
           <tbody id="paperRows"></tbody>
         </table>
-        <div id="emptyState" class="empty" hidden>还没有本地论文表格，请点击“更新论文”。</div>
+        <div id="emptyState" class="empty" hidden>还没有本地论文表格，请先运行手动抓取脚本。</div>
       </section>
     </main>
     <script src="{{ url_for('static', filename='app.js') }}"></script>

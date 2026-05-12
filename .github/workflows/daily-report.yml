@@ -1,0 +1,42 @@
+name: Daily paper report
+
+on:
+  schedule:
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+    inputs:
+      fetch:
+        description: "Also fetch new arXiv paper metadata before summarizing"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Optionally fetch paper metadata
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.fetch == 'true' }}
+        run: python scripts/update_paper_base.py
+
+      - name: Fill missing summaries and export report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/run_pipeline.py
+
+      - name: Commit updated report
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update daily paper report"
+          file_pattern: "data/papers_store.json data/papers.json data/papers.csv docs/index.md"

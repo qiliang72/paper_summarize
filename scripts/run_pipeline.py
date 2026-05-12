@@ -33,15 +33,11 @@ def _run_step(script_name: str, extra_args: list[str] | None = None) -> None:
 
 def run_pipeline(offline: bool = False) -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    _set_status("running", "Fetching arXiv papers...")
-    _run_step("fetch_arxiv.py")
-    _set_status("running", "Classifying keywords...")
-    _run_step("classify_keywords.py")
-    _set_status("running", "Summarizing abstracts...")
+    _set_status("running", "Filling missing translations and summaries...")
     summarize_args = ["--offline"] if offline else []
-    _run_step("summarize_gemini.py", summarize_args)
-    _set_status("running", "Exporting local tables...")
-    _run_step("export_table.py")
+    _run_step("fill_summaries.py", summarize_args)
+    _set_status("running", "Exporting Markdown report and local tables...")
+    _run_step("export_markdown.py")
     _set_status("success", "Pipeline completed.")
 
 

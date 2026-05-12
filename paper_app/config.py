@@ -12,16 +12,21 @@ except ImportError:
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT_DIR / "data"
+DOCS_DIR = ROOT_DIR / "docs"
 RAW_PAPERS_PATH = DATA_DIR / "raw_papers.json"
 CLASSIFIED_PAPERS_PATH = DATA_DIR / "classified_papers.json"
 SUMMARIZED_PAPERS_PATH = DATA_DIR / "summarized_papers.json"
+PAPERS_STORE_PATH = DATA_DIR / "papers_store.json"
 PAPERS_JSON_PATH = DATA_DIR / "papers.json"
 PAPERS_CSV_PATH = DATA_DIR / "papers.csv"
 PIPELINE_STATUS_PATH = DATA_DIR / "pipeline_status.json"
+MARKDOWN_REPORT_PATH = DOCS_DIR / "index.md"
 
 
 TABLE_FIELDS = [
     "arxiv_id",
+    "base_arxiv_id",
+    "version",
     "title",
     "authors",
     "published",

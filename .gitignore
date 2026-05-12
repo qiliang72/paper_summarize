@@ -22,6 +22,9 @@ ENV/
 # Runtime data and logs
 data/*
 !data/.gitkeep
+!data/papers_store.json
+!data/papers.json
+!data/papers.csv
 *.log
 
 # Build and packaging artifacts

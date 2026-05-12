@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -96,7 +97,39 @@ def summarize_one(client, model: str, paper: dict) -> PaperSummary:
     return PaperSummary.model_validate_json(response.text)
 
 
-def summarize_papers(papers: list[dict], offline: bool = False) -> list[dict]:
+def _is_retryable_error(exc: Exception) -> bool:
+    message = str(exc)
+    return "429" in message or "503" in message or "RESOURCE_EXHAUSTED" in message or "UNAVAILABLE" in message
+
+
+def _summarize_with_retries(client, model: str, paper: dict, retry_count: int, retry_delay_seconds: float) -> PaperSummary:
+    last_exc: Exception | None = None
+    for attempt in range(retry_count + 1):
+        try:
+            return summarize_one(client, model, paper)
+        except Exception as exc:
+            last_exc = exc
+            if attempt >= retry_count or not _is_retryable_error(exc):
+                raise
+            wait_seconds = retry_delay_seconds * (attempt + 1)
+            print(
+                f"[retry] {paper.get('arxiv_id', 'unknown')} failed with {type(exc).__name__}; "
+                f"waiting {wait_seconds:g}s before retry {attempt + 1}/{retry_count}.",
+                flush=True,
+            )
+            time.sleep(wait_seconds)
+    raise RuntimeError("Unexpected summary retry state.") from last_exc
+
+
+def summarize_papers(
+    papers: list[dict],
+    offline: bool = False,
+    delay_seconds: float = 0,
+    retry_count: int = 2,
+    retry_delay_seconds: float = 30,
+    limit: int | None = None,
+    verbose: bool = True,
+) -> list[dict]:
     if load_dotenv is not None:
         load_dotenv(ROOT_DIR / ".env")
     config = load_config()
@@ -112,23 +145,48 @@ def summarize_papers(papers: list[dict], offline: bool = False) -> list[dict]:
             raise RuntimeError("Missing dependency: install requirements.txt before summarizing papers.") from exc
 
     summarized = []
-    for paper in papers:
+    generated_count = 0
+    total = len(papers)
+    for index, paper in enumerate(papers, start=1):
         updated = dict(paper)
+        arxiv_id = updated.get("arxiv_id", "unknown")
         if updated.get("abstract_zh") and updated.get("summary_zh"):
+            if verbose:
+                print(f"[{index}/{total}] skip {arxiv_id}: Chinese fields already complete.", flush=True)
+            summarized.append(updated)
+            continue
+
+        if limit is not None and generated_count >= limit:
+            if verbose:
+                print(f"[{index}/{total}] defer {arxiv_id}: run limit {limit} reached.", flush=True)
             summarized.append(updated)
             continue
 
         try:
             if client is None:
+                if verbose:
+                    print(f"[{index}/{total}] fallback {arxiv_id}: Gemini client unavailable.", flush=True)
                 summary = _fallback_summary(updated.get("abstract_en", ""))
                 if not offline and not api_key:
                     updated["summary_error"] = "GEMINI_API_KEY is not set; used fallback summary."
             else:
-                summary = summarize_one(client, config.gemini_model, updated)
+                if generated_count > 0 and delay_seconds > 0:
+                    if verbose:
+                        print(f"[{index}/{total}] wait {delay_seconds:g}s before {arxiv_id}.", flush=True)
+                    time.sleep(delay_seconds)
+                if verbose:
+                    print(f"[{index}/{total}] generate {arxiv_id} with Gemini.", flush=True)
+                summary = _summarize_with_retries(client, config.gemini_model, updated, retry_count, retry_delay_seconds)
+                updated.pop("summary_error", None)
             updated["abstract_zh"] = summary.abstract_zh
             updated["summary_zh"] = summary.summary_zh
+            generated_count += 1
+            if verbose:
+                print(f"[{index}/{total}] done {arxiv_id}.", flush=True)
         except Exception as exc:
             updated["summary_error"] = str(exc)
+            if verbose:
+                print(f"[{index}/{total}] error {arxiv_id}: {exc}", flush=True)
             fallback = _fallback_summary(updated.get("abstract_en", ""))
             updated["abstract_zh"] = updated.get("abstract_zh", "")
             updated["summary_zh"] = fallback.summary_zh
@@ -141,10 +199,23 @@ def main() -> int:
     parser.add_argument("--input", type=Path, default=CLASSIFIED_PAPERS_PATH)
     parser.add_argument("--output", type=Path, default=SUMMARIZED_PAPERS_PATH)
     parser.add_argument("--offline", action="store_true", help="Skip Gemini calls and generate fallback summaries.")
+    parser.add_argument("--delay-seconds", type=float, default=float(os.getenv("GEMINI_DELAY_SECONDS", "0")))
+    parser.add_argument("--retry-count", type=int, default=int(os.getenv("GEMINI_RETRY_COUNT", "2")))
+    parser.add_argument("--retry-delay-seconds", type=float, default=float(os.getenv("GEMINI_RETRY_DELAY_SECONDS", "30")))
+    parser.add_argument("--limit", type=int, default=None, help="Maximum number of incomplete papers to generate in this run.")
+    parser.add_argument("--quiet", action="store_true", help="Hide per-paper progress output.")
     args = parser.parse_args()
 
     papers = read_json(args.input, [])
-    summarized = summarize_papers(papers, offline=args.offline)
+    summarized = summarize_papers(
+        papers,
+        offline=args.offline,
+        delay_seconds=args.delay_seconds,
+        retry_count=args.retry_count,
+        retry_delay_seconds=args.retry_delay_seconds,
+        limit=args.limit,
+        verbose=not args.quiet,
+    )
     write_json(args.output, summarized)
     print(f"Wrote {len(summarized)} summarized papers to {args.output}")
     return 0

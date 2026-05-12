@@ -3,7 +3,6 @@ from __future__ import annotations
 import subprocess
 import sys
 import threading
-from pathlib import Path
 
 from flask import Flask, jsonify, render_template
 
@@ -51,7 +50,7 @@ def run_pipeline():
         if _pipeline_process is not None and _pipeline_process.poll() is None:
             return jsonify({"status": "running", "message": "已有更新任务正在运行。"}), 409
 
-        write_json(PIPELINE_STATUS_PATH, {"status": "running", "message": "正在启动更新任务...", "updated_at": utc_now_iso()})
+        write_json(PIPELINE_STATUS_PATH, {"status": "running", "message": "正在启动摘要补齐和导出任务...", "updated_at": utc_now_iso()})
         _pipeline_process = subprocess.Popen(
             [sys.executable, str(ROOT_DIR / "scripts" / "run_pipeline.py")],
             cwd=ROOT_DIR,

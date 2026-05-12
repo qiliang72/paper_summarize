@@ -120,7 +120,7 @@ function render() {
     tr.innerHTML = `
       <td class="title">${escapeHtml(paper.title)}</td>
       <td class="info">${renderInfo(paper, date)}</td>
-      <td class="keyword-cell"><div class="chips">${chipList([...list(paper.domain_keywords), ...list(paper.topic_keywords)])}</div></td>
+      <td class="keyword-cell"><div class="chips">${chipList(list(paper.topic_keywords))}</div></td>
       <td class="abstract">${renderAbstract(paper)}</td>
       <td class="short-summary">${escapeHtml(paper.summary_zh || "")}</td>
     `;
