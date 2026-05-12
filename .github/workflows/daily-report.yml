@@ -5,10 +5,11 @@ on:
     - cron: "0 20 * * *"
   workflow_dispatch:
     inputs:
-      fetch:
-        description: "Also fetch new arXiv paper metadata before summarizing"
+      run_update_paper_base:
+        description: "Run scripts/update_paper_base.py before summarizing"
         required: false
-        default: "false"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,12 +27,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Optionally fetch paper metadata
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.fetch == 'true' }}
+      - name: Fetch recent paper metadata
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.run_update_paper_base) }}
         env:
           ARXIV_NUM_RETRIES: "3"
           ARXIV_REQUEST_TIMEOUT: "60"
-        run: python scripts/update_paper_base.py
+        run: python scripts/update_paper_base.py --recent-days 7
 
       - name: Fill missing summaries and export report
         env:

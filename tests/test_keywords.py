@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime, timezone
 from types import SimpleNamespace
 
 import pytest
@@ -64,6 +65,18 @@ def test_fetch_query_requires_all_domain_groups_and_any_topic_group():
     assert "distrillation" not in query
 
 
+def test_fetch_query_can_limit_to_recent_submitted_dates():
+    now = datetime(2026, 5, 13, 12, 30, tzinfo=timezone.utc)
+
+    query = build_query(recent_days=7, now=now)
+
+    assert "submittedDate:[202605061230 TO 202605131230]" in query
+
+
+def test_fetch_query_omits_submitted_dates_by_default():
+    assert "submittedDate" not in build_query()
+
+
 def test_fetch_papers_caps_page_size_to_fetch_limit(monkeypatch):
     captured = {}
 
@@ -104,6 +117,65 @@ def test_fetch_papers_caps_page_size_to_fetch_limit(monkeypatch):
     assert captured["page_size"] == 1
     assert captured["max_results"] == 1
     assert captured["num_retries"] == 1
+
+
+def test_recent_fetch_uses_recent_limit_and_does_not_truncate_to_max_results(monkeypatch):
+    captured = {}
+
+    class FakeSession:
+        def get(self, url, **kwargs):
+            return None
+
+    class FakeAuthor:
+        def __init__(self, name):
+            self.name = name
+
+    class FakeResult:
+        def __init__(self, arxiv_id):
+            self.entry_id = f"http://arxiv.org/abs/{arxiv_id}"
+            self.title = f"Title {arxiv_id}"
+            self.authors = [FakeAuthor("Author")]
+            self.published = datetime(2026, 5, 13, tzinfo=timezone.utc)
+            self.updated = datetime(2026, 5, 13, tzinfo=timezone.utc)
+            self.pdf_url = f"https://arxiv.org/pdf/{arxiv_id}"
+            self.categories = ["cs.CV"]
+            self.summary = "Abstract"
+
+    class FakeClient:
+        def __init__(self, page_size, delay_seconds, num_retries):
+            captured["page_size"] = page_size
+            captured["delay_seconds"] = delay_seconds
+            captured["num_retries"] = num_retries
+            self._session = FakeSession()
+
+        def results(self, search):
+            captured["query"] = search.query
+            captured["max_results"] = search.max_results
+            return [FakeResult("1v1"), FakeResult("2v1"), FakeResult("3v1")]
+
+    class FakeSearch:
+        def __init__(self, query, max_results, sort_by, sort_order):
+            self.query = query
+            self.max_results = max_results
+            self.sort_by = sort_by
+            self.sort_order = sort_order
+
+    fake_arxiv = SimpleNamespace(
+        Client=FakeClient,
+        Search=FakeSearch,
+        SortCriterion=SimpleNamespace(SubmittedDate="submitted"),
+        SortOrder=SimpleNamespace(Descending="descending"),
+    )
+    monkeypatch.setitem(sys.modules, "arxiv", fake_arxiv)
+    monkeypatch.setenv("MAX_RESULTS", "1")
+    monkeypatch.setenv("ARXIV_RECENT_FETCH_LIMIT", "10")
+    monkeypatch.setenv("ARXIV_NUM_RETRIES", "0")
+
+    papers = fetch_papers(recent_days=7)
+
+    assert len(papers) == 3
+    assert captured["max_results"] == 10
+    assert "submittedDate:[" in captured["query"]
 
 
 def test_set_request_timeout_adds_default_timeout():

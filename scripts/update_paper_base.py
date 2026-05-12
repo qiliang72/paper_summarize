@@ -13,9 +13,9 @@ from scripts.classify_keywords import classify_papers
 from scripts.fetch_arxiv import build_query, fetch_papers
 
 
-def update_paper_base(store_path: Path = PAPERS_STORE_PATH) -> tuple[list[dict], list[dict]]:
+def update_paper_base(store_path: Path = PAPERS_STORE_PATH, recent_days: int | None = None) -> tuple[list[dict], list[dict]]:
     existing = read_paper_store(store_path)
-    fetched = fetch_papers()
+    fetched = fetch_papers(recent_days=recent_days)
     classified = classify_papers(fetched)
     merged, added = merge_new_papers(existing, classified)
     write_paper_store(merged, store_path)
@@ -26,14 +26,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Manually fetch arXiv papers and append new paper versions to the local store.")
     parser.add_argument("--store", type=Path, default=PAPERS_STORE_PATH)
     parser.add_argument("--dry-run", action="store_true", help="Print the arXiv query without fetching or writing files.")
+    parser.add_argument("--recent-days", type=int, default=None, help="Limit query to papers submitted in the last N days.")
     args = parser.parse_args()
 
     if args.dry_run:
-        print(build_query())
+        print(build_query(recent_days=args.recent_days))
         print(f"Store path: {args.store}")
         return 0
 
-    merged, added = update_paper_base(args.store)
+    merged, added = update_paper_base(args.store, recent_days=args.recent_days)
     print(f"Added {len(added)} new paper versions. Store now has {len(merged)} records at {args.store}")
     return 0
 

@@ -52,6 +52,7 @@ class KeywordGroup:
 class AppConfig:
     max_results: int
     overfetch_factor: int
+    arxiv_recent_fetch_limit: int
     arxiv_num_retries: int
     arxiv_request_timeout: float
     arxiv_categories: list[str]
@@ -70,6 +71,7 @@ def load_config() -> AppConfig:
     return AppConfig(
         max_results=int(os.getenv("MAX_RESULTS", "100")),
         overfetch_factor=int(os.getenv("ARXIV_OVERFETCH_FACTOR", "4")),
+        arxiv_recent_fetch_limit=int(os.getenv("ARXIV_RECENT_FETCH_LIMIT", "1000")),
         arxiv_num_retries=int(os.getenv("ARXIV_NUM_RETRIES", "3")),
         arxiv_request_timeout=float(os.getenv("ARXIV_REQUEST_TIMEOUT", "60")),
         arxiv_categories=["cs.CV", "cs.RO", "cs.AI", "cs.LG"],
