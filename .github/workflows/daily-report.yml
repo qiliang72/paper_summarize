@@ -28,6 +28,9 @@ jobs:
 
       - name: Optionally fetch paper metadata
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.fetch == 'true' }}
+        env:
+          ARXIV_NUM_RETRIES: "3"
+          ARXIV_REQUEST_TIMEOUT: "60"
         run: python scripts/update_paper_base.py
 
       - name: Fill missing summaries and export report

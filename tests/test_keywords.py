@@ -1,6 +1,8 @@
 import sys
 from types import SimpleNamespace
 
+import pytest
+
 from paper_app.config import load_config
 from paper_app.keyword_utils import find_keyword_matches, keyword_matches
 from scripts.fetch_arxiv import _set_request_timeout, build_query, fetch_papers
@@ -96,6 +98,7 @@ def test_fetch_papers_caps_page_size_to_fetch_limit(monkeypatch):
     monkeypatch.setitem(sys.modules, "arxiv", fake_arxiv)
     monkeypatch.setenv("MAX_RESULTS", "1")
     monkeypatch.setenv("ARXIV_OVERFETCH_FACTOR", "1")
+    monkeypatch.setenv("ARXIV_NUM_RETRIES", "1")
 
     assert fetch_papers() == []
     assert captured["page_size"] == 1
@@ -117,3 +120,30 @@ def test_set_request_timeout_adds_default_timeout():
     client._session.get("https://export.arxiv.org/api/query", headers={"user-agent": "test"})
 
     assert captured["kwargs"]["timeout"] == 12.5
+
+
+def test_fetch_papers_final_error_includes_last_failure_reason(monkeypatch):
+    class FakeClient:
+        def __init__(self, page_size, delay_seconds, num_retries):
+            self._session = SimpleNamespace(get=lambda url, **kwargs: None)
+
+        def results(self, search):
+            raise TimeoutError("read timed out")
+
+    class FakeSearch:
+        def __init__(self, query, max_results, sort_by, sort_order):
+            pass
+
+    fake_arxiv = SimpleNamespace(
+        Client=FakeClient,
+        Search=FakeSearch,
+        SortCriterion=SimpleNamespace(SubmittedDate="submitted"),
+        SortOrder=SimpleNamespace(Descending="descending"),
+    )
+    monkeypatch.setitem(sys.modules, "arxiv", fake_arxiv)
+    monkeypatch.setenv("MAX_RESULTS", "1")
+    monkeypatch.setenv("ARXIV_OVERFETCH_FACTOR", "1")
+    monkeypatch.setenv("ARXIV_NUM_RETRIES", "0")
+
+    with pytest.raises(RuntimeError, match="Last error: TimeoutError: read timed out"):
+        fetch_papers()

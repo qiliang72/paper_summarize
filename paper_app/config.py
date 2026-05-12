@@ -70,8 +70,8 @@ def load_config() -> AppConfig:
     return AppConfig(
         max_results=int(os.getenv("MAX_RESULTS", "100")),
         overfetch_factor=int(os.getenv("ARXIV_OVERFETCH_FACTOR", "4")),
-        arxiv_num_retries=int(os.getenv("ARXIV_NUM_RETRIES", "1")),
-        arxiv_request_timeout=float(os.getenv("ARXIV_REQUEST_TIMEOUT", "20")),
+        arxiv_num_retries=int(os.getenv("ARXIV_NUM_RETRIES", "3")),
+        arxiv_request_timeout=float(os.getenv("ARXIV_REQUEST_TIMEOUT", "60")),
         arxiv_categories=["cs.CV", "cs.RO", "cs.AI", "cs.LG"],
         domain_keywords=[
             KeywordGroup(

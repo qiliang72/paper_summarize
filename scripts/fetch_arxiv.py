@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -54,13 +55,11 @@ def _paper_id(entry_id: str) -> str:
     return entry_id.rstrip("/").split("/")[-1]
 
 
-def fetch_papers() -> list[dict]:
-    try:
-        import arxiv
-    except ImportError as exc:
-        raise RuntimeError("Missing dependency: install requirements.txt before fetching arXiv papers.") from exc
+def _error_summary(exc: Exception) -> str:
+    return f"{type(exc).__name__}: {exc}"
 
-    config = load_config()
+
+def _fetch_papers_once(arxiv, config) -> list[dict]:
     page_size = min(100, config.arxiv_fetch_limit)
     client = arxiv.Client(page_size=page_size, delay_seconds=3, num_retries=config.arxiv_num_retries)
     _set_request_timeout(client, config.arxiv_request_timeout)
@@ -72,9 +71,14 @@ def fetch_papers() -> list[dict]:
     )
 
     papers_by_id: dict[str, dict] = {}
-    print("start!")
-    for result in client.results(search):
-        print("processing ...")
+    print(
+        f"Fetching arXiv papers: max_results={config.max_results}, "
+        f"fetch_limit={config.arxiv_fetch_limit}, timeout={config.arxiv_request_timeout:g}s",
+        flush=True,
+    )
+    for index, result in enumerate(client.results(search), start=1):
+        if index == 1 or index % 25 == 0:
+            print(f"Received {index} arXiv results...", flush=True)
         paper = {
             "arxiv_id": _paper_id(result.entry_id),
             "title": " ".join(result.title.split()),
@@ -96,6 +100,33 @@ def fetch_papers() -> list[dict]:
         reverse=True,
     )
     return papers[: config.max_results]
+
+
+def fetch_papers() -> list[dict]:
+    try:
+        import arxiv
+    except ImportError as exc:
+        raise RuntimeError("Missing dependency: install requirements.txt before fetching arXiv papers.") from exc
+
+    config = load_config()
+    max_attempts = max(1, config.arxiv_num_retries + 1)
+    last_exc: Exception | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return _fetch_papers_once(arxiv, config)
+        except Exception as exc:
+            last_exc = exc
+            if attempt >= max_attempts:
+                break
+            wait_seconds = 15 * attempt
+            print(
+                f"arXiv fetch attempt {attempt}/{max_attempts} failed: {_error_summary(exc)}. "
+                f"Waiting {wait_seconds}s before retry.",
+                flush=True,
+            )
+            time.sleep(wait_seconds)
+    reason = _error_summary(last_exc) if last_exc is not None else "unknown error"
+    raise RuntimeError(f"arXiv fetch failed after {max_attempts} attempts. Last error: {reason}") from last_exc
 
 
 def main() -> int:
