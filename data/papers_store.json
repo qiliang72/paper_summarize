@@ -1,5 +1,40 @@
 [
   {
+    "arxiv_id": "2605.12624v1",
+    "title": "MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving",
+    "authors": [
+      "Yuzhou Huang",
+      "Benjin Zhu",
+      "Hengtong Lu",
+      "Victor Shea-Jay Huang",
+      "Haiming Zhang",
+      "Wei Chen",
+      "Jifeng Dai",
+      "Yan Xie",
+      "Hongsheng Li"
+    ],
+    "published": "2026-05-12T18:09:42+00:00",
+    "updated": "2026-05-12T18:09:42+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.12624v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.12624v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "abstract_en": "Autonomous driving has progressed from modular pipelines toward end-to-end unification, and Vision-Language-Action (VLA) models are a natural extension of this journey beyond Vision-to-Action (VA). In practice, driving VLAs have often trailed VA on planning quality, suggesting that the difficulty is not simply model scale but the interface through which semantic reasoning, temporal context, and continuous control are combined. We argue that this gap reflects how VLA has been built -- as isolated subtask improvements that fail to compose into coherent driving capabilities -- rather than what VLA is. We present MindVLA-U1, the first unified streaming VLA architecture for autonomous driving. A unified VLM backbone produces autoregressive language tokens and flow-matching continuous action trajectories in a single forward pass over one shared representation, preserving the natural output form of each modality. A streaming design processes the driving video framewise rather than as fixed video-action chunks, while a learned memory channel carries temporal context across frames so planned trajectories evolve smoothly without redundant multi-frame VLM modeling. The unified architecture admits fast/slow execution on dense/sparse Mixture-of-Transformers (MoT) backbones via flexible self-attention context management, and exposes a measurable language-to-action route: a language-predicted driving intent steers action diffusion through classifier-free guidance (CFG), turning language-side intent into a control signal for continuous trajectory generation. On the long-tail WOD-E2E benchmark, MindVLA-U1 surpasses experienced human drivers for the first time (8.20 RFS vs. 8.13 GT RFS) with 2 diffusion steps, achieves state-of-the-art planning ADEs over prior VA/VLA methods by large margins, and matches VA-class throughput (16 FPS vs. RAP-DINO's 18 FPS) while preserving natural-language interfaces.",
+    "abstract_zh": "自动驾驶已从模块化流水线转向端到端统一，而视觉-语言-动作（VLA）模型是这一过程从视觉到动作（VA）的自然延伸。在实践中，驾驶类 VLA 模型在规划质量上往往落后于 VA 模型，这表明困难不仅仅在于模型规模，而在于将语义推理、时序上下文和连续控制相结合的接口方式。我们认为这种差距反映了 VLA 的构建方式——即未能整合为连贯驾驶能力的孤立子任务改进——而非 VLA 本身的局限。我们提出了 MindVLA-U1，这是首个用于自动驾驶的统一流式 VLA 架构。该统一 VLM 主干网络在单次前向传递中利用共享表征生成自回归语言 Token 和流匹配连续动作轨迹，保留了各模态的自然输出形式。流式设计以逐帧方式处理驾驶视频，而非作为固定的视频-动作块，通过学习到的记忆通道在帧间传递时序上下文，使规划轨迹平滑演进，避免了冗余的多帧 VLM 建模。该统一架构通过灵活的自注意力上下文管理，支持在稠密/稀疏混合专家 Transformer（MoT）主干上进行快/慢速执行，并提供了一条可量化的语言到动作路径：语言预测的驾驶意图通过无分类器引导（CFG）驱动动作扩散，将语言侧意图转化为连续轨迹生成的控制信号。在长尾 WOD-E2E 基准测试中，MindVLA-U1 首次超越了经验丰富的人类驾驶员表现（RFS 为 8.20 对比人类的 8.13），仅需 2 步扩散即可实现，在规划 ADE 指标上大幅优于现有的 VA/VLA 方法，并在保持自然语言接口的同时，达到了与 VA 类模型相当的吞吐量（16 FPS 对比 RAP-DINO 的 18 FPS）。",
+    "summary_zh": "本文针对自动驾驶中 VLA 模型规划质量落后于 VA 模型的问题，提出了 MindVLA-U1 统一流式架构。该方法通过共享表征的单次前向传递实现了语言与连续动作轨迹的同步生成，并引入流式记忆通道和基于语言意图的扩散控制。实验结果表明，该模型在 WOD-E2E 基准测试中实现了性能与效率的平衡，规划能力超越了人类驾驶员水平。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2605.12624",
+    "version": 1
+  },
+  {
     "arxiv_id": "2605.10564v1",
     "title": "DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving",
     "authors": [
@@ -34,6 +69,42 @@
     ],
     "base_arxiv_id": "2605.10564",
     "version": 1
+  },
+  {
+    "arxiv_id": "2605.10426v2",
+    "title": "CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving",
+    "authors": [
+      "Minqing Huang",
+      "Yujiao Xiang",
+      "Zihan Liang",
+      "Jiajie Huang",
+      "Jingqi Wang",
+      "Zhi Xu",
+      "Feiyang Tan",
+      "Hangning Zhou",
+      "Mu Yang",
+      "Gong Che"
+    ],
+    "published": "2026-05-11T12:01:13+00:00",
+    "updated": "2026-05-13T08:01:33+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.10426v2",
+    "pdf_url": "https://arxiv.org/pdf/2605.10426v2",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models have emerged as a promising paradigm for end-to-end autonomous driving. However, existing reasoning mechanisms still struggle to provide planning-oriented intermediate representations: textual Chain-of-Thought (CoT) fails to preserve continuous spatiotemporal structure, while latent world reasoning remains difficult to use as a direct condition for action generation. In this paper, we propose CoWorld-VLA, a multi-expert world reasoning framework for autonomous driving, where world representations serve as explicit conditions to guide action planning. CoWorld-VLA extracts complementary world information through multi-source supervision and encodes it into expert tokens within the VLA, thereby providing planner-accessible conditioning signals. Specifically, we construct four types of tokens: semantic interaction, geometric structure, dynamic evolution, and ego trajectory tokens, which respectively model interaction intent, spatial structure, future temporal dynamics, and behavioral goals. During action generation, CoWorld-VLA employs a diffusion-based hierarchical multi-expert fusion planner, which is coupled with scene context throughout the joint denoising process to generate continuous ego trajectories. Experiments show that CoWorld-VLA achieves competitive results in both future scene generation and planning on the NAVSIM v1 benchmark, demonstrating strong performance in collision avoidance and trajectory accuracy. Ablation studies further validate the complementarity of expert tokens and their effectiveness as planning conditions for action generation. Code will be available at https://github.com/AFARI-Research/CoWorld-VLA.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型已成为端到端自动驾驶的一种有前途的范式。然而，现有的推理机制在提供面向规划的中间表征方面仍存在困难：文本思维链（CoT）无法保留连续的时空结构，而潜在的世界推理仍难以直接作为动作生成的条件。在本文中，我们提出了 CoWorld-VLA，这是一种用于自动驾驶的多专家世界推理框架，其中世界表征作为引导动作规划的显式条件。CoWorld-VLA 通过多源监督提取互补的世界信息，并将其编码为 VLA 中的专家标记，从而提供规划器可访问的条件信号。具体而言，我们构建了四种类型的标记：语义交互、几何结构、动态演化和自车轨迹标记，分别对交互意图、空间结构、未来时间动态和行为目标进行建模。在动作生成过程中，CoWorld-VLA 采用了一种基于扩散的分层多专家融合规划器，该规划器在整个联合去噪过程中与场景上下文相结合，以生成连续的自车轨迹。实验表明，CoWorld-VLA 在 NAVSIM v1 基准测试的未来场景生成和规划方面均取得了具有竞争力的结果，在防碰撞和轨迹准确性方面表现出强大的性能。消融实验进一步验证了专家标记的互补性及其作为动作生成规划条件的有效性。代码地址：https://github.com/AFARI-Research/CoWorld-VLA。",
+    "summary_zh": "针对自动驾驶中现有 VLA 模型难以获取有效的面向规划的中间表征的问题，本研究提出了 CoWorld-VLA 框架。该方法通过引入四种互补的专家标记来建模时空信息，并结合基于扩散的分层规划器进行动作生成。实验结果证明，该方法能显著提升自动驾驶中的轨迹准确性和防碰撞能力。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2605.10426",
+    "version": 2
   },
   {
     "arxiv_id": "2605.10426v1",
