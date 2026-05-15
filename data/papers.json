@@ -1,8 +1,77 @@
 [
   {
-    "arxiv_id": "2605.12624v1",
-    "base_arxiv_id": "2605.12624",
+    "arxiv_id": "2605.15120v1",
+    "base_arxiv_id": "2605.15120",
     "version": 1,
+    "title": "CLOVER: Closed-Loop Value Estimation \\& Ranking for End-to-End Autonomous Driving Planning",
+    "authors": [
+      "Sining Ang",
+      "Yuguang Yang",
+      "Canyu Chen",
+      "Yan Wang"
+    ],
+    "published": "2026-05-14T17:32:18+00:00",
+    "updated": "2026-05-14T17:32:18+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.15120v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.15120v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "End-to-end autonomous driving planners are commonly trained by imitating a single logged trajectory, yet evaluated by rule-based planning metrics that measure safety, feasibility, progress, and comfort. This creates a training--evaluation mismatch: trajectories close to the logged path may violate planning rules, while alternatives farther from the demonstration can remain valid and high-scoring. The mismatch is especially limiting for proposal-selection planners, whose performance depends on candidate-set coverage and scorer ranking quality. We propose CLOVER, a Closed-LOop Value Estimation and Ranking framework for end-to-end autonomous driving planning. CLOVER follows a lightweight generator--scorer formulation: a generator produces diverse candidate trajectories, and a scorer predicts planning-metric sub-scores to rank them at inference time. To expand proposal support beyond single-trajectory imitation, CLOVER constructs evaluator-filtered pseudo-expert trajectories and trains the generator with set-level coverage supervision. It then performs conservative closed-loop self-distillation: the scorer is fitted to true evaluator sub-scores on generated proposals, while the generator is refined toward teacher-selected top-$k$ and vector-Pareto targets with stability regularization. We analyze when an imperfect scorer can improve the generator, showing that scorer-mediated refinement is reliable when scorer-selected targets are enriched under the true evaluator and updates remain conservative. On NAVSIM, CLOVER achieves 94.5 PDMS and 90.4 EPDMS, establishing a new state of the art. On the more challenging NavHard split, it obtains 48.3 EPDMS, matching the strongest reported result. On supplementary nuScenes open-loop evaluation, CLOVER achieves the lowest L2 error and collision rate among compared methods. Code data will be released at https://github.com/WilliamXuanYu/CLOVER.",
+    "abstract_zh": "端到端自动驾驶规划器通常通过模仿单一记录轨迹进行训练，但通过衡量安全性、可行性、进度和舒适度的基于规则的规划指标进行评估。这导致了训练与评估之间的失配：接近记录路径的轨迹可能违反规划规则，而偏离演示的其他路径可能仍然有效且得分更高。这种失配对于提案选择型规划器尤为严重，其性能依赖于候选集覆盖范围和评分器的排名质量。我们提出了 CLOVER，一个用于端到端自动驾驶规划的闭环价值估计与排序框架。CLOVER 遵循轻量级的生成器-评分器结构：生成器产生多样的候选轨迹，评分器在推理时预测规划指标的子分数以进行排序。为了将提案支持扩展到单一轨迹模仿之外，CLOVER 构建了经评估器过滤的伪专家轨迹，并利用集合级覆盖监督来训练生成器。随后，它执行保守的闭环自蒸馏：评分器拟合生成提案上的真实评估器子分数，同时通过稳定性正则化将生成器向教师选择的 Top-k 和向量帕累托目标进行精炼。我们分析了不完美的评分器何时可以改进生成器，表明当评分器选择的目标在真实评估器下得到丰富且更新保持保守时，评分器介导的精炼是可靠的。在 NAVSIM 上，CLOVER 达到了 94.5 的 PDMS 和 90.4 的 EPDMS，确立了新的技术水平。在更具挑战性的 NavHard 数据集划分上，它获得了 48.3 的 EPDMS，达到了目前报告的最强结果。在补充的 nuScenes 开环评估中，CLOVER 在对比方法中实现了最低的 L2 误差和碰撞率。",
+    "summary_zh": "针对端到端自动驾驶规划中训练目标与评估规则不匹配的问题，该论文提出了 CLOVER 闭环价值估计与排序框架。通过结合生成器-评分器结构、集合级覆盖监督和闭环自蒸馏策略，该方法有效地提升了规划器的提案质量与排名能力，并在多个自动驾驶基准测试中达到了领先水平。"
+  },
+  {
+    "arxiv_id": "2605.14201v1",
+    "base_arxiv_id": "2605.14201",
+    "version": 1,
+    "title": "MAPLE: Latent Multi-Agent Play for End-to-End Autonomous Driving",
+    "authors": [
+      "Rajeev Yasarla",
+      "Deepti Hegde",
+      "Hsin-Pai Cheng",
+      "Shizhong Han",
+      "Yunxiao Shi",
+      "Meysam Sadeghigooghari",
+      "Hanno Ackermann",
+      "Litian Liu",
+      "Pranav Desai",
+      "Fatih Porikli",
+      "Mohammad Ghavamzadeh",
+      "Hong Cai"
+    ],
+    "published": "2026-05-13T23:35:14+00:00",
+    "updated": "2026-05-13T23:35:14+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.14201v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.14201v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "abstract_en": "Vision-language-action (VLA) models are effective as end-to-end motion planners, but can be brittle when evaluated in closed-loop settings due to being trained under traditional imitation learning framework. Existing closed-loop supervision approaches lack scalability and fail to completely model a reactive environment. We propose MAPLE, a novel framework for reactive, multi-agent rollout of a dynamic driving scenario in the latent space of the VLA model. The ego vehicle and nearby traffic agents are independently controlled over multi-step horizons, while being reactive to other agents in the scene, enabling closed-loop training. MAPLE consists of two training stages: (1) supervised fine-tuning on the latent rollouts based on ground-truth trajectories, followed by (2) reinforcement learning with global and agent -specific rewards that encourage safety, progress, and interaction realism. We further propose diversity rewards that encourage the model to generate planning behaviors that may not be present in logged driving data. Notably, our closed-loop training framework is scalable and does not require external simulators, which can be computationally expensive to run and have limited visual fidelity to the real-world. MAPLE achieves state-of-the-art driving performance on Bench2Drive and demonstrates scalable, closed-loop multi-agent play for robust E2E autonomous driving systems.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型作为端到端运动规划器非常有效，但由于在传统的模仿学习框架下进行训练，在闭环设置中评估时可能表现得不够稳健。现有的闭环监督方法缺乏可扩展性，且无法完全建模反应式环境。我们提出了 MAPLE，这是一个用于在 VLA 模型的潜在空间中进行动态驾驶场景的反应式、多智能体演练的新颖框架。自动驾驶车辆和附近的交通智能体在多步时间范围内被独立控制，同时对场景中的其他智能体做出反应，从而实现闭环训练。MAPLE 包含两个训练阶段：（1）基于真实轨迹的潜在演练的监督微调，随后（2）通过全局和智能体特定的奖励进行强化学习，以鼓励安全性、进度和交互真实性。我们进一步提出了多样性奖励，鼓励模型生成日志驾驶数据中可能不存在的规划行为。值得注意的是，我们的闭环训练框架具有可扩展性，不需要外部模拟器，因为外部模拟器在运行上计算成本高昂且在真实世界的视觉保真度上有限。MAPLE 在 Bench2Drive 上实现了最先进的驾驶性能，并为稳健的端到端自动驾驶系统展示了可扩展的、闭环的多智能体博弈。",
+    "summary_zh": "针对端到端自动驾驶模型在闭环环境下的稳健性不足问题，该论文提出了 MAPLE 框架，通过在 VLA 模型潜在空间中进行多智能体交互式演练进行训练。该方法结合了监督微调与包含多样性奖励的强化学习，无需依赖外部模拟器即可实现可扩展的闭环训练。实验结果表明，MAPLE 在 Bench2Drive 基准测试中达到了领先性能，有效提升了自动驾驶系统的交互与规划能力。"
+  },
+  {
+    "arxiv_id": "2605.12624v2",
+    "base_arxiv_id": "2605.12624",
+    "version": 2,
     "title": "MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving",
     "authors": [
       "Yuzhou Huang",
@@ -16,9 +85,9 @@
       "Hongsheng Li"
     ],
     "published": "2026-05-12T18:09:42+00:00",
-    "updated": "2026-05-12T18:09:42+00:00",
-    "arxiv_url": "http://arxiv.org/abs/2605.12624v1",
-    "pdf_url": "https://arxiv.org/pdf/2605.12624v1",
+    "updated": "2026-05-14T17:59:31+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.12624v2",
+    "pdf_url": "https://arxiv.org/pdf/2605.12624v2",
     "arxiv_categories": [
       "cs.RO",
       "cs.CV"
@@ -30,9 +99,9 @@
     "topic_keywords": [
       "VLM"
     ],
-    "abstract_en": "Autonomous driving has progressed from modular pipelines toward end-to-end unification, and Vision-Language-Action (VLA) models are a natural extension of this journey beyond Vision-to-Action (VA). In practice, driving VLAs have often trailed VA on planning quality, suggesting that the difficulty is not simply model scale but the interface through which semantic reasoning, temporal context, and continuous control are combined. We argue that this gap reflects how VLA has been built -- as isolated subtask improvements that fail to compose into coherent driving capabilities -- rather than what VLA is. We present MindVLA-U1, the first unified streaming VLA architecture for autonomous driving. A unified VLM backbone produces autoregressive language tokens and flow-matching continuous action trajectories in a single forward pass over one shared representation, preserving the natural output form of each modality. A streaming design processes the driving video framewise rather than as fixed video-action chunks, while a learned memory channel carries temporal context across frames so planned trajectories evolve smoothly without redundant multi-frame VLM modeling. The unified architecture admits fast/slow execution on dense/sparse Mixture-of-Transformers (MoT) backbones via flexible self-attention context management, and exposes a measurable language-to-action route: a language-predicted driving intent steers action diffusion through classifier-free guidance (CFG), turning language-side intent into a control signal for continuous trajectory generation. On the long-tail WOD-E2E benchmark, MindVLA-U1 surpasses experienced human drivers for the first time (8.20 RFS vs. 8.13 GT RFS) with 2 diffusion steps, achieves state-of-the-art planning ADEs over prior VA/VLA methods by large margins, and matches VA-class throughput (16 FPS vs. RAP-DINO's 18 FPS) while preserving natural-language interfaces.",
-    "abstract_zh": "自动驾驶已从模块化流水线转向端到端统一，而视觉-语言-动作（VLA）模型是这一过程从视觉到动作（VA）的自然延伸。在实践中，驾驶类 VLA 模型在规划质量上往往落后于 VA 模型，这表明困难不仅仅在于模型规模，而在于将语义推理、时序上下文和连续控制相结合的接口方式。我们认为这种差距反映了 VLA 的构建方式——即未能整合为连贯驾驶能力的孤立子任务改进——而非 VLA 本身的局限。我们提出了 MindVLA-U1，这是首个用于自动驾驶的统一流式 VLA 架构。该统一 VLM 主干网络在单次前向传递中利用共享表征生成自回归语言 Token 和流匹配连续动作轨迹，保留了各模态的自然输出形式。流式设计以逐帧方式处理驾驶视频，而非作为固定的视频-动作块，通过学习到的记忆通道在帧间传递时序上下文，使规划轨迹平滑演进，避免了冗余的多帧 VLM 建模。该统一架构通过灵活的自注意力上下文管理，支持在稠密/稀疏混合专家 Transformer（MoT）主干上进行快/慢速执行，并提供了一条可量化的语言到动作路径：语言预测的驾驶意图通过无分类器引导（CFG）驱动动作扩散，将语言侧意图转化为连续轨迹生成的控制信号。在长尾 WOD-E2E 基准测试中，MindVLA-U1 首次超越了经验丰富的人类驾驶员表现（RFS 为 8.20 对比人类的 8.13），仅需 2 步扩散即可实现，在规划 ADE 指标上大幅优于现有的 VA/VLA 方法，并在保持自然语言接口的同时，达到了与 VA 类模型相当的吞吐量（16 FPS 对比 RAP-DINO 的 18 FPS）。",
-    "summary_zh": "本文针对自动驾驶中 VLA 模型规划质量落后于 VA 模型的问题，提出了 MindVLA-U1 统一流式架构。该方法通过共享表征的单次前向传递实现了语言与连续动作轨迹的同步生成，并引入流式记忆通道和基于语言意图的扩散控制。实验结果表明，该模型在 WOD-E2E 基准测试中实现了性能与效率的平衡，规划能力超越了人类驾驶员水平。"
+    "abstract_en": "Autonomous driving has progressed from modular pipelines toward end-to-end unification, and Vision-Language-Action (VLA) models are a natural extension of this journey beyond Vision-to-Action (VA). In practice, driving VLAs have often trailed VA on planning quality, suggesting that the difficulty is not simply model scale but the interface through which semantic reasoning, temporal context, and continuous control are combined. We argue that this gap reflects how VLA has been built -- as isolated subtask improvements that fail to compose coherent driving capabilities -- rather than what VLA is. We present MindVLA-U1, the first unified streaming VLA architecture for autonomous driving. A unified VLM backbone produces AR language tokens (optional) and flow-matching continuous action trajectories in a single forward pass over one shared representation, preserving the natural output form of each modality. A full streaming design processes the driving video framewise rather than as fixed video-action chunks under costly temporal VLM modeling. Planned trajectories evolve smoothly across frames while a learned streaming memory channel carries temporal context and updates. The unified architecture enables fast/slow systems on dense & sparse MoT backbones via flexible self-attention context management, and exposes a measurable language-control path for action: language-predicted driving intents steers the action diffusion via classifier-free guidance (CFG), turning language-side intent into control signals for continuous action planning. On the long-tail WOD-E2E benchmark, MindVLA-U1 surpasses experienced human drivers for the first time (8.20 RFS vs. 8.13 GT RFS) with 2 diffusion steps, achieves state-of-the-art planning ADEs over prior VA/VLA by large margins, and matches VA latency (16 FPS vs. RAP's 18 FPS at 1B scale) while preserving natural language interfaces for human-vehicle interaction.",
+    "abstract_zh": "自动驾驶已从模块化流程转向端到端统一，而视觉-语言-动作（VLA）模型是这一趋势超越单纯视觉-动作（VA）模型的自然延伸。在实践中，驾驶类 VLA 模型在规划质量上往往落后于 VA，这表明问题不在于模型规模，而在于结合语义推理、时间上下文与连续控制的接口方式。我们认为，这一差距反映了 VLA 的构建方式——即将其视为孤立的子任务改进，从而无法形成连贯的驾驶能力，而非 VLA 本身的问题。我们提出了 MindVLA-U1，这是首个用于自动驾驶的统一流式 VLA 架构。统一的 VLM 主干在单一前向传播中基于共享表示生成自回归语言 Token（可选）和流匹配连续动作轨迹，保持了各模态的原始输出形式。完整的流式设计以帧为单位处理驾驶视频，而非在昂贵的时间 VLM 建模下处理固定的视频-动作块。规划的轨迹在帧间平滑演变，同时通过学习到的流式记忆通道携带和更新时间上下文。该统一架构通过灵活的自注意力上下文管理，在密集和稀疏的多对象追踪（MoT）主干上实现了快/慢系统，并为动作暴露了一条可衡量的语言-控制路径：语言预测的驾驶意图通过无分类器引导（CFG）驱动动作扩散，将语言端的意图转化为连续动作规划的控制信号。在长尾 WOD-E2E 基准测试中，MindVLA-U1 在 2 步扩散下首次超越了人类驾驶员的表现（RFS 为 8.20，而人类 GT RFS 为 8.13），在规划 ADE 指标上大幅超越了此前的 VA/VLA 模型，并在保持人车交互自然语言接口的同时，达到了与 VA 相当的延迟（1B 参数规模下为 16 FPS，而 RAP 为 18 FPS）。",
+    "summary_zh": "针对自动驾驶 VLA 模型规划质量不足且处理效率低的问题，本文提出了 MindVLA-U1 统一流式架构。该方法通过以帧为单位的流式处理与共享表征，实现了语言与动作的同步生成及平滑轨迹规划。实验证明，该架构在达到实时驾驶延迟的同时，在长尾驾驶任务中的表现首次超过了人类水平。"
   },
   {
     "arxiv_id": "2605.10564v1",
