@@ -1,5 +1,36 @@
 [
   {
+    "arxiv_id": "2605.15120v2",
+    "title": "CLOVER: Closed-Loop Value Estimation and Ranking for End-to-End Autonomous Driving Planning",
+    "authors": [
+      "Sining Ang",
+      "Yuguang Yang",
+      "Canyu Chen",
+      "Yan Wang"
+    ],
+    "published": "2026-05-14T17:32:18+00:00",
+    "updated": "2026-05-15T11:07:11+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.15120v2",
+    "pdf_url": "https://arxiv.org/pdf/2605.15120v2",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "abstract_en": "End-to-end autonomous driving planners are commonly trained by imitating a single logged trajectory, yet evaluated by rule-based planning metrics that measure safety, feasibility, progress, and comfort. This creates a training--evaluation mismatch: trajectories close to the logged path may violate planning rules, while alternatives farther from the demonstration can remain valid and high-scoring. The mismatch is especially limiting for proposal-selection planners, whose performance depends on candidate-set coverage and scorer ranking quality. We propose CLOVER, a Closed-LOop Value Estimation and Ranking framework for end-to-end autonomous driving planning. CLOVER follows a lightweight generator--scorer formulation: a generator produces diverse candidate trajectories, and a scorer predicts planning-metric sub-scores to rank them at inference time. To expand proposal support beyond single-trajectory imitation, CLOVER constructs evaluator-filtered pseudo-expert trajectories and trains the generator with set-level coverage supervision. It then performs conservative closed-loop self-distillation: the scorer is fitted to true evaluator sub-scores on generated proposals, while the generator is refined toward teacher-selected top-$k$ and vector-Pareto targets with stability regularization. We analyze when an imperfect scorer can improve the generator, showing that scorer-mediated refinement is reliable when scorer-selected targets are enriched under the true evaluator and updates remain conservative. On NAVSIM, CLOVER achieves 94.5 PDMS and 90.4 EPDMS, establishing a new state of the art. On the more challenging NavHard split, it obtains 48.3 EPDMS, matching the strongest reported result. On supplementary nuScenes open-loop evaluation, CLOVER achieves the lowest L2 error and collision rate among compared methods. Code data will be released at https://github.com/WilliamXuanYu/CLOVER.",
+    "abstract_zh": "端到端自动驾驶规划器通常通过模仿单一的记录轨迹进行训练，但却使用衡量安全性、可行性、进度和舒适度的基于规则的规划指标进行评估。这导致了训练与评估之间的不匹配：接近记录路径的轨迹可能违反规划规则，而偏离示范的替代方案可能依然有效且评分更高。这种不匹配对于提案选择型规划器尤为局限，因为其性能取决于候选集的覆盖范围和评分器的排名质量。我们提出了 CLOVER，一种用于端到端自动驾驶规划的闭环价值估计与排名框架。CLOVER 遵循轻量级的生成器-评分器架构：生成器产生多样的候选轨迹，评分器在推理时预测规划指标的子分数以进行排名。为了将提案支持扩展到单一轨迹模仿之外，CLOVER 构建了经评估器过滤的伪专家轨迹，并利用集合级覆盖监督来训练生成器。随后，它执行保守的闭环自蒸馏：评分器拟合生成提案上的真实评估器子分数，同时通过稳定性正则化将生成器向教师选定的 Top-k 和向量帕累托目标进行精炼。我们分析了不完美的评分器何时能改进生成器，并证明当评分器选定的目标在真实评估器下得到丰富且更新保持保守时，评分器介导的精炼是可靠的。在 NAVSIM 上，CLOVER 达到了 94.5 的 PDMS 和 90.4 的 EPDMS，确立了新的技术水平。在更具挑战性的 NavHard 分集上，它获得了 48.3 的 EPDMS，与已报道的最强结果相当。在补充的 nuScenes 开环评估中，CLOVER 在对比方法中实现了最低的 L2 误差和碰撞率。",
+    "summary_zh": "针对端到端自动驾驶规划中训练模仿轨迹与规则评估指标不匹配的问题，该论文提出了 CLOVER 框架。通过采用生成器-评分器架构，结合集合级覆盖监督和闭环自蒸馏策略，CLOVER 有效提升了候选轨迹的质量与排名准确性。在多个公开数据集上的实验表明，该方法在规划性能和安全性方面均达到了领先水平。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "base_arxiv_id": "2605.15120",
+    "version": 2
+  },
+  {
     "arxiv_id": "2605.15120v1",
     "title": "CLOVER: Closed-Loop Value Estimation \\& Ranking for End-to-End Autonomous Driving Planning",
     "authors": [

@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-05-17 20:41 UTC
+Generated: 2026-05-18 21:04 UTC
 
 当前展示 103 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -23,11 +23,11 @@ Generated: 2026-05-17 20:41 UTC
   </thead>
   <tbody>
     <tr>
-      <td style="width: 23%; vertical-align: top;"><strong>1. CLOVER: Closed-Loop Value Estimation \&amp; Ranking for End-to-End Autonomous Driving Planning</strong><br><span>Sining Ang, Yuguang Yang, Canyu Chen, Yan Wang</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-05-14</div><div>2026-05-14</div><div><a href="http://arxiv.org/abs/2605.15120v1">2605.15120v1</a> / <a href="https://arxiv.org/pdf/2605.15120v1">PDF</a></div><div>cs.RO, cs.AI, cs.CV</div></td>
+      <td style="width: 23%; vertical-align: top;"><strong>1. CLOVER: Closed-Loop Value Estimation and Ranking for End-to-End Autonomous Driving Planning</strong><br><span>Sining Ang, Yuguang Yang, Canyu Chen, Yan Wang</span></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-05-14</div><div>2026-05-15</div><div><a href="http://arxiv.org/abs/2605.15120v2">2605.15120v2</a> / <a href="https://arxiv.org/pdf/2605.15120v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2605.15120v1">v1</a></div><div>cs.RO, cs.AI, cs.CV</div></td>
       <td style="width: 10%; vertical-align: top;">distillation</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶规划器通常通过模仿单一记录轨迹进行训练，但通过衡量安全性、可行性、进度和舒适度的基于规则的规划指标进行评估。这导致了训练与评估之间的失配：接近记录路径的轨迹可能违反规划规则，而偏离演示的其他路径可能仍然有效且得分更高。这种失配对于提案选择型规划器尤为严重，其性能依赖于候选集覆盖范围和评分器的排名质量。我们提出了 CLOVER，一个用于端到端自动驾驶规划的闭环价值估计与排序框架。CLOVER 遵循轻量级的生成器-评分器结构：生成器产生多样的候选轨迹，评分器在推理时预测规划指标的子分数以进行排序。为了将提案支持扩展到单一轨迹模仿之外，CLOVER 构建了经评估器过滤的伪专家轨迹，并利用集合级覆盖监督来训练生成器。随后，它执行保守的闭环自蒸馏：评分器拟合生成提案上的真实评估器子分数，同时通过稳定性正则化将生成器向教师选择的 Top-k 和向量帕累托目标进行精炼。我们分析了不完美的评分器何时可以改进生成器，表明当评分器选择的目标在真实评估器下得到丰富且更新保持保守时，评分器介导的精炼是可靠的。在 NAVSIM 上，CLOVER 达到了 94.5 的 PDMS 和 90.4 的 EPDMS，确立了新的技术水平。在更具挑战性的 NavHard 数据集划分上，它获得了 48.3 的 EPDMS，达到了目前报告的最强结果。在补充的 nuScenes 开环评估中，CLOVER 在对比方法中实现了最低的 L2 误差和碰撞率。</td>
-      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶规划中训练目标与评估规则不匹配的问题，该论文提出了 CLOVER 闭环价值估计与排序框架。通过结合生成器-评分器结构、集合级覆盖监督和闭环自蒸馏策略，该方法有效地提升了规划器的提案质量与排名能力，并在多个自动驾驶基准测试中达到了领先水平。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶规划器通常通过模仿单一的记录轨迹进行训练，但却使用衡量安全性、可行性、进度和舒适度的基于规则的规划指标进行评估。这导致了训练与评估之间的不匹配：接近记录路径的轨迹可能违反规划规则，而偏离示范的替代方案可能依然有效且评分更高。这种不匹配对于提案选择型规划器尤为局限，因为其性能取决于候选集的覆盖范围和评分器的排名质量。我们提出了 CLOVER，一种用于端到端自动驾驶规划的闭环价值估计与排名框架。CLOVER 遵循轻量级的生成器-评分器架构：生成器产生多样的候选轨迹，评分器在推理时预测规划指标的子分数以进行排名。为了将提案支持扩展到单一轨迹模仿之外，CLOVER 构建了经评估器过滤的伪专家轨迹，并利用集合级覆盖监督来训练生成器。随后，它执行保守的闭环自蒸馏：评分器拟合生成提案上的真实评估器子分数，同时通过稳定性正则化将生成器向教师选定的 Top-k 和向量帕累托目标进行精炼。我们分析了不完美的评分器何时能改进生成器，并证明当评分器选定的目标在真实评估器下得到丰富且更新保持保守时，评分器介导的精炼是可靠的。在 NAVSIM 上，CLOVER 达到了 94.5 的 PDMS 和 90.4 的 EPDMS，确立了新的技术水平。在更具挑战性的 NavHard 分集上，它获得了 48.3 的 EPDMS，与已报道的最强结果相当。在补充的 nuScenes 开环评估中，CLOVER 在对比方法中实现了最低的 L2 误差和碰撞率。</td>
+      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶规划中训练模仿轨迹与规则评估指标不匹配的问题，该论文提出了 CLOVER 框架。通过采用生成器-评分器架构，结合集合级覆盖监督和闭环自蒸馏策略，CLOVER 有效提升了候选轨迹的质量与排名准确性。在多个公开数据集上的实验表明，该方法在规划性能和安全性方面均达到了领先水平。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>2. MAPLE: Latent Multi-Agent Play for End-to-End Autonomous Driving</strong><br><span>Rajeev Yasarla, Deepti Hegde, Hsin-Pai Cheng, Shizhong Han, Yunxiao Shi, Meysam Sadeghigooghari, Hanno Ackermann, Litian Liu, Pranav Desai, Fatih Porikli, Mohammad Ghavamzadeh, Hong Cai</span></td>
