@@ -1,8 +1,103 @@
 [
   {
-    "arxiv_id": "2605.18137v1",
-    "base_arxiv_id": "2605.18137",
+    "arxiv_id": "2605.20082v1",
+    "base_arxiv_id": "2605.20082",
     "version": 1,
+    "title": "VL-DPO: Vision-Language-Guided Finetuning for Preference-Aligned Autonomous Driving",
+    "authors": [
+      "Zhefan Xu",
+      "Ghassen Jerfel",
+      "Marina Haliem",
+      "Qi Zhao",
+      "Jeonhyung Kang",
+      "Khaled S. Refaat"
+    ],
+    "published": "2026-05-19T16:36:34+00:00",
+    "updated": "2026-05-19T16:36:34+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.20082v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.20082v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "The rapid growth of autonomous driving datasets has enabled the scaling of powerful motion forecasting models. While large-scale pretraining provides strong performance, the standard imitation objective may not fully capture the complex nuances of human driving preferences. Meanwhile, recent advances in vision-language models (VLMs) have demonstrated impressive reasoning and commonsense understanding. Building on these capabilities, this paper presents VL-DPO, a vision-language-guided framework that aligns ego-vehicle motion forecasting models with human preferences. Our approach leverages a VLM as a zero-shot reasoner to automatically generate preference pairs from a pretrained model's rollouts, which are then used to finetune the model via Direct Preference Optimization (DPO). We finetune our models on the Waymo Open End-to-End Driving Dataset (WOD-E2E) and evaluate performance against held-out human preference annotations using rater feedback score (RFS) and average displacement error (ADE). Our experiments confirm that the VLM's trajectory selection is a high-quality proxy for human preference. Our final model, VL-DPO, yields an 11.94% increase in RFS and a 10.01% reduction in ADE over the pretrained model.",
+    "abstract_zh": "自动驾驶数据集的快速增长推动了强大的运动预测模型的发展。尽管大规模预训练提供了出色的性能，但标准的模仿学习目标可能无法完全捕捉人类驾驶偏好的复杂细微之处。与此同时，视觉语言模型（VLM）的最新进展展示了其令人印象深刻的推理和常识理解能力。基于这些能力，本文提出了VL-DPO，这是一个视觉语言引导的框架，旨在使自动驾驶车辆运动预测模型与人类偏好对齐。我们的方法利用VLM作为零样本推理器，自动从预训练模型的输出中生成偏好对，随后通过直接偏好优化（DPO）对模型进行微调。我们在Waymo端到端自动驾驶数据集（WOD-E2E）上微调模型，并使用评分反馈分数（RFS）和平均位移误差（ADE）对照保留的人类偏好标注评估性能。实验证实，VLM的轨迹选择是人类偏好的高质量代理。我们的最终模型VL-DPO在RFS上比预训练模型提高了11.94%，在ADE上降低了10.01%。",
+    "summary_zh": "针对现有自动驾驶运动预测模型难以完全契合人类驾驶偏好的问题，本文提出了一种基于视觉语言模型（VLM）引导的微调框架VL-DPO。该方法利用VLM自动生成偏好对，并通过直接偏好优化（DPO）对模型进行对齐，有效提升了轨迹预测的质量及与人类偏好的一致性。"
+  },
+  {
+    "arxiv_id": "2605.19631v1",
+    "base_arxiv_id": "2605.19631",
+    "version": 1,
+    "title": "HEAT: Heterogeneous End-to-End Autonomous Driving via Trajectory-Guided World Models",
+    "authors": [
+      "Hoonhee Cho",
+      "Giwon Lee",
+      "Jae-Young Kang",
+      "Hyemin Yang",
+      "Heejun Park",
+      "Kuk-Jin Yoon"
+    ],
+    "published": "2026-05-19T10:12:01+00:00",
+    "updated": "2026-05-19T10:12:01+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.19631v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.19631v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "End-to-end autonomous driving has emerged as a compelling alternative to traditional modular pipelines by directly mapping raw sensor data to driving actions. While recent approaches achieve strong performance on single-domain datasets, their performance degrades significantly when trained jointly across multiple heterogeneous domains. In practice, however, autonomous systems must operate across diverse environments with heterogeneous distributions, including different cities, sensor configurations, and traffic patterns, without domain-specific retraining. This gap highlights a key challenge in multi-domain learning: domain-specific variations across heterogeneous domains introduce conflicting learning signals, driving models toward compromised solutions that are suboptimal across domains. To address this, we propose a trajectory-driven learning paradigm that organizes training around planning trajectories, enabling the model to capture domain-invariant representations of driving intent. Furthermore, we incorporate a world model that predicts future latent features conditioned on ego actions, improving feature consistency and mitigating domain-induced biases. We evaluate our approach on three benchmarks, nuScenes, NAVSIM, and the Waymo end-to-end dataset, and show substantial improvements over existing methods across all domains. Our results demonstrate that a single unified model can be trained on heterogeneous datasets while maintaining strong performance within each domain, highlighting a step toward scalable real-world deployment. We will make our code publicly available.",
+    "abstract_zh": "端到端自动驾驶已成为传统模块化方案的一种极具吸引力的替代方案，它能直接将原始传感器数据映射为驾驶动作。尽管最近的方法在单域数据集上表现出色，但在多个异构域上联合训练时，性能会显著下降。然而在实践中，自动驾驶系统必须在包括不同城市、传感器配置和交通模式等具有异构分布的多样化环境中运行，且无需针对特定域进行再训练。这一差距突显了多域学习中的一个核心挑战：异构域间的特定变化引入了冲突的学习信号，导致模型倾向于得出在各域中表现均欠佳的折中方案。为了解决这一问题，我们提出了一种以轨迹为驱动的学习范式，围绕规划轨迹组织训练，使模型能够捕捉到驾驶意图的域不变表示。此外，我们结合了一个以自车动作为条件的未来潜空间特征预测世界模型，从而提高了特征的一致性并减轻了域诱导的偏差。我们在nuScenes、NAVSIM和Waymo端到端数据集这三个基准上评估了我们的方法，并证明其在所有域中均显著优于现有方法。研究结果表明，单个统一模型可以在异构数据集上进行训练，同时保持各域内的强大性能，这标志着向可扩展的现实世界部署迈出了一步。",
+    "summary_zh": "针对自动驾驶模型在多异构域联合训练时性能下降的问题，本文提出了一种基于轨迹引导和世界模型的端到端学习框架。通过引入轨迹驱动的学习范式与条件化未来特征预测，该方法有效缓解了跨域冲突信号，显著提升了模型在不同驾驶场景下的通用性与任务性能。"
+  },
+  {
+    "arxiv_id": "2605.19524v1",
+    "base_arxiv_id": "2605.19524",
+    "version": 1,
+    "title": "SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving",
+    "authors": [
+      "Kefei Tian",
+      "Yuansheng Lian",
+      "Kai Yang",
+      "Xiangdong Chen",
+      "Shen Li"
+    ],
+    "published": "2026-05-19T08:26:43+00:00",
+    "updated": "2026-05-19T08:26:43+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.19524v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.19524v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "abstract_en": "End-to-end autonomous driving systems excel in common scenarios but struggle with safety-critical long-tail cases. Vision-Language-Action (VLA) models are promising due to their strong reasoning capabilities. However, most VLA-based approaches rely on positive expert demonstrations, rarely exploiting negative samples, leading to insufficient understanding of risky behaviors and safety boundaries. To address this limitation, we propose SafeAlign-VLA, a unified negative-enhanced safe alignment framework that incorporates negative data into supervised learning and reinforcement learning. First, we develop a counterfactual safety pairing paradigm to generate structured safety labels and counterfactual positive trajectories from risky scenarios via counterfactual reasoning. Then, a two-stage training strategy is adopted: negative-enhanced supervised fine-tuning for failure feedback and trajectory correction, followed by anchor-based group relative policy optimization that uses positive and negative trajectories as contrastive anchors to steer sampling and penalize high-risk behaviors via group-relative advantages. Experiments on NAVSIM and DeepAccident validate the proposed framework. SafeAlign-VLA achieves 89.1 PDMS on the NAVSIM v1 testset, improving over the baseline without negative data by 1.3%. On DeepAccident, it reduces the collision rate to 3.36%, while achieving 84.2% language accuracy and 85.8% risk prediction accuracy. These results demonstrate the effectiveness of the proposed negative-enhanced safe alignment framework for safe and robust autonomous driving.",
+    "abstract_zh": "端到端自动驾驶系统在常见场景中表现出色，但在安全关键的长尾案例中却面临挑战。视觉-语言-动作（VLA）模型因其强大的推理能力而备受期待。然而，大多数基于 VLA 的方法主要依赖正向专家演示，很少利用负面样本，导致对风险行为和安全边界的理解不足。为了解决这一局限性，我们提出了 SafeAlign-VLA，这是一个统一的负增强安全对齐框架，将负面数据纳入监督学习和强化学习中。首先，我们开发了一种反事实安全配对范式，通过反事实推理从风险场景中生成结构化安全标签和反事实正向轨迹。随后，采用两阶段训练策略：首先进行负增强监督微调以实现失败反馈和轨迹纠正，随后采用基于锚点的组相对策略优化，利用正负轨迹作为对比锚点来引导采样，并通过组相对优势惩罚高风险行为。在 NAVSIM 和 DeepAccident 上的实验验证了该框架的有效性。SafeAlign-VLA 在 NAVSIM v1 测试集上达到了 89.1 的 PDMS，比不使用负面数据的基线提高了 1.3%。在 DeepAccident 上，它将碰撞率降低至 3.36%，同时达到了 84.2% 的语言准确率和 85.8% 的风险预测准确率。这些结果证明了所提出的负增强安全对齐框架对于实现安全稳健的自动驾驶的有效性。",
+    "summary_zh": "针对自动驾驶在处理安全关键长尾案例时对风险理解不足的问题，本文提出了 SafeAlign-VLA 框架。该方法通过反事实推理生成负面样本，并采用负增强监督微调与基于对比锚点的强化学习，显著提高了系统对高风险行为的识别与避障能力。"
+  },
+  {
+    "arxiv_id": "2605.18137v2",
+    "base_arxiv_id": "2605.18137",
+    "version": 2,
     "title": "Xiaomi EV World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving",
     "authors": [
       "Lijun Zhou",
@@ -44,9 +139,9 @@
       "Haiyang Sun"
     ],
     "published": "2026-05-18T09:46:16+00:00",
-    "updated": "2026-05-18T09:46:16+00:00",
-    "arxiv_url": "http://arxiv.org/abs/2605.18137v1",
-    "pdf_url": "https://arxiv.org/pdf/2605.18137v1",
+    "updated": "2026-05-19T09:33:34+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.18137v2",
+    "pdf_url": "https://arxiv.org/pdf/2605.18137v2",
     "arxiv_categories": [
       "cs.CV"
     ],
@@ -59,8 +154,8 @@
       "distillation"
     ],
     "abstract_en": "This report presents a unified technical system addressing the two core capabilities of world models for autonomous driving: world representation and world generation. For world representation, we propose WorldRec, a feed-forward reconstruction architecture driven by sparse scene queries. WorldRec initializes structured queries in 3D space, leveraging them to aggregate cross-view, cross-temporal features, thereby naturally enforcing spatial consistency across frames and yielding compact yet high-fidelity 3D Gaussian scene representations. For world generation, we propose WorldGen, a two-stage training framework of bidirectional pretraining followed by causal fine-tuning through three progressive stages (Teacher Forcing, ODE distillation, and DMD), enabling high-quality online causal video generation in as few as 4 denoising steps. Building on both modules, we further introduce the JWM, which deeply integrates WorldRec and WorldGen to achieve synergistic gains in generation stability, cross-frame consistency, and visual fidelity, providing a solid foundation for closed-loop simulation, data synthesis, and end-to-end training in autonomous driving.",
-    "abstract_zh": "本报告提出了一个统一的技术系统，旨在解决自动驾驶世界模型的核心能力：世界表征与世界生成。在世界表征方面，我们提出了 WorldRec，这是一种由稀疏场景查询驱动的前馈重建架构。WorldRec 在三维空间中初始化结构化查询，利用这些查询聚合跨视角、跨时间特征，从而自然地增强了帧间的空间一致性，并产生紧凑且高保真的三维高斯场景表示。在世界生成方面，我们提出了 WorldGen，这是一个包含双向预训练和因果微调的两阶段训练框架，通过三个循序渐进的阶段（教师强制、ODE 蒸馏和 DMD），实现了低至 4 步去噪的高质量在线因果视频生成。基于上述两个模块，我们进一步引入了 JWM，它将 WorldRec 和 WorldGen 深度集成，在生成稳定性、跨帧一致性和视觉保真度方面实现了协同增效，为自动驾驶的闭环仿真、数据合成和端到端训练提供了坚实基础。",
-    "summary_zh": "针对自动驾驶中的世界表征与生成挑战，本文提出了集成 WorldRec 重建架构与 WorldGen 生成框架的 JWM 系统。该系统通过三维高斯场景表示与分阶段高效去噪技术，提升了视频生成的质量与一致性。其主要贡献在于实现了一套协同的端到端架构，为自动驾驶的仿真与数据合成提供了有力支撑。"
+    "abstract_zh": "本报告提出了一个统一的技术系统，旨在解决自动驾驶世界模型的核心能力：世界表征与世界生成。在世界表征方面，我们提出了 WorldRec，这是一种由稀疏场景查询驱动的前馈重建架构。WorldRec 在 3D 空间中初始化结构化查询，利用它们聚合跨视图、跨时间的特征，从而自然地增强了帧间的空间一致性，并生成紧凑且高保真的 3D 高斯场景表示。在世界生成方面，我们提出了 WorldGen，这是一个包含双向预训练和因果微调的两阶段训练框架，通过三个循序渐进的阶段（教师强制、ODE 蒸馏和 DMD），实现了低至 4 步去噪的高质量在线因果视频生成。基于这两个模块，我们进一步引入了 JWM，深度整合了 WorldRec 和 WorldGen，以在生成稳定性、帧间一致性和视觉保真度方面实现协同增效，为自动驾驶的闭环仿真、数据合成和端到端训练提供了坚实基础。",
+    "summary_zh": "针对自动驾驶中的世界表征与生成问题，本文提出了集成 WorldRec 重建架构与 WorldGen 生成框架的 JWM 系统。该系统通过 3D 高斯场景表示与分阶段高效去噪生成，显著提升了视频生成的一致性、稳定性和保真度，为自动驾驶仿真与训练提供了支持。"
   },
   {
     "arxiv_id": "2605.15120v2",
