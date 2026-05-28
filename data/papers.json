@@ -1,5 +1,36 @@
 [
   {
+    "arxiv_id": "2605.28544v1",
+    "base_arxiv_id": "2605.28544",
+    "version": 1,
+    "title": "DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving",
+    "authors": [
+      "Chen Shi",
+      "Jinrui Xu",
+      "Shaoshuai Shi",
+      "Kehua Sheng",
+      "Bo Zhang",
+      "Li Jiang"
+    ],
+    "published": "2026-05-27T14:36:26+00:00",
+    "updated": "2026-05-27T14:36:26+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.28544v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.28544v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Pretrained foundation models have become an important basis for end-to-end autonomous driving. In contrast to vision-language models pretrained primarily on static image-text pairs, video generative models capture temporal dynamics and motion priors that are naturally suited for driving. We present DriveWAM, a driving world-action model that adapts a pretrained video diffusion transformer into an autoregressive video-action policy. DriveWAM organizes video and action streams into a unified temporal token sequence and trains them under a joint flow-matching objective, preserving the pretrained video-generation architecture while adapting its large-scale video priors to action generation. To incorporate high-level scene understanding, we introduce scene-evolving driving guidance, where a frozen VLM produces chunk-specific semantic intent to guide video-action generation. To keep long-horizon rollout bounded, we further introduce selective KV memory, which maintains bounded modality-aware video and action memory pools through relevance-redundancy cache selection at inference time. Experiments on NAVSIM and the PhysicalAI-Autonomous-Vehicles benchmark show that DriveWAM achieves strong planning performance, and a data-scaling study from 4k to 100k driving clips further confirms the scaling potential of world-action modeling for end-to-end autonomous driving.",
+    "abstract_zh": "预训练基础模型已成为端到端自动驾驶的重要基石。与主要在静态图文对上预训练的视觉语言模型不同，视频生成模型捕捉了天然适合驾驶场景的时序动态和运动先验。我们提出了 DriveWAM，这是一种驾驶世界-动作模型，它将预训练的视频扩散 Transformer 适配为自回归的视频-动作策略。DriveWAM 将视频流和动作流组织成统一的时序 Token 序列，并在联合流匹配目标下进行训练，在保留预训练视频生成架构的同时，将其大规模视频先验适配到动作生成中。为了结合高层场景理解，我们引入了场景演化驾驶引导，利用冻结的视觉语言模型（VLM）生成特定片段的语义意图以指导视频-动作的生成。为了使长时程预测保持稳定，我们进一步引入了选择性 KV 内存，在推理时通过相关性-冗余性缓存选择来维护有界的模态感知视频和动作内存池。在 NAVSIM 和 PhysicalAI-Autonomous-Vehicles 基准测试上的实验表明，DriveWAM 实现了强大的规划性能，从 4k 到 100k 驾驶片段的数据扩展研究进一步证实了世界-动作建模在端到端自动驾驶中的扩展潜力。",
+    "summary_zh": "针对自动驾驶任务，该论文提出了 DriveWAM，这是一种通过将预训练的视频扩散模型适配为视频-动作策略的端到端世界-动作模型。该方法通过引入场景语义引导和选择性 KV 内存机制，实现了对驾驶环境的有效理解及长时程规划，并在大规模驾驶数据上验证了其出色的扩展性能。"
+  },
+  {
     "arxiv_id": "2605.24354v1",
     "base_arxiv_id": "2605.24354",
     "version": 1,
