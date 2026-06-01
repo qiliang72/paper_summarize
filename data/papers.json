@@ -1,5 +1,100 @@
 [
   {
+    "arxiv_id": "2605.31476v1",
+    "base_arxiv_id": "2605.31476",
+    "version": 1,
+    "title": "IDOL: Inverse-Dynamics-Guided Future Prediction for End-to-End Autonomous Driving",
+    "authors": [
+      "Chenghao Zhang",
+      "Timin Li",
+      "Dongmei Li"
+    ],
+    "published": "2026-05-29T16:05:42+00:00",
+    "updated": "2026-05-29T16:05:42+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.31476v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.31476v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "End-to-end autonomous driving has emerged as a compelling paradigm for learning planning directly from sensor observations, while recent world-model-based approaches further enrich this paradigm by enabling explicit reasoning about how the scene may evolve in the future. Yet future prediction alone does not guarantee better planning unless the predicted evolution can be converted into planning-relevant trajectory updates. Many current methods still forecast future scene states without explicitly decoding the motion implications hidden in state transitions. As a result, future reasoning often remains descriptively useful but only weakly coupled to executable motion generation. To address this limitation, we propose \\mathbf{IDOL}, an inverse-dynamics-guided future prediction framework for world-model-based end-to-end planning in latent BEV space, where inverse dynamics serves as the key bridge between future prediction and trajectory optimization. IDOL first predicts multiple future latent scene states with a BEV world model, then applies an inverse dynamics model to adjacent latent futures to decode transition-aware trajectory features and recover planning-relevant motion deltas that explain how the latent world evolves over time. These inverse-dynamics-derived signals are used to optimize the planned trajectory, turning future forecasting from passive scene anticipation into actionable planning guidance. A lightweight closed-loop refinement module further improves long-horizon consistency by reusing the optimized trajectory for another round of future-aware reasoning. By introducing inverse dynamics into latent future reasoning, IDOL tightens the coupling between world modeling and planning. Extensive experiments on the NAVSIM v1 and NAVSIM v2 benchmarks show that IDOL achieves state-of-the-art performance among comparable methods.",
+    "abstract_zh": "端到端自动驾驶作为一种直接从传感器观测中学习规划的新兴范式，近年来通过世界模型方法进一步丰富，使其能够对场景演化进行显式推理。然而，仅靠未来预测并不能保证获得更好的规划，除非预测的演化能转化为与规划相关的轨迹更新。现有的许多方法在预测未来场景状态时，未能显式解码状态转换中蕴含的运动含义。因此，未来推理往往仅在描述层面有用，而与可执行的运动生成耦合较弱。为了解决这一局限性，我们提出了 IDOL，这是一种用于潜空间 BEV 世界模型端到端规划的逆动力学引导未来预测框架，其中逆动力学作为未来预测与轨迹优化之间的关键桥梁。IDOL 首先利用 BEV 世界模型预测多个未来的潜场景状态，然后应用逆动力学模型对相邻的潜状态进行解码，提取感知转换的轨迹特征，并恢复与规划相关的运动增量，从而解释潜世界如何随时间演变。这些源自逆动力学的信号被用于优化规划轨迹，将未来预测从被动的场景预演转化为可操作的规划指导。一个轻量级的闭环优化模块通过重用优化后的轨迹进行新一轮的未来感知推理，进一步提升了长程一致性。通过将逆动力学引入潜未来推理中，IDOL 加强了世界建模与规划之间的耦合。在 NAVSIM v1 和 NAVSIM v2 基准测试上的大量实验表明，IDOL 在同类方法中达到了最先进的性能。",
+    "summary_zh": "针对端到端自动驾驶中未来预测与轨迹规划耦合较弱的问题，该论文提出了 IDOL 框架，引入逆动力学作为桥梁，将潜空间中的场景演化显式转化为可操作的运动增量。通过利用逆动力学模型提取转换特征并结合闭环优化模块，该方法显著提升了规划轨迹的质量，在 NAVSIM 基准测试中表现优异。"
+  },
+  {
+    "arxiv_id": "2605.31256v1",
+    "base_arxiv_id": "2605.31256",
+    "version": 1,
+    "title": "Before Parc Fermé: RL-Time Pruning for Efficient Embodied LLMs in Autonomous Driving",
+    "authors": [
+      "Luca Benfenati",
+      "Ali Azimi",
+      "Matteo Risso",
+      "Fabio Carapellese",
+      "Daniele Jahier Pagliari",
+      "Alessio Burrello"
+    ],
+    "published": "2026-05-29T12:53:33+00:00",
+    "updated": "2026-05-29T12:53:33+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.31256v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.31256v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "abstract_en": "Embodied Large Language Models (LLMs) are increasingly used as reasoning modules in robotic control pipelines to improve human-robot interaction, but their memory and generation latency make real-time deployment difficult. Pruning can reduce these costs, but for controllers that undergo multiple pre- and post-training phases, the crucial question is not only how much to prune, but when pruning should occur. In this work, we propose Before Parc Fermé (BPF), a pruning strategy performed during RL that compresses embodied LLM controllers while they are still being optimized for closed-loop behavior. This allows pruning decisions to account for the task-specific supervision and closed-loop feedback that shape the final controller. We propose two variants: BPF-RL, which performs iterative pruning during RL by removing part of the model at predefined training intervals, and BPF-SFT/RL, which first prunes part of the model structure during SFT and then further compresses it during RL using the same iterative strategy as BPF-RL until the target pruning ratio is reached. We evaluate BPF on RobotxR1, an LLM-based autonomous-driving control pipeline, using an established LLM pruning framework (LLM-Pruner), and compare it against post-training pruning, post-training pruning with RL recovery, SFT-stage pruning, and smaller dense models from the same family. Our results show that BPF provides the best task-performance vs. memory and throughput trade-off among the considered pruning strategies. When compressing the larger RobotxR1 models, BPF-SFT/RL achieves a $1.69\\times$ better size-end-to-end performance trade-off than directly selecting a smaller dense model from the same family, measured as removed parameters per lost percentage point of control adaptability. On the Jetson AGX Orin mounted on the target robotic platform, the compact models improve decode throughput by up to $27\\%$.",
+    "abstract_zh": "具身大语言模型（LLMs）正越来越多地作为机器人控制流程中的推理模块，以改善人机交互，但其内存占用和生成延迟使得实时部署变得困难。模型剪枝可以降低这些成本，但对于经历多个训练阶段的控制器而言，关键问题不仅在于剪枝多少，还在于何时剪枝。在本研究中，我们提出了“Before Parc Fermé”（BPF）策略，这是一种在强化学习（RL）期间执行的剪枝方案，旨在压缩仍在优化闭环行为的具身LLM控制器。该方法使得剪枝决策能够考虑到塑造最终控制器的任务特定监督和闭环反馈。我们提出了两种变体：BPF-RL，通过在预定义的训练间隔移除模型部分来进行迭代剪枝；以及BPF-SFT/RL，先在有监督微调（SFT）阶段剪枝部分结构，随后在RL期间继续压缩直到达到目标剪枝比率。我们在基于LLM的自动驾驶控制流程RobotxR1上使用LLM-Pruner框架评估了BPF，并将其与训练后剪枝、带RL恢复的训练后剪枝、SFT阶段剪枝及同系列较小稠密模型进行了比较。结果表明，在考虑的所有剪枝策略中，BPF在任务性能与内存及吞吐量之间提供了最佳的权衡。在压缩大型RobotxR1模型时，BPF-SFT/RL实现的规模与端到端性能权衡比直接选择同系列较小稠密模型提升了1.69倍（按每损失一个百分点控制适应度所移除的参数量衡量）。在目标机器人平台的Jetson AGX Orin上，紧凑模型使解码吞吐量提升了最高27%。",
+    "summary_zh": "本文针对自动驾驶中具身大模型部署的内存与延迟瓶颈，提出了一种在强化学习训练过程中进行剪枝的策略BPF。该方法通过在闭环优化期间动态调整模型结构，在保持任务性能的同时显著降低了模型规模并提升了推理吞吐量，优于传统的训练后剪枝方案。"
+  },
+  {
+    "arxiv_id": "2605.31116v1",
+    "base_arxiv_id": "2605.31116",
+    "version": 1,
+    "title": "NTR: Neural Token Reconstruction for Scene Token Bottleneck in End-to-End Driving",
+    "authors": [
+      "Jiahui Li",
+      "Jiawei Sun",
+      "Zixiang Ren",
+      "Ming Liu",
+      "Jiamin Shi",
+      "Ruiteng Zhao",
+      "Zhiyang Liu",
+      "Liying Liu",
+      "Zuoguan Wang",
+      "Kaidi Yang"
+    ],
+    "published": "2026-05-29T10:27:32+00:00",
+    "updated": "2026-05-29T10:27:32+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2605.31116v1",
+    "pdf_url": "https://arxiv.org/pdf/2605.31116v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "Recent perception-free end-to-end (E2E) autonomous driving methods bypass explicit perception outputs by compressing dense image patch tokens into compact scene tokens for downstream trajectory generation and scoring. While these scene tokens form a compact visual bottleneck for the planner, they receive supervision solely from the planning objective, providing limited constraints on the encoded visual information. To address this limitation, we introduce Neural Token Reconstruction (NTR), a representation learning framework to directly constrain the compact scene-token bottleneck in perception-free driving. NTR introduces a self-distillation masked latent reconstruction objective that reconstructs masked patch-level latent features using only compact scene tokens as reconstruction memory. This forces reconstruction gradients to pass exclusively through the scene-token bottleneck, encouraging scene tokens to preserve richer and less redundant visual representations for planning. We further introduce semantic priors derived from foundation-model annotations as a weak semantic interface biasing reconstruction targets toward driving-related structures without introducing explicit perception heads. All auxiliary reconstruction components are removed at inference time, leaving the deployed planner unchanged. NTR achieves state-of-the-art performance on three public autonomous driving benchmarks, including 8.0461 RFS on Waymo E2E and 94.1 PDMS / 90.9 EPDMS on NavSim1&2. The learned scene tokens exhibit lower pairwise redundancy and higher effective rank, indicating that effective bottleneck supervision improves both compact visual representation learning and planning performance.",
+    "abstract_zh": "近期的无感知端到端自动驾驶方法通过将密集的图像块 Token 压缩为紧凑的场景 Token，从而绕过了显式的感知输出，直接用于后续的轨迹生成与评分。然而，尽管这些场景 Token 为规划器构成了紧凑的视觉瓶颈，但它们仅受到规划目标的监督，导致对编码视觉信息的约束有限。为了解决这一局限性，我们引入了神经 Token 重建（NTR），这是一个直接约束无感知驾驶中紧凑场景 Token 瓶颈的表征学习框架。NTR 引入了一种自蒸馏掩码潜在重建目标，仅利用紧凑的场景 Token 作为重建记忆来恢复被掩码的块级潜在特征。这强制重建梯度完全通过场景 Token 瓶颈，从而促使场景 Token 为规划保留更丰富且冗余度更低的视觉表征。我们进一步引入了源自基础模型标注的语义先验，作为一种弱语义接口，在不引入显式感知头的情况下，将重建目标偏向于驾驶相关的结构。推理时，所有辅助重建组件都会被移除，部署的规划器保持不变。NTR 在三个公开自动驾驶基准测试上实现了最先进的性能，包括在 Waymo E2E 上达到 8.0461 RFS，以及在 NavSim1&2 上达到 94.1 PDMS / 90.9 EPDMS。所学习的场景 Token 展示出更低的成对冗余度和更高的有效秩，表明有效的瓶颈监督提升了紧凑视觉表征学习和规划性能。",
+    "summary_zh": "针对无感知端到端自动驾驶中场景 Token 瓶颈缺乏约束的问题，本文提出了神经 Token 重建（NTR）框架。该方法通过引入自蒸馏掩码潜在重建目标和弱语义先验，迫使场景 Token 编码更丰富、冗余度更低的视觉信息。实验结果表明，该方法在多个基准测试中均取得了最优性能，显著提升了驾驶规划的表征质量。"
+  },
+  {
     "arxiv_id": "2605.28544v1",
     "base_arxiv_id": "2605.28544",
     "version": 1,
