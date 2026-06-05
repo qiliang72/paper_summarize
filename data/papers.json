@@ -1,5 +1,76 @@
 [
   {
+    "arxiv_id": "2606.06014v1",
+    "base_arxiv_id": "2606.06014",
+    "version": 1,
+    "title": "PLAN-S: Bridging Planning with Latent Style Dynamics for Autonomous Driving World Models",
+    "authors": [
+      "Xiaoyun Qiu",
+      "Jingtao He",
+      "Yijie Chen",
+      "Yusong Huang",
+      "Haotian Wang",
+      "Yixuan Wang",
+      "Xinhu Zheng"
+    ],
+    "published": "2026-06-04T11:03:20+00:00",
+    "updated": "2026-06-04T11:03:20+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.06014v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.06014v1",
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Latent world models (LWMs) have strengthened end-to-end autonomous driving by forecasting compact scene dynamics for downstream planning. However, existing LWM-based planners usually generate trajectories directly from entangled latent representations. This compact latent-to-planner pathway lacks explicit modeling of risk, drivability, and diverse style preferences, making driving-style dynamics difficult to supervise, inspect, or modulate before a final trajectory is selected. We propose PLAN-S (PLANning with latent Style dynamics), a planner-facing bridge that addresses this compactness-controllability dilemma by decoding a style-conditioned, four-channel semantic cost map from the latent representation. The cost map is conditioned on ego state and driving style and is consumed up-stream of the planning decision through two host-side interfaces: attention-level fusion for regression planners and reward-level fusion for anchor-score planners. We validate PLAN-S on two architecturally distinct hosts, ResWorld on nuScenes and WoTE on NAVSIM, while keeping the host backbones frozen to isolate the contribution of the proposed bridge. On nuScenes, PLAN-S reduces L2 at every horizon over the baseline, with 0.55 m average L2 and a 42% relative reduction in the 3 s collision rate. On NAVSIM, the rule-cost variant reaches 89.4 Predictive Driver Model Score (PDMS), while the learned cost variant provides complementary gains on baseline-challenging scenes. Ablations show that the cost pathway contributes most directly to safer trajectory selection. Qualitative results further show that PLAN-S can produce diverse cost maps, with spatially consistent variations aligned to different driving styles.",
+    "abstract_zh": "潜在世界模型（LWMs）通过预测紧凑的场景动态来强化端到端自动驾驶的下游规划。然而，现有的基于LWM的规划器通常直接从纠缠的潜在表征中生成轨迹。这种紧凑的潜在空间到规划器的路径缺乏对风险、可行驶性及多样化驾驶风格偏好的显式建模，导致在最终轨迹选择前难以对驾驶风格动态进行监督、检查或调节。我们提出了PLAN-S（基于潜在风格动态的规划），这是一个面向规划器的桥接结构，通过从潜在表征中解码出受风格条件约束的四通道语义代价图，解决了这种紧凑性与可控性之间的困境。该代价图以自我状态和驾驶风格为条件，并通过两种宿主端接口作用于规划决策之前：针对回归规划器的注意力级融合和针对锚点评分规划器的奖励级融合。我们在nuScenes上的ResWorld和NAVSIM上的WoTE这两个架构不同的宿主模型上验证了PLAN-S，并保持宿主骨干网络固定以分离该桥接结构的贡献。在nuScenes上，PLAN-S在所有预测时间范围内的L2误差均低于基线，平均L2为0.55米，且3秒碰撞率相对降低了42%。在NAVSIM上，规则代价变体达到了89.4的预测驾驶模型评分（PDMS），而学习到的代价变体在基线模型难以处理的场景中提供了补充增益。消融实验表明，代价路径对更安全的轨迹选择贡献最为直接。定性结果进一步显示，PLAN-S能够生成多样化的代价图，并展现出与不同驾驶风格相符的空间一致性变化。",
+    "summary_zh": "针对现有潜在世界模型在自动驾驶规划中缺乏对风险和风格显式控制的问题，该研究提出了PLAN-S框架，通过引入受风格约束的语义代价图来优化路径规划。该方法通过注意力或奖励融合接口与不同规划器集成，在nuScenes和NAVSIM基准测试中显著提升了行驶安全性和轨迹预测准确度。"
+  },
+  {
+    "arxiv_id": "2606.05645v1",
+    "base_arxiv_id": "2606.05645",
+    "version": 1,
+    "title": "Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning",
+    "authors": [
+      "Ziyang Yao",
+      "Haochen Liu",
+      "Yuncheng Jiang",
+      "Zeyu Zhu",
+      "Zibin Guo",
+      "Jingru Wang",
+      "Tianle Liu",
+      "Jianwei Cui",
+      "Kuiyuan Yang",
+      "Hongwei Xie",
+      "Jingwei Zhao",
+      "Guang Chen",
+      "Hangjun Ye"
+    ],
+    "published": "2026-06-04T03:16:31+00:00",
+    "updated": "2026-06-04T03:16:31+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.05645v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.05645v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Autonomous driving requires reasoning about how ego actions shape the evolution of the surrounding world. However, most end-to-end methods rely on direct state-to-action mappings, capturing correlations without explicitly modeling action-conditioned dynamics. Conversely, continuous-latent world models often lack compositional structure for causal reasoning across counterfactual futures. We introduce Discrete-WAM, a unified latent vision-action world policy that represents future visual states and ego actions as aligned discrete tokens, enabling compositional causal reasoning across alternative futures. Built upon this unified discrete alignment, Discrete-WAM establishes a shared discrete diffusion framework with unified generative tasks, jointly formulating world modeling, world-action policy, and hierarchical decision-enabled policy, supporting compositional generalization across diverse driving scenarios. Experiments on large-scale autonomous-driving benchmarks show that Discrete-WAM achieves competitive performance while supporting controllable generation and counterfactual reasoning, offering a principled path toward more reliable decision-making.",
+    "abstract_zh": "自动驾驶需要推理自我行为如何塑造周围世界的演变。然而，大多数端到端方法依赖于直接的状态到动作映射，仅捕捉相关性而未明确建模动作条件下的动态过程。相反，连续潜在世界模型通常缺乏用于跨反事实未来进行因果推理的组合结构。我们提出了Discrete-WAM，这是一种统一的潜在视觉-动作世界策略，将未来的视觉状态和自我动作表示为对齐的离散标记，从而支持跨替代未来的组合因果推理。基于这种统一的离散对齐，Discrete-WAM建立了一个具有统一生成任务的共享离散扩散框架，联合构建了世界建模、世界-动作策略和分层决策策略，支持跨多种驾驶场景的组合泛化。在大规模自动驾驶基准上的实验表明，Discrete-WAM在实现竞争性能的同时，支持可控生成和反事实推理，为更可靠的决策提供了一条原则性的路径。",
+    "summary_zh": "针对现有端到端自动驾驶方法缺乏因果推理能力的问题，本文提出了Discrete-WAM框架，将视觉状态与自我动作统一为离散标记进行建模。该方法通过共享离散扩散框架联合优化世界模型与决策策略，有效实现了跨反事实未来的组合式因果推理与场景泛化。"
+  },
+  {
     "arxiv_id": "2605.31476v1",
     "base_arxiv_id": "2605.31476",
     "version": 1,
