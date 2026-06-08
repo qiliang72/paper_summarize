@@ -1,5 +1,45 @@
 [
   {
+    "arxiv_id": "2606.07464v1",
+    "base_arxiv_id": "2606.07464",
+    "version": 1,
+    "title": "Planning-aligned Token Compression for Long-Context Autonomous Driving",
+    "authors": [
+      "Zhixuan Liang",
+      "Yuxiao Chen",
+      "Yurong You",
+      "Peter Karkus",
+      "Wenhao Ding",
+      "Boyi Li",
+      "Alexander Popov",
+      "Yan Wang",
+      "Maximilian Igl",
+      "Yiming Li",
+      "Danfei Xu",
+      "Nikolai Smolyanskiy",
+      "Boris Ivanovic",
+      "Ping Luo",
+      "Marco Pavone"
+    ],
+    "published": "2026-06-05T17:16:21+00:00",
+    "updated": "2026-06-05T17:16:21+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.07464v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.07464v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [],
+    "abstract_en": "Monolithic vision-action models represent an emerging paradigm in autonomous driving. However, this architecture produces token sequences that quickly exceed real-time computational budgets when encoding extended temporal context for complex interactions. While approaches like linear transformers and external memory try to make the context lightweight, token compression is most compatible with the architecture as it requires no backbone modifications. Yet existing compression adopts rule-based heuristics like temporal decay, decoupled from planning, risking loss of decision-critical information. We propose COMPACT-VA, a planning-aligned working memory framework built on conditional VQ-VAE, compressing extended context into bounded representations. Compression is conditioned on both historical trajectory and a learned planning intent that the posterior encoder distills from future trajectories during training, while the prior encoder learns to predict it from compressed observations. The compressed memory, concatenated with the predicted latent, feeds the policy for end-to-end optimization, planning with retained decision-critical information. We evaluate on high-signal dynamic scenarios where historical context is most critical for behavior correctness (e.g., stop, yield, or proceed), and accordingly design behavioral metrics. Under comparable token budgets, we achieve $>$6% improvement (68.3%) on success rates with consistent gains across metrics. Ablations validate planning-aligned coupling effectiveness. Closed-loop evaluation confirms that COMPACT-VA maintained general driving performance with 3.3* speedup and 2.7* memory reduction over uncompressed processing.",
+    "abstract_zh": "单体视觉-动作模型是自动驾驶领域的一种新兴范式。然而，当此类架构为复杂交互编码长时序上下文时，生成的标记序列会迅速超过实时计算预算。尽管线性 Transformer 和外部存储器等方法试图减轻上下文负担，但标记压缩技术因无需修改骨干网络而与现有架构最为兼容。然而，现有的压缩方法多采用基于时间衰减的规则启发式方案，且与规划任务解耦，存在丢失决策关键信息的风险。我们提出了 COMPACT-VA，这是一种基于条件 VQ-VAE 的规划对齐工作记忆框架，旨在将扩展的上下文压缩为有界的表示。压缩过程同时受到历史轨迹和学习到的规划意图的制约，前者由后验编码器在训练期间从未来轨迹中提取，后者则由先验编码器从压缩观测中预测。压缩后的记忆与预测的潜在状态拼接后输入策略网络进行端到端优化，从而实现保留决策关键信息的规划。我们在历史上下文对行为准确性至关重要的高信号动态场景（如停车、让行或通行）中进行了评估，并相应设计了行为指标。在同等标记预算下，我们的成功率提升了超过 6%（达到 68.3%），且在各项指标上均表现出持续的增长。消融实验验证了规划对齐耦合的有效性。闭环评估证实，COMPACT-VA 在保持常规驾驶性能的同时，实现了 3.3 倍的速度提升和 2.7 倍的内存节省。",
+    "summary_zh": "针对长时序自动驾驶中标记数量过大导致计算开销过高的问题，本文提出了 COMPACT-VA 框架，通过引入规划对齐的条件 VQ-VAE 压缩机制来保留决策关键信息。该方法利用规划意图引导压缩过程，在显著减少计算资源占用的同时，提升了模型在复杂交通场景下的决策成功率与推理效率。"
+  },
+  {
     "arxiv_id": "2606.06014v1",
     "base_arxiv_id": "2606.06014",
     "version": 1,
