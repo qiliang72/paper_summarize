@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-06-09 21:47 UTC
+Generated: 2026-06-10 21:52 UTC
 
 当前展示 118 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -38,10 +38,10 @@ Generated: 2026-06-09 21:47 UTC
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>3. Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning</strong><br><span>Ziyang Yao, Haochen Liu, Yuncheng Jiang, Zeyu Zhu, Zibin Guo, Jingru Wang, Tianle Liu, Jianwei Cui, Kuiyuan Yang, Hongwei Xie, Jingwei Zhao, Guang Chen, Hangjun Ye</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-06-04</div><div>2026-06-04</div><div><a href="http://arxiv.org/abs/2606.05645v1">2606.05645v1</a> / <a href="https://arxiv.org/pdf/2606.05645v1">PDF</a></div><div>cs.RO</div></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-06-04</div><div>2026-06-09</div><div><a href="http://arxiv.org/abs/2606.05645v2">2606.05645v2</a> / <a href="https://arxiv.org/pdf/2606.05645v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2606.05645v1">v1</a></div><div>cs.RO</div></td>
       <td style="width: 10%; vertical-align: top;">world model</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>自动驾驶需要推理自我行为如何塑造周围世界的演变。然而，大多数端到端方法依赖于直接的状态到动作映射，仅捕捉相关性而未明确建模动作条件下的动态过程。相反，连续潜在世界模型通常缺乏用于跨反事实未来进行因果推理的组合结构。我们提出了Discrete-WAM，这是一种统一的潜在视觉-动作世界策略，将未来的视觉状态和自我动作表示为对齐的离散标记，从而支持跨替代未来的组合因果推理。基于这种统一的离散对齐，Discrete-WAM建立了一个具有统一生成任务的共享离散扩散框架，联合构建了世界建模、世界-动作策略和分层决策策略，支持跨多种驾驶场景的组合泛化。在大规模自动驾驶基准上的实验表明，Discrete-WAM在实现竞争性能的同时，支持可控生成和反事实推理，为更可靠的决策提供了一条原则性的路径。</td>
-      <td style="width: 20%; vertical-align: top;">针对现有端到端自动驾驶方法缺乏因果推理能力的问题，本文提出了Discrete-WAM框架，将视觉状态与自我动作统一为离散标记进行建模。该方法通过共享离散扩散框架联合优化世界模型与决策策略，有效实现了跨反事实未来的组合式因果推理与场景泛化。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>自动驾驶不仅需要将观测结果映射为动作，还需要推理自我行为如何塑造未来世界演变。然而，大多数端到端方法依赖于直接的状态到动作模仿，而现有的世界模型往往与下游策略生成之间缺乏有效的对齐。我们引入了 Discrete-WAM，这是一个统一的离散视觉-动作世界-策略框架，它在共享的标记空间内表示视觉观测、未来状态、高层决策和自我动作。基于这种离散对齐，Discrete-WAM 通过多任务和多阶段预训练联合训练世界建模、世界策略建模和策略建模，从而使基于动作的未来预测能够直接支持策略生成。在下游规划方面，Discrete-WAM 进一步将策略生成分解为分层决策预测和并行动作标记编辑，其中决策标记提供高层规划框架，基于置信度的调度则有效地优化了密集的未来动作。在大规模自动驾驶基准测试上的实验表明，Discrete-WAM 在实现强大规划性能的同时，还支持可控的未来生成、反事实评估、基于惊奇度的世界模型分析以及高效的并行策略解码。这些结果表明，离散表示对齐、统一的世界-策略训练和分层标记编辑为物理人工智能提供了一种有前景的设计范式。</td>
+      <td style="width: 20%; vertical-align: top;">针对自动驾驶中世界建模与策略生成不匹配的问题，该论文提出了 Discrete-WAM 框架，将视觉观测、决策和动作统一在离散标记空间中。该方法通过联合预训练和分层标记编辑，实现了动作条件下的未来预测与高效的策略规划。实验证明，该方法在保持高性能规划的同时，具备了可控生成和高效解码等优势。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>4. IDOL: Inverse-Dynamics-Guided Future Prediction for End-to-End Autonomous Driving</strong><br><span>Chenghao Zhang, Timin Li, Dongmei Li</span></td>

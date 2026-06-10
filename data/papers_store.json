@@ -73,6 +73,44 @@
     "version": 1
   },
   {
+    "arxiv_id": "2606.05645v2",
+    "title": "Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning",
+    "authors": [
+      "Ziyang Yao",
+      "Haochen Liu",
+      "Yuncheng Jiang",
+      "Zeyu Zhu",
+      "Zibin Guo",
+      "Jingru Wang",
+      "Tianle Liu",
+      "Jianwei Cui",
+      "Kuiyuan Yang",
+      "Hongwei Xie",
+      "Jingwei Zhao",
+      "Guang Chen",
+      "Hangjun Ye"
+    ],
+    "published": "2026-06-04T03:16:31+00:00",
+    "updated": "2026-06-09T07:25:40+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.05645v2",
+    "pdf_url": "https://arxiv.org/pdf/2606.05645v2",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "Autonomous driving requires reasoning about how ego actions shape future world evolution, rather than merely mapping observations to actions. However, most end-to-end methods rely on direct state-to-action imitation, while existing world models often remain weakly aligned with downstream policy generation. We introduce Discrete-WAM, a unified discrete vision-action world-policy framework that represents visual observations, future states, high-level decisions, and ego actions within a shared token space. Built on this discrete alignment, Discrete-WAM jointly trains world modeling, world-policy modeling, and policy modeling through multi-task and multi-stage pretraining, allowing action-conditioned future prediction to directly support policy generation. For downstream planning, Discrete-WAM further decomposes policy generation into hierarchical decision prediction and parallel action-token editing, where the decision token provides a high-level planning skeleton and confidence-based scheduling refines dense future actions efficiently. Experiments on large-scale autonomous-driving benchmarks show that Discrete-WAM achieves strong planning performance while supporting controllable future generation, counterfactual evaluation, surprise-based world-model analysis, and efficient parallel policy decoding. These results suggest that discrete representation alignment, unified world-policy training, and hierarchical token editing provide a promising design paradigm for physical AI.",
+    "abstract_zh": "自动驾驶不仅需要将观测结果映射为动作，还需要推理自我行为如何塑造未来世界演变。然而，大多数端到端方法依赖于直接的状态到动作模仿，而现有的世界模型往往与下游策略生成之间缺乏有效的对齐。我们引入了 Discrete-WAM，这是一个统一的离散视觉-动作世界-策略框架，它在共享的标记空间内表示视觉观测、未来状态、高层决策和自我动作。基于这种离散对齐，Discrete-WAM 通过多任务和多阶段预训练联合训练世界建模、世界策略建模和策略建模，从而使基于动作的未来预测能够直接支持策略生成。在下游规划方面，Discrete-WAM 进一步将策略生成分解为分层决策预测和并行动作标记编辑，其中决策标记提供高层规划框架，基于置信度的调度则有效地优化了密集的未来动作。在大规模自动驾驶基准测试上的实验表明，Discrete-WAM 在实现强大规划性能的同时，还支持可控的未来生成、反事实评估、基于惊奇度的世界模型分析以及高效的并行策略解码。这些结果表明，离散表示对齐、统一的世界-策略训练和分层标记编辑为物理人工智能提供了一种有前景的设计范式。",
+    "summary_zh": "针对自动驾驶中世界建模与策略生成不匹配的问题，该论文提出了 Discrete-WAM 框架，将视觉观测、决策和动作统一在离散标记空间中。该方法通过联合预训练和分层标记编辑，实现了动作条件下的未来预测与高效的策略规划。实验证明，该方法在保持高性能规划的同时，具备了可控生成和高效解码等优势。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2606.05645",
+    "version": 2
+  },
+  {
     "arxiv_id": "2606.05645v1",
     "title": "Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning",
     "authors": [
