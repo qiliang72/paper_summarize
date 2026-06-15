@@ -1,5 +1,69 @@
 [
   {
+    "arxiv_id": "2606.14010v1",
+    "title": "RT-VLA: Real-Time Vision-Language-Action Models via Knowledge Distillation",
+    "authors": [
+      "Xiangyu Huang",
+      "Zhenlin Hua",
+      "Han Zhou",
+      "Shounak Sural",
+      "Ragunathan Rajkumar"
+    ],
+    "published": "2026-06-12T01:06:42+00:00",
+    "updated": "2026-06-12T01:06:42+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.14010v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.14010v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models have shown strong potential for end-to-end autonomous driving by jointly modeling visual perception, language reasoning, explainability and action prediction. However, their large vision-language backbones and reasoning modules introduce substantial inference latency and thereby prevent their deployment in the unforgiving reality of the road networks. We propose RT-VLA, a lightweight, distilled VLA model that transfers the driving and reasoning capabilities of the state-of-the-art SimLingo model into a compact student through multi-level supervised distillation. RT-VLA preserves language-based reasoning and supports post-hoc explanation through offline language analysis of safety-critical driving moments without adding latency to real-time control. Compared to the SimLingo teacher, RT-VLA maintains competitive closed-loop driving and language reasoning performance while reducing inference time by 44.8X in vision-only mode and 7.9X in vision+language mode. These results suggest that supervised distillation is a practical approach for building real-time, explainable VLA-style autonomous driving models.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型通过联合建模视觉感知、语言推理、可解释性和动作预测，在端到端自动驾驶方面展现出巨大潜力。然而，它们庞大的视觉-语言骨干网络和推理模块导致了严重的推理延迟，从而阻碍了其在复杂的道路网络环境中的实际部署。我们提出了 RT-VLA，这是一种轻量级的蒸馏 VLA 模型，它通过多级监督蒸馏将最先进的 SimLingo 模型的驾驶和推理能力转移到一个紧凑的学生模型中。RT-VLA 保留了基于语言的推理能力，并通过对安全关键驾驶时刻进行离线语言分析来支持事后解释，且不会增加实时控制的延迟。与 SimLingo 教师模型相比，RT-VLA 在保持具有竞争力的闭环驾驶和语言推理性能的同时，将纯视觉模式下的推理时间缩短了 44.8 倍，在视觉+语言模式下缩短了 7.9 倍。这些结果表明，监督蒸馏是构建实时、可解释的 VLA 式自动驾驶模型的实用方法。",
+    "summary_zh": "针对大型 VLA 模型在自动驾驶应用中推理延迟过高的问题，本文提出了 RT-VLA 轻量级模型。通过采用多级监督蒸馏技术，该模型成功将 SimLingo 的驾驶与推理能力转移至紧凑网络中，在显著降低推理延迟的同时，有效保证了闭环驾驶性能与可解释性。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "base_arxiv_id": "2606.14010",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2606.13840v1",
+    "title": "Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models",
+    "authors": [
+      "Senkang Hu",
+      "Zhengru Fang",
+      "Yihang Tao",
+      "Zihan Fang",
+      "Sam Tak Wu Kwong",
+      "Yuguang Fang"
+    ],
+    "published": "2026-06-11T19:10:13+00:00",
+    "updated": "2026-06-11T19:10:13+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.13840v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.13840v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "abstract_en": "Autonomous driving is shifting from isolated vehicle intelligence toward multi-agent embodied systems that share perception, infer intent, and coordinate action under uncertainty. This survey examines this transition through the lens of Shared World Models (SWMs): predictive cross-agent representations maintained across vehicles, infrastructure, and other traffic participants. We review more than 380 publications spanning vehicle-to-everything (V2X) communication, collaborative perception, inter-agent cognition, cooperative planning, end-to-end cooperative driving, and simulation and data engines for closed-loop validation. The organizing question is how exchanged observations become aligned state, intent-aware interaction, and coordinated downstream action. Across the surveyed literature, evaluation remains concentrated in simulation, curated benchmarks, and offline protocols. Foundation-model-based coordination also lacks verified real-time safety guarantees in open traffic. These gaps motivate key research priorities for multi-agent embodied autonomous driving (MAEAD): verifiable shared-state maintenance, robust intent and plan alignment, and safe coordinated action under communication, latency, and deployment constraints.",
+    "abstract_zh": "自动驾驶正从孤立的车辆智能转向多智能体具身系统，这些系统在不确定性下共享感知、推断意图并协调行动。本综述通过共享世界模型（SWMs）的视角审视了这一转变，即车辆、基础设施和其他交通参与者之间维护的预测性跨智能体表征。我们回顾了超过380篇文献，涵盖车联网（V2X）通信、协作感知、智能体间认知、协同规划、端到端协同驾驶，以及用于闭环验证的仿真和数据引擎。核心问题是如何将交换的观测结果转化为对齐的状态、感知意图的交互以及协调的后续行动。在所调查的文献中，评估仍集中在仿真、精选基准测试和离线协议中。基于基础模型的协调在开放交通中也缺乏经过验证的实时安全保障。这些差距促成了多智能体具身自动驾驶（MAEAD）的关键研究重点：可验证的共享状态维护、稳健的意图与规划对齐，以及在通信、延迟和部署约束下的安全协调行动。",
+    "summary_zh": "该论文综述了多智能体具身自动驾驶领域，探讨了从车联网通信向共享世界模型（SWMs）的演进。研究分析了协作感知与规划的技术现状，并指出了当前方法在实时安全保障和评估协议方面的局限性，为未来可验证的共享状态与稳健协同研究指明了方向。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2606.13840",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.07464v1",
     "title": "Planning-aligned Token Compression for Long-Context Autonomous Driving",
     "authors": [
