@@ -1,5 +1,75 @@
 [
   {
+    "arxiv_id": "2606.16480v1",
+    "base_arxiv_id": "2606.16480",
+    "version": 1,
+    "title": "HOLO-MPPI: Multi-Scenario Motion Planning via Hierarchical Policy Optimization",
+    "authors": [
+      "Youngjae Min",
+      "Jovin D'sa",
+      "Faizan M. Tariq",
+      "David Isele",
+      "Navid Azizan",
+      "Sangjae Bae"
+    ],
+    "published": "2026-06-15T09:49:14+00:00",
+    "updated": "2026-06-15T09:49:14+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.16480v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.16480v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "eess.SY"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "RL"
+    ],
+    "abstract_en": "Robots deployed in the real world must plan motions across diverse scenarios without per-scenario retuning. End-to-end reinforcement learning (RL) can generalize across scenarios but often becomes brittle under distribution shift, reward misspecification, and stochastic interactions. Model predictive path integral (MPPI) control enables strong real-time refinement without gradients, but its performance depends on a well-shaped sampling prior, while manually designing the priors does not scale to multi-scenario deployment. We present HOLO-MPPI (High-level Offline, Low-level Online MPPI), a multi-scenario motion planning framework that combines high-level policy learning with low-level stochastic optimal control. Offline, we learn a high-level policy that proposes scenario-robust plans in an abstract action space, with a learned world model for online rollout. Online, the policy serves as a data-driven prior generator that parameterizes MPPI's sampling distribution conditioned on the current observation and goal. MPPI then optimizes low-level control sequences around this prior in real time to adapt to local disturbances. We instantiate HOLO-MPPI in autonomous driving by designing an effective high-level action space and tailored model architectures. Our evaluation across diverse driving scenarios shows that HOLO-MPPI improves upon MPPI and end-to-end RL baselines while maintaining real-time control.",
+    "abstract_zh": "部署在现实世界中的机器人必须能够在无需针对每个场景重新调整的情况下，跨多种场景规划运动。端到端强化学习（RL）可以跨场景泛化，但在分布偏移、奖励设定错误和随机交互下往往变得脆弱。模型预测路径积分（MPPI）控制可以在无需梯度的情况下实现强大的实时优化，但其性能取决于良好的采样先验，而手动设计先验无法扩展到多场景部署。我们提出了 HOLO-MPPI（高层离线，底层在线 MPPI），这是一个将高层策略学习与底层随机最优控制相结合的多场景运动规划框架。离线时，我们学习一个高层策略，在抽象动作空间中提出稳健的场景规划，并结合学习到的世界模型进行在线演练。在线时，该策略作为数据驱动的先验生成器，根据当前观测和目标对 MPPI 的采样分布进行参数化。随后，MPPI 在此先验周围实时优化底层控制序列，以适应局部干扰。我们通过设计有效的高层动作空间和定制的模型架构，将 HOLO-MPPI 应用于自动驾驶。在各种驾驶场景中的评估表明，HOLO-MPPI 在保持实时控制的同时，超越了 MPPI 和端到端 RL 基准。",
+    "summary_zh": "针对机器人多场景运动规划中通用性与鲁棒性的挑战，本文提出了 HOLO-MPPI 框架。该方法结合了离线高层策略学习与在线 MPPI 随机最优控制，利用高层策略生成自适应采样先验，实现了对局部环境干扰的实时优化。实验证明，该框架在自动驾驶任务中显著提升了规划性能与泛化能力。"
+  },
+  {
+    "arxiv_id": "2606.16274v1",
+    "base_arxiv_id": "2606.16274",
+    "version": 1,
+    "title": "GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving",
+    "authors": [
+      "Ziying Song",
+      "Caiyan Jia",
+      "Lin Liu",
+      "Lei Yang",
+      "Shengkai Zhang",
+      "Feiyang Jia",
+      "Fengda Zhao",
+      "Peiliang Wu",
+      "Shaoqing Xu",
+      "Chen Lv",
+      "Yadan Luo"
+    ],
+    "published": "2026-06-15T06:26:46+00:00",
+    "updated": "2026-06-15T06:26:46+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.16274v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.16274v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "End-to-end autonomous driving has made significant progress by unifying perception, prediction, and planning within a single learning framework, achieving strong performance in short-horizon decision making. However, most existing E2E-AD methods remain confined to short-horizon planning and lack the ability to model long-term temporal dependencies, which severely limits their generalization and security in complex and highly interactive driving scenarios. In this work, we propose GraphWorld, an E2E-AD framework that explicitly enhances long-horizon planning through latent world modeling. We introduce an Ego-Centric Interaction Graph, which adaptively models critical neighboring agents based on spatial proximity, and propagates relational context to planning queries via cross-node cross-attention. We present a World-State-Conditioned Planning that learns ego-centric latent world representations by modeling interactions between an ego vehicle and surrounding agents. This latent world state captures key interaction dynamics and safety-relevant semantics, and serves as a conditioning signal to guide long-horizon, safety-aware trajectory planning. Extensive experiments on Bench2Drive, NAVSIMv1/2, and nuScenes demonstrate that GraphWorld significantly reduces collision rates and improves long-horizon planning performance, validating its effectiveness in complex driving environments.",
+    "abstract_zh": "端到端自动驾驶通过在单一学习框架内统一感知、预测和规划，在短视界决策方面取得了显著进展。然而，大多数现有的端到端自动驾驶方法仍局限于短视界规划，缺乏对长期时间依赖性的建模能力，这严重限制了其在复杂且高度交互的驾驶场景中的泛化能力和安全性。在这项工作中，我们提出了 GraphWorld，这是一个通过潜在世界模型明确增强长视界规划的端到端自动驾驶框架。我们引入了以自我为中心的交互图，基于空间邻近性自适应地建模关键相邻代理，并通过跨节点交叉注意力将关系上下文传播到规划查询中。我们提出了世界状态条件规划，通过建模自车与周围代理之间的交互来学习以自我为中心的潜在世界表征。这种潜在世界状态捕捉了关键的交互动力学和与安全相关的语义，并作为条件信号来指导长视界、具有安全意识的轨迹规划。在 Bench2Drive、NAVSIMv1/2 和 nuScenes 上的大量实验表明，GraphWorld 显著降低了碰撞率并提高了长视界规划性能，验证了其在复杂驾驶环境中的有效性。",
+    "summary_zh": "针对端到端自动驾驶在长视界规划和长期交互建模上的不足，本文提出了 GraphWorld 框架。该方法通过构建以自我为中心的交互图和学习潜在世界状态，有效捕捉关键交互动态并指导安全轨迹规划。实验证明，该框架在多个基准测试中显著提升了长视界规划性能并降低了碰撞率。"
+  },
+  {
     "arxiv_id": "2606.14010v1",
     "base_arxiv_id": "2606.14010",
     "version": 1,
