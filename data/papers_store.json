@@ -1,5 +1,77 @@
 [
   {
+    "arxiv_id": "2606.17386v1",
+    "title": "TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations",
+    "authors": [
+      "Zikang Xiong",
+      "Weixin Li",
+      "Zhouchonghao Wu",
+      "Akshay Rangesh",
+      "Saarth Bonde",
+      "Grantland Hall",
+      "Chen Tang",
+      "Yihan Hu",
+      "Wei Zhan"
+    ],
+    "published": "2026-06-16T00:45:01+00:00",
+    "updated": "2026-06-16T00:45:01+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.17386v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.17386v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "abstract_en": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all stages: collecting and labeling millions of driving frames is costly, and closed-loop RL on images is bottlenecked by the per-step cost of photorealistic rendering plus a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: millions of rollout steps per second, and a state distribution naturally rich in collisions, near-misses, and recoveries that no driving log contains. Our approach exploits this asymmetry by decoupling learning to drive from learning to see. We pretrain a single policy by self-play, then align its latent space with a pretrained vision backbone, through the action KL divergence and a batch-relational low-rank structural loss. The action target comes from the self-play policy, so alignment never supervises against a logged trajectory: a paired dataset of (image, scene-state) frames suffices, with no need for the curated expert demonstrations that imitation pretraining is built on. On photorealistic 3D Gaussian splatting closed-loop scenarios, the resulting end-to-end policy matches or exceeds prior end-to-end methods.",
+    "abstract_zh": "端到端自动驾驶在基准测试和实际部署中均已实现顶尖性能。然而，其标准的训练方案在各个阶段的成本均较高：收集和标注数百万帧驾驶数据耗资巨大，而基于图像的闭环强化学习又受限于照片级真实渲染及大型视觉主干网络的单步推理成本。在向量化模拟器中进行的自我博弈改变了这一经济性：每秒可完成数百万次 rollout，且状态分布自然涵盖了驾驶日志中不存在的碰撞、险情及恢复场景。我们的方法通过解耦“驾驶学习”与“感知学习”来利用这种不对称性。我们首先通过自我博弈预训练一个单一策略，然后通过动作 KL 散度及批量关系低秩结构损失，将其潜在空间与预训练的视觉主干网络对齐。动作目标源自自我博弈策略，因此对齐过程无需依赖带标注的轨迹数据。仅需成对的（图像，场景状态）数据集即可，无需模拟预训练所必需的精选专家演示数据。在基于 3D 高斯溅射的照片级真实感闭环场景中，所生成的端到端策略达到了或超过了先前的端到端方法。",
+    "summary_zh": "针对端到端自动驾驶训练对高质量专家数据依赖性强、成本高昂的问题，该论文提出一种名为 TerraTransfer 的方法。该方法通过在向量化模拟器中进行自我博弈预训练驾驶策略，并利用潜在空间对齐技术将其迁移至视觉主干网络，从而在无需专家演示的情况下实现了高效的端到端学习。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "base_arxiv_id": "2606.17386",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2606.17362v1",
+    "title": "DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models",
+    "authors": [
+      "Xinglong Sun",
+      "Kevin Xie",
+      "Jenny Schmalfuss",
+      "Despoina Paschalidou",
+      "Xiuming Zhang",
+      "Sanja Fidler",
+      "Kashyap Chitta",
+      "Jose M. Alvarez"
+    ],
+    "published": "2026-06-15T23:39:36+00:00",
+    "updated": "2026-06-15T23:39:36+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.17362v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.17362v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "abstract_en": "Autonomous driving has shifted towards end-to-end policy learning, where reliable, interpretable policy evaluation is a fundamental challenge as driving quality is highly context-dependent. Commonly used rule-based driving metrics like EPDMS are interpretable but lack context-awareness, while recent VLMbased evaluations are context-aware but limited by ambiguous VLM outputs and weak physical grounding. To evaluate driving in a manner that is both interpretable and context-aware, we introduce DriveJudge. DriveJudge is a driving evaluation agent that combines rule-grounded evaluation with Vision-Language Model (VLM) reasoning and selectively invokes physically-grounded deterministic rule functions after interpreting the environmental context. To train and evaluate DriveJudge, we curate a large-scale dataset of 33,577 challenging driving samples with human annotations on whether the driving behavior is reasonable in the given scenario. With this dataset, we address the underexplored problem of driving metric evaluation, and introduce two human-aligned benchmark tasks: Driving Quality Classification and Trajectory Preference Selection. DriveJudge outperforms EPDMS for driving quality classification by 21.23 AUC, and the recent VLM-based DriveCritic for trajectory preference selection by 6.5%, setting a new standard for interpretable and precise driving evaluation.",
+    "abstract_zh": "自动驾驶已转向端到端策略学习，由于驾驶质量高度依赖于场景，因此可靠且可解释的策略评估成为一项基础性挑战。常用的基于规则的驾驶指标（如 EPDMS）虽具可解释性但缺乏对情境的感知，而近期基于视觉语言模型（VLM）的评估方法虽然具备情境感知能力，却受限于 VLM 输出的模糊性和物理基础薄弱的问题。为了实现既具可解释性又具备情境感知的驾驶评估，我们提出了 DriveJudge。DriveJudge 是一款驾驶评估代理，它将基于规则的评估与视觉语言模型推理相结合，在解读环境背景后选择性地调用具备物理基础的确定性规则函数。为了训练和评估 DriveJudge，我们策划了一个包含 33,577 个具有挑战性的驾驶样本的大规模数据集，并附有人类对给定场景下驾驶行为是否合理的标注。基于该数据集，我们探讨了驾驶指标评估这一尚未充分研究的问题，并引入了两项符合人类价值观的基准任务：驾驶质量分类和轨迹偏好选择。实验结果显示，DriveJudge 在驾驶质量分类方面较 EPDMS 提升了 21.23 的 AUC 值，在轨迹偏好选择方面较近期基于 VLM 的 DriveCritic 提升了 6.5%，为可解释且精确的驾驶评估设定了新标准。",
+    "summary_zh": "针对现有自动驾驶评估方法在可解释性与情境感知之间的权衡难题，本文提出了 DriveJudge 评估代理，通过结合 VLM 推理与物理规则约束来实现更精准的评估。研究团队构建了一个大规模人工标注数据集，并在驾驶质量分类与轨迹偏好选择任务上验证了该方法优于现有基准的性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2606.17362",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.16480v1",
     "title": "HOLO-MPPI: Multi-Scenario Motion Planning via Hierarchical Policy Optimization",
     "authors": [
