@@ -1,5 +1,102 @@
 [
   {
+    "arxiv_id": "2606.20274v1",
+    "title": "Lagrange: An Open-Vocabulary, Energy-Based Sparse Framework for Generalized End-to-End Driving",
+    "authors": [
+      "Shihao Ji",
+      "HongXi Li",
+      "Zihui Song",
+      "Mingyu Li"
+    ],
+    "published": "2026-06-18T14:18:01+00:00",
+    "updated": "2026-06-18T14:18:01+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.20274v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.20274v1",
+    "arxiv_categories": [
+      "cs.AI"
+    ],
+    "abstract_en": "Scaling end-to-end autonomous driving to complex, open-world environments requires perceptual models that generalize to anomalous scenarios and planners that produce kinematically valid trajectories. Existing paradigms face a distinct dichotomy between representational efficiency and generalization capacity. Dense models (e.g., occupancy networks), while geometrically robust, incur critical computational bottlenecks and struggle with high-level semantic reasoning. Conversely, sparse, query-based planners are efficient but reliant on closed-set definitions, rendering them vulnerable to out-of-distribution (OOD) events. Although recent Vision-Language-Action (VLA) models offer open-vocabulary reasoning, their autoregressive, discrete token generation fundamentally conflicts with the continuous, high-frequency control requirements of vehicle dynamics. To address this, we propose Lagrange, an open-vocabulary, computationally sparse driving framework based on Masked Latent Fields (MLF). Rather than relying on dense volumetric reconstructions or closed-set query mechanisms, Lagrange exploits Vision-Language Models (VLMs) to encode class-agnostic object proposals into continuous semantic visual tokens. We introduce an intent-driven masked cross-attention module that temporally filters irrelevant entities, decoding the attended tokens into an implicit continuous energy field defined over spatial coordinates. By framing decision-making as a Lagrangian action minimization problem spanning this energy field, we enforce strict compliance with vehicle kinematics while executing collision avoidance. Extensive offline evaluations on both standard (nuScenes) and long-tail (CODA) benchmarks demonstrate that Lagrange establishes a promising framework for robust, interpretable, and kinematically feasible open-world autonomy.",
+    "abstract_zh": "将端到端自动驾驶扩展到复杂的开放世界环境，需要感知模型能够推广到异常场景，并需要规划器生成运动学上有效的轨迹。现有的范式在表征效率和泛化能力之间面临明显的二分法。稠密模型（如占用网络）虽然在几何上很鲁棒，但会导致关键的计算瓶颈，并且难以进行高级语义推理。相反，稀疏的、基于查询的规划器虽然高效，但依赖于封闭集的定义，这使其容易受到分布外（OOD）事件的影响。尽管最近的视觉-语言-动作（VLA）模型提供了开放词汇的推理能力，但它们的自回归、离散令牌生成方式与车辆动力学对连续、高频控制的要求存在根本冲突。为了解决这个问题，我们提出了 Lagrange，一个基于掩码潜在场（MLF）的开放词汇、计算稀疏的驾驶框架。Lagrange 不依赖稠密的体积重建或封闭集查询机制，而是利用视觉-语言模型（VLM）将与类别无关的对象提议编码为连续的语义视觉令牌。我们引入了一个意图驱动的掩码交叉注意力模块，用于在时间上过滤不相关的实体，将注意力令牌解码为定义在空间坐标上的隐式连续能量场。通过将决策问题框定为跨越该能量场的拉格朗日作用量最小化问题，我们在执行避障的同时强制执行对车辆运动学的严格遵从。在标准（nuScenes）和长尾（CODA）基准测试上的广泛离线评估表明，Lagrange 为稳健、可解释且运动学上可行的开放世界自动驾驶建立了一个有前景的框架。",
+    "summary_zh": "针对端到端自动驾驶在计算效率与泛化能力间的平衡难题，本文提出了基于掩码潜在场（MLF）的 Lagrange 框架。该方法利用视觉-语言模型处理开放词汇语义，并通过拉格朗日作用量最小化将决策过程转化为连续能量场优化。实验表明，该方法在保持计算稀疏性的同时，有效提升了复杂场景下自动驾驶的运动学可行性与稳健性。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2606.20274",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2606.19641v1",
+    "title": "Scaling Self-Play for End-to-End Driving",
+    "authors": [
+      "Luke Rowe",
+      "Roger Girgis",
+      "Rodrigue de Schaetzen",
+      "Daphne Cornelisse",
+      "Alaap Grandhi",
+      "Felix Heide",
+      "Eugene Vinitsky",
+      "Christopher Pal",
+      "Liam Paull"
+    ],
+    "published": "2026-06-17T22:39:11+00:00",
+    "updated": "2026-06-17T22:39:11+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.19641v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.19641v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "abstract_en": "End-to-end autonomous driving models are typically trained on offline human-demonstration datasets that provide limited state coverage and often no closed-loop feedback, making them prone to compounding errors when deployed in closed-loop and brittle to long-tail agent interactions. To overcome these limitations, we propose an alternative strategy for training end-to-end driving models: large-scale self-play directly from pixels in simulation. While prior self-play approaches have shown promising transfer to real-world driving, they typically assume vectorized Bird's-Eye-View (BEV) observations that are incompatible with end-to-end policies operating directly on sensor observations. To this end, we introduce Gigapixel, a high-throughput batched driving simulator with perspective rendering, enabling scalable self-play directly from pixel observations. Rather than targeting compute-costly photorealistic sensor simulation, Gigapixel renders a simplified bounding-box world that preserves essential scene structure while achieving throughput at 50k agent steps per second. Since direct pixel-space self-play RL is prohibitively sample-inefficient at end-to-end model scale, we propose self-play DAgger training: we train pixel-based policies in self-play via on-policy distillation from a privileged RL teacher. To bridge the sim-to-real gap, we subsequently transfer the self-play trained policies to real-world sensor data through lightweight perception adaptation. Policies trained in Gigapixel and adapted to real-world sensor data achieve competitive performance on the HUGSIM and NAVSIM-v2 benchmarks without human trajectory supervision. Moreover, scaling self-play training yields proportional gains in policy performance, establishing self-play as a practical and scalable strategy for training end-to-end models.",
+    "abstract_zh": "端到端自动驾驶模型通常基于线下人类演示数据集进行训练，这类数据集提供的状态覆盖有限，且往往缺乏闭环反馈，导致模型在闭环部署时容易产生累积误差，且难以应对长尾交互。为克服这些局限，我们提出了一种替代策略：在大规模仿真环境中进行直接基于像素的端到端驾驶模型自我博弈训练。尽管此前的自我博弈方法已在迁移至真实驾驶方面表现出潜力，但它们通常假设使用矢量化的鸟瞰图（BEV）观测，这与直接处理传感器观测的端到端策略不兼容。为此，我们引入了 Gigapixel，这是一个具备透视渲染功能的高吞吐量批量驾驶模拟器，实现了直接基于像素观测的可扩展自我博弈。Gigapixel 不追求计算成本高昂的逼真传感器模拟，而是渲染简化的边界框世界，在保留必要场景结构的同时，实现了每秒 5 万个智能体步数的吞吐量。由于直接在像素空间进行自我博弈强化学习在端到端模型规模下采样效率极低，我们提出了自我博弈 DAgger 训练方法：通过从特权强化学习教师模型进行在线策略蒸馏，在自我博弈中训练基于像素的策略。为了弥合仿真与现实之间的差距，我们随后通过轻量级的感知适配将自我博弈训练的策略迁移至真实世界的传感器数据中。在 Gigapixel 中训练并适配真实传感器数据的策略，在没有人类轨迹监督的情况下，于 HUGSIM 和 NAVSIM-v2 基准测试中取得了具有竞争力的表现。此外，扩展自我博弈训练带来了策略性能的同步提升，证明了自我博弈是训练端到端模型的一种实用且可扩展的策略。",
+    "summary_zh": "针对端到端自动驾驶模型在离线数据训练中存在的状态覆盖不足及闭环反馈缺失问题，本文提出了大规模基于像素的自我博弈训练方法。通过开发高吞吐量的 Gigapixel 模拟器并结合自我博弈 DAgger 蒸馏训练，模型实现了在无需人类监督下的高效学习。该研究证明了自我博弈策略在提升自动驾驶端到端模型性能方面的实用性与可扩展性。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation",
+      "RL"
+    ],
+    "base_arxiv_id": "2606.19641",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2606.19632v1",
+    "title": "Formal Verification of Learned Multi-Agent Communication Policies via Decision Tree Distillation",
+    "authors": [
+      "Ahmad Farooq",
+      "Kamran Iqbal"
+    ],
+    "published": "2026-06-17T22:22:28+00:00",
+    "updated": "2026-06-17T22:22:28+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.19632v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.19632v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG",
+      "cs.LO",
+      "cs.MA"
+    ],
+    "abstract_en": "Multi-agent reinforcement learning (MARL) enables agents to develop coordination strategies through emergent communication, but neural policies lack the formal safety guarantees required for safety-critical robotic deployment in drone swarms and autonomous vehicle fleets. We present the first end-to-end framework for safety verification of learned multi-agent communication policies through policy abstraction: neural policies are distilled into interpretable decision trees, then formally verified, with empirical validation confirming that verified safety properties transfer to original networks. Our four-stage pipeline consists of domain-specific feature extraction from agent observations, decision tree distillation achieving 97.9% +/- 1.2% fidelity to neural policies, automated translation to PRISM probabilistic model checker specifications with complete feature-to-state-variable correspondence, and compositional verification of Probabilistic Computation Tree Logic (PCTL) properties via pairwise decomposition with union-bound aggregation and empirical neighbor modeling. Evaluating Vector-Quantized Variational Information Bottleneck (VQ-VIB) policies for multi-drone coordination with 5-7 agents, we verify 18 temporal logic properties across safety, liveness, and cooperation, achieving 88.9% property satisfaction with all five safety thresholds satisfied (0.3% collision probability vs. 1% threshold). Monte Carlo validation of original neural policies confirms that verified safety properties transfer with <=0.6 percentage-point deviation (95% CI). Discrete VQ-VIB messages provide +11.6 to +13.6 percentage-point fidelity advantages over continuous methods, enabling 3-4x faster verification. Our framework provides empirically validated safety verification for distilled policy abstractions, serving as a practical bridge between deep MARL and formal safety workflows for multi-robot deployment.",
+    "abstract_zh": "多智能体强化学习（MARL）使智能体能够通过涌现通信发展协作策略，但神经策略缺乏无人机群和自动驾驶车队等安全关键型机器人部署所需的正式安全保障。我们提出了首个通过策略抽象对学习到的多智能体通信策略进行安全验证的端到端框架：将神经策略蒸馏为可解释的决策树，随后进行形式化验证，实证分析确认了验证后的安全属性可以迁移回原始网络。我们的四阶段流程包括从智能体观测中提取领域特定特征、实现与神经策略保真度达 97.9% +/- 1.2% 的决策树蒸馏、自动翻译为具有完整特征到状态变量对应关系的 PRISM 概率模型检查器规范，以及通过成对分解、联合边界聚合和经验邻居建模进行的概率计算树逻辑（PCTL）属性组合验证。在评估 5-7 个智能体协作的矢量量化变分信息瓶颈（VQ-VIB）策略时，我们验证了 18 个涉及安全、活性和协作的时序逻辑属性，属性满足度达到 88.9%，并满足所有五个安全阈值（碰撞概率为 0.3%，阈值为 1%）。对原始神经策略的蒙特卡洛验证证实，验证后的安全属性迁移偏差小于等于 0.6 个百分点（95% 置信区间）。离散 VQ-VIB 消息相较于连续方法在保真度上具有 11.6 到 13.6 个百分点的优势，并使验证速度提升 3-4 倍。我们的框架为蒸馏策略抽象提供了经过实证验证的安全保障，成为深度 MARL 与多机器人部署正式安全工作流之间的实用桥梁。",
+    "summary_zh": "针对多智能体强化学习策略缺乏安全保障的问题，本文提出了一种通过决策树蒸馏将神经策略转换为可解释模型并进行形式化验证的框架。该方法通过将策略抽象为决策树并结合概率模型检测，在无人机协作任务中实现了高效的属性验证。实验证明，该方法不仅能保证高保真度，还成功将安全属性迁移至原始网络，为复杂多机器人系统的安全部署提供了有效手段。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation",
+      "RL"
+    ],
+    "base_arxiv_id": "2606.19632",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.17386v1",
     "title": "TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations",
     "authors": [
