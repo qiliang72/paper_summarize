@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-06-22 21:56 UTC
+Generated: 2026-06-23 21:25 UTC
 
 当前展示 127 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -31,10 +31,10 @@ Generated: 2026-06-22 21:56 UTC
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>2. Scaling Self-Play for End-to-End Driving</strong><br><span>Luke Rowe, Roger Girgis, Rodrigue de Schaetzen, Daphne Cornelisse, Alaap Grandhi, Felix Heide, Eugene Vinitsky, Christopher Pal, Liam Paull</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-06-17</div><div>2026-06-17</div><div><a href="http://arxiv.org/abs/2606.19641v1">2606.19641v1</a> / <a href="https://arxiv.org/pdf/2606.19641v1">PDF</a></div><div>cs.RO, cs.CV</div></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-06-17</div><div>2026-06-19</div><div><a href="http://arxiv.org/abs/2606.19641v2">2606.19641v2</a> / <a href="https://arxiv.org/pdf/2606.19641v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2606.19641v1">v1</a></div><div>cs.RO, cs.CV</div></td>
       <td style="width: 10%; vertical-align: top;">distillation, RL</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶模型通常基于线下人类演示数据集进行训练，这类数据集提供的状态覆盖有限，且往往缺乏闭环反馈，导致模型在闭环部署时容易产生累积误差，且难以应对长尾交互。为克服这些局限，我们提出了一种替代策略：在大规模仿真环境中进行直接基于像素的端到端驾驶模型自我博弈训练。尽管此前的自我博弈方法已在迁移至真实驾驶方面表现出潜力，但它们通常假设使用矢量化的鸟瞰图（BEV）观测，这与直接处理传感器观测的端到端策略不兼容。为此，我们引入了 Gigapixel，这是一个具备透视渲染功能的高吞吐量批量驾驶模拟器，实现了直接基于像素观测的可扩展自我博弈。Gigapixel 不追求计算成本高昂的逼真传感器模拟，而是渲染简化的边界框世界，在保留必要场景结构的同时，实现了每秒 5 万个智能体步数的吞吐量。由于直接在像素空间进行自我博弈强化学习在端到端模型规模下采样效率极低，我们提出了自我博弈 DAgger 训练方法：通过从特权强化学习教师模型进行在线策略蒸馏，在自我博弈中训练基于像素的策略。为了弥合仿真与现实之间的差距，我们随后通过轻量级的感知适配将自我博弈训练的策略迁移至真实世界的传感器数据中。在 Gigapixel 中训练并适配真实传感器数据的策略，在没有人类轨迹监督的情况下，于 HUGSIM 和 NAVSIM-v2 基准测试中取得了具有竞争力的表现。此外，扩展自我博弈训练带来了策略性能的同步提升，证明了自我博弈是训练端到端模型的一种实用且可扩展的策略。</td>
-      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶模型在离线数据训练中存在的状态覆盖不足及闭环反馈缺失问题，本文提出了大规模基于像素的自我博弈训练方法。通过开发高吞吐量的 Gigapixel 模拟器并结合自我博弈 DAgger 蒸馏训练，模型实现了在无需人类监督下的高效学习。该研究证明了自我博弈策略在提升自动驾驶端到端模型性能方面的实用性与可扩展性。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶模型通常基于离线人类演示数据集进行训练，这些数据集不仅状态覆盖范围有限，且往往缺乏闭环反馈，导致模型在闭环部署时容易出现累积误差，且对长尾代理交互表现脆弱。为克服这些局限性，我们提出了一种训练端到端驾驶模型的新策略：在仿真中直接从像素进行大规模自我博弈。尽管先前的自我博弈方法已在自动驾驶的真实迁移方面表现出潜力，但它们通常依赖于矢量化的鸟瞰图（BEV）观测，这与直接处理传感器观测的端到端策略不兼容。为此，我们引入了 Gigapixel，这是一个具有透视渲染功能的高吞吐量批量驾驶仿真器，支持直接从像素观测进行可扩展的自我博弈。Gigapixel 不追求计算成本高昂的真实感传感器仿真，而是渲染保留关键场景结构的简化包围盒世界，实现了每秒 5 万步代理交互的吞吐量。由于直接在像素空间进行自我博弈强化学习对于端到端模型而言样本效率极低，我们提出了自我博弈 DAgger 训练方法：通过特权强化学习教师的策略蒸馏，在自我博弈中训练基于像素的策略。为了弥合仿真与现实的差距，我们随后通过轻量级的感知适配将训练好的自我博弈策略迁移到真实世界的传感器数据上。在 Gigapixel 中训练并适配到真实传感器数据的策略，在没有人类轨迹监督的情况下，于 HUGSIM 和 NAVSIM-v2 基准测试中达到了具有竞争力的性能。此外，扩展自我博弈训练可带来模型性能的成比例提升，证明了自我博弈是训练端到端模型的一种实用且可扩展的策略。</td>
+      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶模型在离线训练中存在的闭环鲁棒性差与长尾问题，本文提出了 Gigapixel 仿真器以支持大规模像素级自我博弈训练。通过引入基于特权强化学习教师的自我博弈 DAgger 训练与轻量级感知适配，该方法在无需人类监督的情况下实现了在基准测试上的优异表现，并验证了自我博弈在端到端驾驶模型中的可扩展性。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>3. Formal Verification of Learned Multi-Agent Communication Policies via Decision Tree Distillation</strong><br><span>Ahmad Farooq, Kamran Iqbal</span></td>
