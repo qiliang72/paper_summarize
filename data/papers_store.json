@@ -1,5 +1,40 @@
 [
   {
+    "arxiv_id": "2606.25509v1",
+    "title": "ASSCG: Just-Right Gating over Chattering for Fast-Slow LLM Planning in Autonomous Driving",
+    "authors": [
+      "Sining Ang",
+      "Yuan Chen",
+      "Liu Haiyan",
+      "Xuanyao Mao",
+      "Jason Bao",
+      " Xuliang",
+      "Bingchuan Sun",
+      "Yan Wang"
+    ],
+    "published": "2026-06-24T07:44:51+00:00",
+    "updated": "2026-06-24T07:44:51+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.25509v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.25509v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "abstract_en": "Large language models (LLMs) can improve autonomous driving planning but are costly to query online, and existing fast-slow planners often rely on hand-designed triggering rules that either over-call the slow system or call it at the wrong times. We formulate slow-system invocation as a resource-aware sequential decision problem and propose the Adaptive Slow-System Control Gate (ASSCG), which makes frame-level Query/Cache/Drop decisions to refresh, reuse, or suppress slow guidance. ASSCG uses an RWKV backbone for efficient long-horizon gating and is trained with supervised fine-tuning followed by GRPO-style compute-aware reinforcement fine-tuning. We apply ASSCG to two different fast-slow architectures: (i) AsyncDriver on nuPlan Hard20 closed-loop evaluation, where ASSCG improves score to 67.28 (+2.28) while reducing average end-to-end inference latency by 60%; and (ii) a RecogDrive-based dual system that we build by replacing its original VLM-2B module with a lightweight ViT-based fast planner and adding an LLM slow planner, evaluated on NAVSIM, where ASSCG achieves 91.4 PDMS (+0.6) and increases average speed by 25%. The project page, including video visualizations and additional results, is available at https://williamxuanyu.github.io/asscg/.",
+    "abstract_zh": "大语言模型（LLM）能够改善自动驾驶规划，但在线查询成本高昂；现有的快慢规划器往往依赖人工设计的触发规则，导致慢速系统调用过度或时机不当。我们将慢速系统调用建模为一个资源感知的序列决策问题，并提出了自适应慢速系统控制门（ASSCG），它能在帧级别做出查询/缓存/丢弃的决策，以决定刷新、重用或抑制慢速指导。ASSCG 使用 RWKV 主干网络进行高效的长程门控，并经过监督微调及后续的 GRPO 风格计算感知强化微调训练。我们将 ASSCG 应用于两种快慢架构：(i) 在 nuPlan Hard20 闭环评估中，ASSCG 将 AsyncDriver 的得分提升至 67.28（+2.28），同时将端到端平均推理延迟降低了 60%；(ii) 在基于 RecogDrive 的双系统评估中，我们将原始 VLM-2B 模块替换为轻量级 ViT 快速规划器并添加 LLM 慢速规划器，在 NAVSIM 上取得了 91.4 的 PDMS（+0.6）并将平均速度提升了 25%。项目页面（含视频可视化和额外结果）见 https://williamxuanyu.github.io/asscg/。",
+    "summary_zh": "针对自动驾驶中大模型规划成本高且触发机制僵化的问题，本文提出了 ASSCG 框架，将慢速系统的调用建模为资源感知决策问题。通过使用基于 RWKV 的门控机制并结合强化学习训练，该方法在保持自动驾驶规划性能的同时，显著降低了计算延迟并提升了推理效率。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "RL"
+    ],
+    "base_arxiv_id": "2606.25509",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.20274v1",
     "title": "Lagrange: An Open-Vocabulary, Energy-Based Sparse Framework for Generalized End-to-End Driving",
     "authors": [
