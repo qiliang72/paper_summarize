@@ -1,5 +1,34 @@
 [
   {
+    "arxiv_id": "2606.26858v1",
+    "title": "PlanRL: A Trajectory Planning Architecture for Reinforcement Learning-based Driving Experts",
+    "authors": [
+      "Joonhee Lim",
+      "Yongjae Lee",
+      "Jangho Shin",
+      "Dongsuk Kum"
+    ],
+    "published": "2026-06-25T10:42:15+00:00",
+    "updated": "2026-06-25T10:42:15+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2606.26858v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.26858v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "Reinforcement learning (RL) has become a prominent framework for developing driving experts in autonomous vehicles. However, most existing RL-based experts are designed to output direct control commands (e.g., throttle, steering), which suffer from a lack of interpretability, high spatial complexity in learning road geometries, and poor compatibility with modern end-to-end planning architectures. To address these limitations, we propose a novel trajectory planning architecture for RL driving experts that integrates an RL policy with a polynomial-based trajectory planner. By employing a Frenet-frame coordinate system, our method simplifies complex road geometries into a curvilinear framework, offering a structured coordinate prior that facilitates policy learning. Furthermore, we incorporate a kinematic feasibility check into the planning stage to ensure that generated trajectories remain within the vehicle's physical limits, effectively mitigating cumulative tracking errors typically found in planning-based systems. We evaluate our approach on key CARLA benchmarks, where it significantly outperforms existing state-of-the-art control-based RL experts. On the CARLA Offline Leaderboard v1 and NoCrash benchmarks, our method improves the driving score by 5% and 11%, respectively, and increases the success rate by 8% and 19%.",
+    "abstract_zh": "强化学习（RL）已成为开发自动驾驶专家系统的主要框架。然而，大多数现有的基于强化学习的专家系统旨在输出直接控制指令（如油门、转向），这些方法存在可解释性差、学习道路几何结构的空间复杂度高以及与现代端到端规划架构兼容性差等问题。为了解决这些局限性，我们提出了一种新的用于强化学习驾驶专家的轨迹规划架构，该架构将强化学习策略与基于多项式的轨迹规划器相结合。通过采用Frenet坐标系，我们的方法将复杂的道路几何结构简化为曲线框架，提供了一个有助于策略学习的结构化坐标先验。此外，我们将运动学可行性检查纳入规划阶段，以确保生成的轨迹保持在车辆的物理限制内，从而有效缓解了规划系统中常见的累积跟踪误差。我们在关键的CARLA基准测试中评估了我们的方法，结果显示其性能显著优于现有的基于控制的强化学习专家系统。在CARLA离线排行榜v1和NoCrash基准测试中，我们的方法分别将驾驶得分提高了5%和11%，并将成功率分别提高了8%和19%。",
+    "summary_zh": "针对现有基于强化学习的自动驾驶方案在可解释性和兼容性上的不足，本文提出了一种集成强化学习策略与轨迹规划器的PlanRL架构。该方法利用Frenet坐标系简化几何表征，并通过运动学可行性检查保障轨迹质量。实验结果表明，该方案在多个CARLA基准测试中的性能优于现有的控制型强化学习专家系统。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "base_arxiv_id": "2606.26858",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.25509v1",
     "title": "ASSCG: Just-Right Gating over Chattering for Fast-Slow LLM Planning in Autonomous Driving",
     "authors": [
