@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-06-30 21:23 UTC
+Generated: 2026-07-01 21:20 UTC
 
 当前展示 131 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -31,10 +31,10 @@ Generated: 2026-06-30 21:23 UTC
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>2. LWDrive: Layer-Wise World-Model-Guided Vision-Language Model Planning for Autonomous Driving</strong><br><span>Chen Yang, Yuhao Wei, Ze Xu, Ziheng Zou, Shuang Liang, Delin Ouyang, Lingfeng Qi, Jie Li, Guofa Li</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-06-29</div><div>2026-06-29</div><div><a href="http://arxiv.org/abs/2606.29879v1">2606.29879v1</a> / <a href="https://arxiv.org/pdf/2606.29879v1">PDF</a></div><div>cs.CV, cs.AI</div></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-06-29</div><div>2026-06-30</div><div><a href="http://arxiv.org/abs/2606.29879v2">2606.29879v2</a> / <a href="https://arxiv.org/pdf/2606.29879v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2606.29879v1">v1</a></div><div>cs.CV, cs.AI</div></td>
       <td style="width: 10%; vertical-align: top;">VLM, world model</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>视觉-语言模型（VLMs）为端到端自动驾驶（E2E-AD）规划提供了强大的语义理解和常识推理能力。然而，直接由VLM生成的轨迹通常仅包含粗略的驾驶意图，不足以实现几何精确、具有前瞻性且基于多视角感知的规划。为了解决这些局限性，我们开发了层级化世界模型引导的驾驶框架（LWDrive）。LWDrive是一个通过层级化世界模型引导来优化粗略轨迹的VLM规划框架。它不将VLM输出直接作为最终轨迹，而是将其用作意图感知的粗略计划，围绕该计划扩展多样化的候选空间，并通过预见级联规划器（FCP）逐步细化候选轨迹。具体而言，我们引入了未来帧生成监督，以鼓励VLM学习前瞻性的场景表征，从而将规划相关的预测动力学注入其内部隐藏状态中。基于这些受世界模型监督的表征，FCP利用多层级的VLM特征，并整合历史时间状态、动作查询表征以及当前帧的多视角鸟瞰图（BEV）特征，以从粗到细的方式优化候选轨迹。这种设计实现了空间位置和运动趋势的逐步校正，在保持大模型生成的高级驾驶意图的同时，利用多视角场景线索对轨迹优化进行落地支撑。最后，评分头对优化后的候选轨迹进行评估并选出最优轨迹作为最终规划输出。实验表明，LWDrive在NAVSIM基准测试上取得了92.0分，在NAVSIM-v2上取得了89.6分。代码和模型将公开提供。</td>
-      <td style="width: 20%; vertical-align: top;">针对视觉-语言模型在自动驾驶规划中缺乏几何精度和前瞻性的问题，本文提出了LWDrive框架，通过引入未来帧生成监督来增强模型的预测动力学。该方法利用预见级联规划器，结合多层级VLM特征、历史状态和BEV视角，将VLM的粗略意图细化为精确的驾驶轨迹，在NAVSIM基准测试中表现优异。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>视觉语言模型（VLM）为端到端自动驾驶（E2E-AD）规划提供了强大的语义理解和常识推理能力。然而，直接由 VLM 生成的轨迹往往只包含粗略的驾驶意图，不足以实现几何精确、具有前瞻性且基于多视角场景的规划。为了解决这些局限性，我们开发了层级世界模型引导的驾驶框架（LWDrive）。LWDrive 是一个通过层级世界模型引导来优化粗略轨迹的 VLM 规划框架。LWDrive 不将 VLM 的输出视为最终轨迹，而是将其用作意图感知的粗略计划，在周围扩展多样化的候选空间，并通过前瞻级联规划器（FCP）逐步优化这些候选轨迹。具体而言，我们引入了未来帧生成监督，以鼓励 VLM 学习前瞻性的场景表征，从而将其内部隐藏状态中注入与规划相关的预测动力学。基于这些经世界模型监督的表征，FCP 利用 VLM 多层特征，并整合历史时间状态、动作查询表征以及当前帧多视角鸟瞰图（BEV）特征，以由粗到细的方式优化候选轨迹。这种设计能够实现对空间位置和运动趋势的逐步修正，同时在利用多视角场景线索进行轨迹细化的同时，保留了大模型产生的高层驾驶意图。最后，评分头对优化后的候选轨迹进行评估，并选择最优轨迹作为最终规划输出。实验表明，LWDrive 在 NAVSIM 基准测试上取得了 92.0 的分数，在 NAVSIM-v2 上取得了 89.6 的分数。代码和模型将公开。</td>
+      <td style="width: 20%; vertical-align: top;">针对直接由视觉语言模型生成的轨迹缺乏几何精度和前瞻性的问题，本研究提出了 LWDrive 框架。该方法利用未来帧生成监督优化 VLM 的内部表征，并结合前瞻级联规划器，通过多视角场景信息对粗略意图进行由粗到细的轨迹细化。实验证明该方法在自动驾驶规划基准测试中表现出色。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>3. PlanRL: A Trajectory Planning Architecture for Reinforcement Learning-based Driving Experts</strong><br><span>Joonhee Lim, Yongjae Lee, Jangho Shin, Dongsuk Kum</span></td>
