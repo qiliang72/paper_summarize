@@ -1,5 +1,43 @@
 [
   {
+    "arxiv_id": "2607.01658v1",
+    "title": "Teaching Vision-Language-Action Models What to See and Where to Look",
+    "authors": [
+      "Yuguang Yang",
+      "Canyu Chen",
+      "Zhewen Tan",
+      "Yizhi Wang",
+      "Zichao Feng",
+      "Chunyang Liu",
+      "Kehua Sheng",
+      "Juan Zhang",
+      "Linlin Yang",
+      "Baochang Zhang",
+      "Yan Wang",
+      "Bo Zhang",
+      "Xianbin Cao"
+    ],
+    "published": "2026-07-02T03:34:32+00:00",
+    "updated": "2026-07-02T03:34:32+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2607.01658v1",
+    "pdf_url": "https://arxiv.org/pdf/2607.01658v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models have emerged as a promising paradigm for end-to-end autonomous driving. However, existing VLAs' training relies heavily on text-centric visual question answering and chain-of-thought reasoning data, which emphasizes linguistic reasoning rather than action-grounded planning. As a result, the learned representations capture semantic knowledge but lack spatial dependencies crucial for reliable trajectory prediction. We propose DriveTeach-VLA, a framework that explicitly teaches VLAs what to see and where to look. Driving-aware Vision Distillation (DVD) injects driving-specific perceptual priors into the vision encoder, while 2D Trajectory-Guided Prompts (2D-TGP) provide spatial conditioning aligned with feasible driving trajectories. Together, they form a vision-guided learning pipeline: what to see (DVD pretraining) - where to look (TGP-guided SFT) - how to act (TGP-guided GRPO). DriveTeach-VLA achieves the state-of-the-art performance on NAVSIM and nuScenes. Our code is available at: https://github.com/ShivaTeam/DriveTeach-VLA.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型已成为端到端自动驾驶的一种有前景的范式。然而，现有 VLA 的训练过于依赖以文本为中心的视觉问答和思维链推理数据，这强调了语言推理而非动作导向的规划。因此，所学习的表征虽然捕捉到了语义知识，但缺乏对可靠轨迹预测至关重要的空间依赖性。我们提出了 DriveTeach-VLA 框架，明确地教导 VLA 看到什么以及看向哪里。驾驶感知视觉蒸馏（DVD）将驾驶特定的感知先验注入视觉编码器，而二维轨迹引导提示（2D-TGP）则提供了与可行驾驶轨迹对齐的空间条件。它们共同构成了一个视觉引导的学习流水线：看到什么（DVD 预训练）- 看向哪里（TGP 引导的监督微调）- 如何行动（TGP 引导的组相对策略优化）。DriveTeach-VLA 在 NAVSIM 和 nuScenes 数据集上达到了最先进的性能。代码已开源。",
+    "summary_zh": "针对现有 VLA 模型在自动驾驶任务中缺乏空间依赖性和动作规划能力的问题，本文提出了 DriveTeach-VLA 框架。该方法通过驾驶感知视觉蒸馏和轨迹引导提示，显式地向模型注入感知先验并提供空间条件。实验表明，该方法在 NAVSIM 和 nuScenes 基准测试中实现了性能提升。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "base_arxiv_id": "2607.01658",
+    "version": 1
+  },
+  {
     "arxiv_id": "2606.30421v1",
     "title": "OWMDrive: Causality-Aware End-to-End Autonomous Driving via 4D Occupancy World Model",
     "authors": [
