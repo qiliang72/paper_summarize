@@ -1,5 +1,35 @@
 [
   {
+    "arxiv_id": "2607.10565v1",
+    "base_arxiv_id": "2607.10565",
+    "version": 1,
+    "title": "BucketKD: A Safety-Aware Bucket-Based Knowledge Distillation Framework for End-to-End Motion Planning",
+    "authors": [
+      "Md Nahidul Islam",
+      "Mohd Hasan Ali",
+      "Dipankar Dasgupta",
+      "Myounggyu Won"
+    ],
+    "published": "2026-07-12T04:45:02+00:00",
+    "updated": "2026-07-12T04:45:02+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2607.10565v1",
+    "pdf_url": "https://arxiv.org/pdf/2607.10565v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.LG"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "End-to-end motion planning has emerged as a promising paradigm in autonomous driving, directly mapping raw sensor data to control commands via deep neural networks. Despite its advantages, its large model size hinders deployment in resource-constrained platforms. In this paper, we present BucketKD, a bucket-based knowledge distillation framework that yields compact and safety-aware end-to-end planners. Compared to the state-of-the-art approach, which relies on simplified planning state representations, BucketKD discretizes critical environmental variables into adaptive buckets that capture richer scene semantics while preserving efficiency. In addition, we design a safety-aware waypoint attention mechanism that evaluates each waypoint's risk level by accounting for both obstacle proximity and relative motion through a time-to-collision (TTC) formulation widely used in transportation research. This enables the student model to better retain safety-critical behaviors during distillation. Extensive experiments in CARLA using the Bench2Drive dataset show that BucketKD significantly outperforms the state-of-the-art in both planning accuracy and safety while maintaining strong compression ratios.",
+    "abstract_zh": "端到端运动规划已成为自动驾驶中一种有前景的范式，通过深度神经网络将原始传感器数据直接映射为控制指令。尽管具有诸多优势，但其庞大的模型规模阻碍了在资源受限平台上的部署。在本文中，我们提出了 BucketKD，这是一种基于分桶的知识蒸馏框架，旨在生成紧凑且具有安全意识的端到端规划器。与依赖简化规划状态表示的现有先进方法相比，BucketKD 将关键的环境变量离散化为自适应桶，在保持效率的同时捕捉更丰富的场景语义。此外，我们设计了一种安全感知路径点注意力机制，通过交通研究中广泛使用的碰撞时间（TTC）公式，综合考虑障碍物邻近度和相对运动来评估每个路径点的风险水平。这使得学生模型在蒸馏过程中能更好地保留安全关键行为。在 CARLA 环境中使用 Bench2Drive 数据集进行的广泛实验表明，BucketKD 在规划准确性和安全性方面均显著优于现有的先进方法，同时保持了强大的压缩比。",
+    "summary_zh": "针对端到端自动驾驶模型规模大且安全性不足的问题，本文提出了 BucketKD 知识蒸馏框架。该方法通过基于环境变量的自适应分桶技术提升语义捕捉能力，并引入了基于碰撞时间（TTC）的安全感知路径点注意力机制。实验证明，该框架在保持高压缩比的同时，显著提升了模型在规划精度与安全性方面的表现。"
+  },
+  {
     "arxiv_id": "2607.08375v1",
     "base_arxiv_id": "2607.08375",
     "version": 1,
