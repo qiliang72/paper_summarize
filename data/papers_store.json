@@ -1,5 +1,65 @@
 [
   {
+    "arxiv_id": "2607.29052v1",
+    "title": "Outcome-Guided Distillation: A Teacher-Student Framework to Advance VLM Reasoning in Autonomous Driving",
+    "authors": [
+      "Zeyu Dong",
+      "Yimin Zhu",
+      "Yu Wu",
+      "Yu Sun"
+    ],
+    "published": "2026-07-31T06:10:24+00:00",
+    "updated": "2026-07-31T06:10:24+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2607.29052v1",
+    "pdf_url": "https://arxiv.org/pdf/2607.29052v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "End-to-end (E2E) autonomous driving aims to learn a direct mapping from visual observations to control actions. However, these E2E models often act as black boxes and struggle with complex scenarios. To address this, recent works incorporate Vision-Language Models (VLMs) to provide explicit reasoning, enhancing both interpretability and driving robustness. These approaches typically rely on pre-generated annotations, which suffer from potentially flawed labels and require costly human labor. In this work, we propose a new framework that integrates structured reasoning and geometric precision through a teacher-student architecture. The teacher model introduces reflective reasoning, where the VLM generates logical explanations and then reflectively refines the reasoning under the supervision of ground-truth action. This enhances zero-shot generalization without intermediate labels. The student model distills the teacher's reasoning capabilities via supervised fine-tuning. We also design a separate waypoint decoder that interprets textual reasoning into continuous trajectories. Our proposed solution integrates two goals: providing explicit reasoning for interpretability and delivering robust and accurate driving performance. It leverages the synergy between these two objectives within a staged inference engine to enhance driving performance and explicitly uses the reasoning to guide driving prediction. Evaluated on Waymo benchmarks, our framework outperforms classical reasoning-based baselines in zero-shot reasoning, waypoint accuracy, and inference efficiency. Our experiments validate this design, demonstrating that the reasoning text makes a significant contribution to driving inference, resulting in around a 24% improvement in performance compared to an identical model that lacks reasoning. Our work advances reasoning-driven autonomous driving toward interpretable and deployable systems.",
+    "abstract_zh": "端到端（E2E）自动驾驶旨在学习从视觉观测到控制动作的直接映射。然而，这些E2E模型通常充当黑盒，且难以处理复杂场景。为了解决这个问题，近期研究引入视觉语言模型（VLMs）以提供显式推理，从而增强可解释性和驾驶鲁棒性。这些方法通常依赖于预生成的标注，但这些标注可能存在缺陷且耗费大量人力。本文提出了一种新框架，通过教师-学生架构整合结构化推理与几何精度。教师模型引入反思性推理，即由VLM生成逻辑解释，并在真实动作的监督下反思性地优化推理，从而在无需中间标签的情况下增强零样本泛化能力。学生模型通过监督微调提取教师的推理能力。此外，我们设计了一个独立的路径点解码器，将文本推理转化为连续轨迹。我们提出的解决方案整合了两个目标：为可解释性提供显式推理，以及提供稳健且准确的驾驶性能。该框架利用分阶段推理引擎中这两个目标之间的协同作用来增强驾驶性能，并明确使用推理来指导驾驶预测。在Waymo基准测试上的评估表明，我们的框架在零样本推理、路径点准确性和推理效率方面优于经典的推理基线方法。实验验证了该设计，证明推理文本对驾驶推理有显著贡献，与不具备推理能力的同类模型相比，性能提升约24%。我们的工作推动了基于推理的自动驾驶向可解释和可部署系统迈进。",
+    "summary_zh": "针对端到端自动驾驶模型缺乏可解释性及对标注数据依赖的问题，该论文提出了一种基于教师-学生架构的“结果引导蒸馏”框架。该方法通过教师模型的反思性推理指导学生模型，并结合路径点解码器实现从文本推理到控制轨迹的转化。实验表明，该方法在保持高推理效率的同时，有效提升了自动驾驶的可解释性与执行精度。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "distillation"
+    ],
+    "base_arxiv_id": "2607.29052",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2607.29031v1",
+    "title": "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving",
+    "authors": [
+      "Jiwei Yang",
+      "Zhengxian Chen",
+      "Chaosheng Huang",
+      "Jun Li"
+    ],
+    "published": "2026-07-31T05:10:23+00:00",
+    "updated": "2026-07-31T05:10:23+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2607.29031v1",
+    "pdf_url": "https://arxiv.org/pdf/2607.29031v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "abstract_en": "Existing autonomous-driving world models typically perform dense prediction of future videos, occupancy states, BEV representations, or agent motion. We argue that planning need not reconstruct the complete future world, but only focus on scene features that affect future ego action. Based on this perspective, we propose Auto-JEPA, an action-oriented latent world model that learns continuous future driving intent through joint-embedding prediction. Given visual observations, egomotion history, and navigation commands, Auto-JEPA predicts an intent embedding aligned with the latent representation of the future ego trajectory. The predicted intent retrieves executable trajectories from a fixed trajectory memory, which are then ranked by a scene-conditioned candidate selection module. Auto-JEPA keeps the visual encoder frozen, requires no explicit perception annotations, and uses no learned trajectory generator. By optimizing only task-specific modules for trajectory representation, intent prediction, and candidate selection, Auto-JEPA achieves 91.3 PDMS on NAVSIM v1 and 89.1 EPDMS on NAVSIM v2. Semantic occlusion experiments show that masking dynamic-agent regions induces an average intent change 2.97x that of equal-area random masking. Moreover, occluding vehicles that affect future driving substantially changes the predicted intent and selected trajectory, whereas both remain essentially unchanged when non-influential vehicles are occluded. These results show that future-intent prediction encourages the model to focus on planning-relevant visual features and supports high-quality planning without dense future-world modeling.",
+    "abstract_zh": "现有的自动驾驶世界模型通常会对未来视频、占用状态、鸟瞰图（BEV）表示或智能体运动进行密集预测。我们认为，规划无需重构完整的未来世界，只需关注影响未来自动驾驶车辆行为的场景特征。基于这一观点，我们提出了 Auto-JEPA，这是一个面向行为的潜在世界模型，通过联合嵌入预测学习连续的未来驾驶意图。给定视觉观测、自运动历史和导航指令，Auto-JEPA 可以预测出一个与未来自车轨迹的潜在表示对齐的意图嵌入。预测出的意图从固定的轨迹库中检索可执行轨迹，然后由一个场景条件下的候选选择模块进行排序。Auto-JEPA 保持视觉编码器冻结，不需要明确的感知标注，也不使用学习型的轨迹生成器。通过仅优化用于轨迹表示、意图预测和候选选择的任务特定模块，Auto-JEPA 在 NAVSIM v1 上取得了 91.3 PDMS，在 NAVSIM v2 上取得了 89.1 EPDMS。语义遮挡实验表明，遮挡动态智能体区域引起的意图变化平均是等面积随机遮挡的 2.97 倍。此外，遮挡影响未来驾驶的车辆会显著改变预测的意图和选定的轨迹，而遮挡非影响车辆时两者基本保持不变。这些结果表明，未来意图预测促使模型关注与规划相关的视觉特征，并在无需密集未来世界建模的情况下支持高质量的规划。",
+    "summary_zh": "针对自动驾驶规划中无需完整重构未来世界的问题，本文提出了 Auto-JEPA 模型，通过联合嵌入预测学习直接关联驾驶行为的潜在意图。该方法通过从预存轨迹中检索和选择最优路径，在无需密集感知标注的情况下，实现了高效且具备可解释性的自动驾驶规划。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2607.29031",
+    "version": 1
+  },
+  {
     "arxiv_id": "2607.20988v1",
     "title": "HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving",
     "authors": [
