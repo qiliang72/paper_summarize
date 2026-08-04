@@ -1,5 +1,135 @@
 [
   {
+    "arxiv_id": "2608.01535v1",
+    "base_arxiv_id": "2608.01535",
+    "version": 1,
+    "title": "STAR-VLM: Spatiotemporal Grounding Vision-Language Models for Motion and Velocity Estimation via Automotive Radar Supervision",
+    "authors": [
+      "Pou-Chun Kung",
+      "Aryaman Rao",
+      "Utkrisht Sahai",
+      "Hemanth Murali",
+      "Yi Liu",
+      "Rui-Yu Lin",
+      "Katherine A. Skinner"
+    ],
+    "published": "2026-08-02T23:02:06+00:00",
+    "updated": "2026-08-02T23:02:06+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.01535v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.01535v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Vision-language models (VLMs) are emerging as a key component of embodied intelligence, with growing applications in auto-labeling and end-to-end autonomous driving. However, existing approaches for improving spatiotemporal reasoning in VLMs often rely on complex preprocessing pipelines, expensive human annotations, or synthetic data, which limit scalability and introduce potential sim-to-real gaps. Moreover, although these methods have improved spatiotemporal understanding, they still lack strong metric reasoning capabilities for dynamic scenes, such as estimating object motion in real-world units. Prior work has explored LiDAR-based metric depth supervision to enhance spatial perception, but it does not directly address temporal reasoning. We introduce STAR-VLM, an automotive radar-supervised framework that enhances spatiotemporal VLMs with motion reasoning and metric velocity estimation for autonomous driving. Automotive radar is a low-cost and widely deployed sensor that provides complementary spatiotemporal supervision through range and Doppler measurements. By leveraging these measurements as label-free ground truth during training, STAR-VLM improves the metric spatiotemporal reasoning ability of VLMs. Through experiments on driving scenarios, we show that STAR-VLM achieves state-of-the-art performance on both motion classification and metric velocity estimation, outperforming even task-specific methods designed for each task. These results highlight automotive radar as a scalable and cost-effective source of supervision for building metric-aware spatiotemporal VLMs for real-world autonomous driving.",
+    "abstract_zh": "视觉-语言模型（VLMs）正成为具身智能的关键组成部分，在自动标注和端到端自动驾驶中的应用日益广泛。然而，现有的提升 VLM 时空推理能力的方法往往依赖复杂的预处理流程、昂贵的人工标注或合成数据，这限制了可扩展性并引入了潜在的仿真到现实（sim-to-real）差距。此外，尽管这些方法改进了时空理解，但在处理动态场景的度量推理（例如在真实世界单位中估计物体运动）方面仍显不足。先前的研究探讨了利用基于激光雷达的度量深度监督来增强空间感知，但并未直接解决时间推理问题。我们提出了 STAR-VLM，这是一个通过车载雷达监督的框架，旨在增强视觉-语言模型在自动驾驶中的运动推理和速度度量估计能力。车载雷达是一种低成本且广泛部署的传感器，通过距离和多普勒测量提供互补的时空监督信息。通过在训练期间将这些测量值用作无标注的真值，STAR-VLM 提升了 VLM 的度量时空推理能力。在驾驶场景的实验表明，STAR-VLM 在运动分类和速度度量估计任务上均达到了最先进的水平，甚至优于专门为各项任务设计的特定方法。这些结果突显了车载雷达作为一种可扩展且经济高效的监督来源，能够用于构建面向真实世界自动驾驶的度量感知型时空 VLM。",
+    "summary_zh": "针对视觉-语言模型在自动驾驶中缺乏动态场景度量推理能力的问题，本文提出了 STAR-VLM 框架，利用车载雷达提供的距离和多普勒测量作为无标注监督信号。该方法有效增强了模型在运动推理和速度度量估计方面的性能，在多个基准测试中达到了领先水平，展示了一种低成本且可扩展的训练路径。"
+  },
+  {
+    "arxiv_id": "2608.01201v1",
+    "base_arxiv_id": "2608.01201",
+    "version": 1,
+    "title": "PRISM: Privileged Probabilistic Latent Supervision for End-to-End Autonomous Driving Motion Planning",
+    "authors": [
+      "Volodymyr Havrylov",
+      "Faris Janjoš",
+      "Andreas Look",
+      "Jürgen Mathes",
+      "Andreas Geiger"
+    ],
+    "published": "2026-08-02T12:33:52+00:00",
+    "updated": "2026-08-02T12:33:52+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.01201v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.01201v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "End-to-end autonomous driving (E2E AD) systems integrate perception, prediction, and planning into a single differentiable architecture. While these models show great promise, their standard training often relies on output-only supervision, which can lead to weak gradients for the hidden layers of increasingly complex models. Recent works have integrated vision-language model (VLM) supervision for latent features to address this, yielding substantial empirical gains, yet leaving the underlying theoretical mechanisms poorly understood. Our investigation into this methodology reveals that the resulting performance gains stem not from VLM reasoning capabilities, as previously assumed, but rather from the latent connections forged between the E2E AD model and ground-truth (GT) data during training. Building on this insight, we propose a probabilistic deep supervision framework that regularizes intermediate latent representations directly from GT data. By treating model latents as reparameterizable distributions, we optimize the architecture via the Evidence Lower Bound (ELBO). Our evaluations conducted on the nuScenes dataset demonstrate that supervising trajectory-related latents with future GT paths consistently improves planning performance. Using identical training data and E2E architectures, our method achieves an 8% reduction in planning L2 error and a 3% decrease in collision rates compared to competitive vectorized baselines, all while incurring negligible computational overhead.",
+    "abstract_zh": "端到端自动驾驶（E2E AD）系统将感知、预测和规划集成到一个可微分的架构中。尽管这些模型展现出巨大潜力，但其标准训练通常依赖于仅输出的监督，这可能导致日益复杂的模型隐藏层梯度较弱。近期的研究通过整合视觉语言模型（VLM）对潜在特征进行监督来解决这一问题，并取得了显著的实证进展，但其潜在的理论机制尚不明确。我们对该方法的研究发现，性能的提升并非源于先前认为的 VLM 推理能力，而是源于训练过程中在 E2E AD 模型与真实值（GT）数据之间建立的潜在联系。基于此见解，我们提出了一个概率深度监督框架，直接利用真实值数据对中间潜在表征进行正则化。通过将模型潜在变量视为可重参数化的分布，我们通过证据下界（ELBO）对架构进行了优化。在 nuScenes 数据集上的评估表明，利用未来真实轨迹路径对轨迹相关潜在变量进行监督，能持续提升规划性能。在训练数据和 E2E 架构完全相同的情况下，我们的方法相较于竞争性的向量化基线，规划 L2 误差降低了 8%，碰撞率降低了 3%，且计算开销可忽略不计。",
+    "summary_zh": "本文针对端到端自动驾驶中隐层监督不足的问题，指出基于VLM的监督方法实则依赖于对真实值数据的潜在连接。为此，作者提出了一种基于证据下界（ELBO）的概率深度监督框架，通过利用真实轨迹数据对中间潜在表征进行正则化。实验结果表明，该方法在不增加额外计算负担的情况下，显著提升了自动驾驶系统的规划精度并降低了碰撞率。"
+  },
+  {
+    "arxiv_id": "2608.01035v1",
+    "base_arxiv_id": "2608.01035",
+    "version": 1,
+    "title": "WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA",
+    "authors": [
+      "Zhihao Zhu",
+      "Hanlin Shang",
+      "Mingwang Xu",
+      "Feipeng Cai",
+      "Zhuolin He",
+      "Yaoyi Li",
+      "Jianhua Han",
+      "Hang Xu",
+      "Siyu Zhu"
+    ],
+    "published": "2026-08-02T06:45:16+00:00",
+    "updated": "2026-08-02T06:45:16+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.01035v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.01035v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models have emerged as a prominent paradigm for end-to-end autonomous driving; however, their efficient deployment is severely constrained by high computational latency and exposure bias arising from sequential autoregressive decoding. Conversely, while specialized diffusion policies enable low-latency, parallel execution, training them from scratch typically yields narrow, single-task architectures that lack holistic visual-linguistic reasoning. Successfully transforming pre-trained autoregressive generalists into parallel diffusion models could combine multi-task cognitive intelligence with execution efficiency, yet this transition presents a formidable architectural challenge due to mismatched attention patterns (causal versus bidirectional) and divergent optimization objectives. To bridge this divide, we introduce WAM-Diff2, a multi-task discrete diffusion VLA framework powered by a three-stage hierarchical distillation strategy. By structuring the architectural shift through progressive block-wise adaptation, block-wise distillation, and model-wise cross-scale distillation, WAM-Diff2 preserves the underlying semantic foundations of the base model while accelerating inference. Extensive evaluations across driving understanding, perception, and planning benchmarks demonstrate that WAM-Diff2 effectively mitigates exposure bias and achieves performance parity with autoregressive baselines. Crucially, the autoregressive-to-diffusion transition yields a 2.8x decoding speedup, which scales to an ultimate 15.1x acceleration when combined with system-level optimizations including FlashInfer and CUDA Graphs.",
+    "abstract_zh": "视觉-语言-动作 (VLA) 模型已成为端到端自动驾驶的重要范式；然而，其高效部署受到序列自回归解码带来的高计算延迟和曝光偏差的严重限制。相反，虽然专门的扩散策略能够实现低延迟的并行执行，但从零开始训练它们通常会导致缺乏全面视觉-语言推理能力的狭窄单任务架构。将预训练的自回归通用模型成功转化为并行扩散模型，可以将多任务认知智能与执行效率相结合，但由于注意力模式（因果与双向）的不匹配和优化目标的分歧，这种转变提出了巨大的架构挑战。为了弥合这一差距，我们引入了 WAM-Diff2，这是一个由三阶段分层蒸馏策略驱动的多任务离散扩散 VLA 框架。通过结构化的架构转换，包括逐步的块级适配、块级蒸馏和模型级跨尺度蒸馏，WAM-Diff2 在加速推理的同时保留了基础模型的底层语义基础。在驾驶理解、感知和规划基准上的广泛评估表明，WAM-Diff2 有效地减轻了曝光偏差，并实现了与自回归基线相当的性能。关键的是，自回归到扩散的转换带来了 2.8 倍的解码加速，在结合 FlashInfer 和 CUDA Graphs 等系统级优化后，最终可实现 15.1 倍的加速。",
+    "summary_zh": "该研究针对自回归 VLA 模型在自动驾驶中存在的计算延迟和曝光偏差问题，提出了 WAM-Diff2 框架。通过创新的三阶段分层蒸馏策略，将自回归通用模型转化为并行扩散模型，在保持多任务推理能力的同时显著提升了推理速度。"
+  },
+  {
+    "arxiv_id": "2608.00237v1",
+    "base_arxiv_id": "2608.00237",
+    "version": 1,
+    "title": "Latent-Centroid Steering: Single-Pass Classifier-Free Guidance for Command-Aligned Autonomous Driving",
+    "authors": [
+      "Meibo Hu",
+      "Jiamian Wang",
+      "Pichao Wang",
+      "Zhiqiang Tao"
+    ],
+    "published": "2026-07-31T19:32:28+00:00",
+    "updated": "2026-07-31T19:32:28+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.00237v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.00237v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Vision-language models (VLMs) have recently emerged as a promising paradigm for end-to-end autonomous driving, enabling agents to map multimodal inputs and high-level navigation instructions directly to executable trajectories. However, in practice, these models exhibit a persistent command-following gap: predicted trajectories often show weak sensitivity to navigation commands, resulting in incorrect behavior at critical decision points. We identify this issue as a form of conditional policy collapse, where regression-based training under multimodal trajectory distributions encourages the model to rely on dominant visual priors while marginalizing the language-conditioned signal. To address this issue, we introduce a principled formulation of classifier-free guidance (CFG) for regression-based vision-language driving. We show that CFG can be interpreted as isolating the instruction-induced residual in the action space by contrasting conditional and unconditional predictions, thereby explicitly amplifying the effect of the navigation command at inference time. However, a standard two-pass CFG introduces prohibitive latency for real-time control and produces noisy instance-level guidance directions. Building on a mean-shift interpretation of CFG, we propose Latent-Centroid Steering (LCS), a single-pass guidance mechanism that replaces instance-level residuals with class-level latent shifts. By projecting conditional representations toward precomputed command-specific centroids, LCS performs class-level latent steering based on cluster geometry that is both more stable and computationally efficient. We demonstrate that LCS reduces inference latency by approximately 50% while achieving stronger command adherence and improved driving performance on both closed-loop (Bench2Drive) and open-loop (nuScenes) benchmarks. Code will be released.",
+    "abstract_zh": "视觉语言模型（VLMs）近期成为端到端自动驾驶的一种有前景的范式，使智能体能够将多模态输入和高级导航指令直接映射为可执行轨迹。然而在实践中，这些模型表现出持续的指令遵循鸿沟：预测轨迹往往对导航指令的敏感度较低，导致在关键决策点出现错误行为。我们将此问题识别为一种条件策略崩溃，即在多模态轨迹分布下基于回归的训练，促使模型依赖占主导地位的视觉先验，同时边缘化了语言条件的信号。为了解决这一问题，我们为基于回归的视觉语言驾驶引入了一种原则性的分类器自由引导（CFG）公式。我们展示了 CFG 可以被解释为通过对比条件预测和无条件预测，在动作空间中分离由指令诱导的残差，从而在推理时明确放大导航指令的影响。然而，标准的双向 CFG 引入了对于实时控制而言过高的延迟，并产生了嘈杂的实例级引导方向。基于对 CFG 的均值漂移解释，我们提出了潜在质心引导（LCS），这是一种单向引导机制，用类级潜在位移取代了实例级残差。通过将条件表示投影到预计算的特定指令质心，LCS 基于聚类几何执行类级潜在引导，这种方法既更稳定又具有计算效率。我们证明，LCS 在闭环（Bench2Drive）和开环（nuScenes）基准测试中，在将推理延迟降低约 50% 的同时，实现了更强的指令遵循能力和改进的驾驶性能。代码将开源。",
+    "summary_zh": "针对视觉语言驾驶模型中常见的导航指令遵循不足问题，本文分析其为条件策略崩溃，并引入了潜在质心引导（LCS）机制。该方法通过将条件表示投影至预计算的类级指令质心，在实现单向推理的同时显著提升了计算效率与导航指令的执行准确度。"
+  },
+  {
     "arxiv_id": "2607.29052v1",
     "base_arxiv_id": "2607.29052",
     "version": 1,
