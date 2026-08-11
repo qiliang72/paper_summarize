@@ -1,5 +1,101 @@
 [
   {
+    "arxiv_id": "2608.09591v1",
+    "title": "FactorDrive: Adaptive Multi-Step Reasoning Driven by Planning-Critical Factors for End-to-End Autonomous Driving",
+    "authors": [
+      "Guolei Huang",
+      "Tengfei She",
+      "Yuxuan Lu",
+      "Yao Huang",
+      "Yuqi Ye",
+      "Yongjun Shen"
+    ],
+    "published": "2026-08-10T13:26:09+00:00",
+    "updated": "2026-08-10T13:26:09+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.09591v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.09591v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "abstract_en": "Vision-language models (VLMs) have advanced scene understanding and enabled explicit reasoning in end-to-end autonomous driving. However, existing methods insufficiently integrate spatial-physical evidence into planning reasoning, while reasoning adaptation remains coarse-grained and falls short of scene-specific planning demands. Furthermore, reasoning-path optimization for higher planning quality remains largely unexplored in autonomous-driving post-training. To address these limitations, we propose FactorDrive, an end-to-end autonomous driving framework for adaptive multi-step reasoning driven by planning-critical factors (PCFs). We first perform large-scale driving-domain instruction tuning to establish foundational driving knowledge. Building on this foundation, we construct PCF-CoT, a chain-of-thought (CoT) dataset that grounds planning reasoning in trajectory-relevant spatial-physical evidence and organizes reasoning around scene-specific PCFs, enabling the composition and depth of reasoning paths to adapt to different planning demands. We further introduce Quality Search-Guided Group Relative Policy Optimization (QS-GRPO), which guides Monte Carlo Tree Search (MCTS) with trajectory-level planning rewards to discover reasoning paths with higher planning quality and uses the resulting responses to optimize the policy through GRPO, thereby improving trajectory planning performance. Extensive experiments on both open-loop (nuScenes) and closed-loop-oriented (NAVSIM) benchmarks demonstrate that FactorDrive achieves state-of-the-art planning performance.",
+    "abstract_zh": "视觉-语言模型（VLMs）提升了场景理解能力，并实现了端到端自动驾驶中的显式推理。然而，现有方法在将空间-物理证据整合到规划推理方面尚显不足，推理适应性仍然较为粗糙，无法满足特定场景的规划需求。此外，在自动驾驶后训练中，针对规划质量的推理路径优化研究尚属空白。为了解决这些局限性，我们提出了 FactorDrive，这是一个由规划关键因素（PCFs）驱动的自适应多步推理端到端自动驾驶框架。我们首先执行大规模驾驶领域指令微调以建立基础驾驶知识。在此基础上，我们构建了 PCF-CoT，这是一个将规划推理建立在轨迹相关空间-物理证据之上的思维链（CoT）数据集，并围绕场景特定的 PCF 组织推理，使推理路径的构成和深度能够适应不同的规划需求。我们进一步引入了质量搜索引导的组相对策略优化（QS-GRPO），它利用轨迹级规划奖励引导蒙特卡洛树搜索（MCTS）以发现更高规划质量的推理路径，并利用产生的响应通过 GRPO 优化策略，从而提升轨迹规划性能。在开环（nuScenes）和闭环导向（NAVSIM）基准测试上的广泛实验表明，FactorDrive 实现了最先进的规划性能。",
+    "summary_zh": "该研究针对现有自动驾驶模型推理能力不足和规划需求适配性差的问题，提出了 FactorDrive 框架。该方法通过引入规划关键因素驱动的思维链数据集，以及结合质量搜索引导的组相对策略优化，有效提升了自动驾驶系统的推理深度与轨迹规划性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2608.09591",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2608.09333v1",
+    "title": "DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving",
+    "authors": [
+      "Ziyi Song",
+      "Chen Xia",
+      "Hang Yu",
+      "Sheng Zhou",
+      "Zhisheng Niu"
+    ],
+    "published": "2026-08-10T09:11:50+00:00",
+    "updated": "2026-08-10T09:11:50+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.09333v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.09333v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "Large-scale language models for autonomous driving enable enhanced global understanding and long-horizon planning. However, when deployed in isolated vehicles, limited sensing range and occlusions restrict reliable decision-making, and the substantial computational and latency overhead makes on-board deployment impractical. Cooperative driving provides a potential solution by leveraging external agents for information exchange, but existing methods remain limited in semantic reasoning capability under practical constraints. To address these challenges, we propose DH-VLM, a dual-horizon cooperative latent reasoning framework that enables asymmetric semantic cooperation between the infrastructure and ego vehicle. The infrastructure aggregates multi-layer hidden states to form a global-reasoning horizon latent guidance, which is integrated into the ego model through an Infrastructure-Driven Latent Evolution mechanism for conditional latent refinement. This enables the ego vehicle to leverage long-range contextual understanding while preserving autonomous decision-making within its local planning horizon. Furthermore, we construct a cooperation-oriented question-answer (QA) dataset covering fundamental scene understanding and ego-personalized comprehension to support counterfactual and safety-aware reasoning. Extensive experiments demonstrate that DH-VLM achieves state-of-the-art planning performance, outperforming the previous state of the art by 14.6% in L2 error and 26.9% in collision rate. Compared with query-based end-to-end cooperative driving methods, our approach reduces the communication cost by 57.3% and GPU memory usage by 25.5%, while maintaining strong robustness against infrastructure guidance errors, providing a practical and robust paradigm for cooperative autonomous driving.",
+    "abstract_zh": "面向自动驾驶的大规模语言模型能够增强全局理解和长程规划能力。然而，当部署在独立车辆上时，有限的传感范围和遮挡问题限制了决策的可靠性，且巨大的计算和延迟开销使得车载部署变得不切实际。协作驾驶通过利用外部代理进行信息交换提供了潜在的解决方案，但现有方法在实际约束下的语义推理能力仍然有限。为了应对这些挑战，我们提出了DH-VLM，这是一个双视野协作潜在推理框架，实现了基础设施与自车之间的非对称语义协作。基础设施聚合多层隐藏状态以形成全局推理视野的潜在引导，并通过“基础设施驱动的潜在演化”机制集成到自车模型中，用于条件化潜在优化。这使得自车能够在保持局部规划视野内自动决策的同时，利用长程的上下文理解能力。此外，我们构建了一个面向协作的问答（QA）数据集，涵盖了基础场景理解和自车个性化理解，以支持反事实和安全感知推理。广泛的实验表明，DH-VLM实现了最先进的规划性能，在L2误差上比现有最佳方法提升了14.6%，碰撞率降低了26.9%。与基于查询的端到端协作驾驶方法相比，我们的方法在通信成本上降低了57.3%，GPU内存使用率降低了25.5%，同时保持了对基础设施引导误差的强鲁棒性，为协作式自动驾驶提供了一种实用且稳健的范式。",
+    "summary_zh": "针对自动驾驶中单车感知局限与协作通信开销大的问题，该论文提出了DH-VLM双视野协作潜在推理框架。该方法通过基础设施向自车提供全局潜变量引导，实现了兼顾局部决策与全局长程上下文理解的非对称协作。实验证明，该方案在提升驾驶性能的同时显著降低了计算与通信成本。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2608.09333",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2608.08045v1",
+    "title": "Lingjing: A Simulation Testbed for Multi-Agent Embodied Tasks in Open-Ended Cities",
+    "authors": [
+      "Xiaohe Li",
+      "Yiru Wang",
+      "Junhao Fan",
+      "Mingyuan Liu",
+      "Jie Huang",
+      "Kaixin Zhang",
+      "Jiahao Li",
+      "Chen Qian",
+      "Zide Fan"
+    ],
+    "published": "2026-08-08T10:18:58+00:00",
+    "updated": "2026-08-08T10:18:58+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.08045v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.08045v1",
+    "arxiv_categories": [
+      "cs.AI"
+    ],
+    "abstract_en": "Urban embodied intelligence requires coordination among heterogeneous agents (e.g., UAVs, ground robots, and autonomous vehicles) in dynamic cities. Simulators therefore provide a scalable foundation for developing and evaluating such coordination. Existing platforms nevertheless isolate different embodiments and decouple them from task design and evaluation. We present \\textbf{Lingjing}, a simulation platform for heterogeneous multi-agent embodied intelligence in open-ended urban environments. Lingjing reconstructs and renders evolving cities from geographic data, synchronizes multiple physics engines, and exposes shared physical and structured urban state to agents. Its Gym-like interface supports user-defined ReAct agents and single- or multi-agent natural-language missions with configurable star or broadcast communication and resource constraints. Each episode becomes an attribution-ready replay that links agent trajectories and communication to relation-graph changes, resource consumption, and engine-based evaluations for systematic diagnosis. We evaluate twelve vision-language models on nine urban tasks under a shared engine-in-the-loop protocol. Controlled studies further examine communication, scalability, robustness, and failure provenance. Results expose persistent bottlenecks in grounding and long-horizon execution. They also show task-dependent coordination trade-offs and diminishing returns from added capacity, while heavier workloads further reduce success. Lingjing provides a unified testbed that enables reproducible end-to-end evaluation and systematic failure diagnosis in urban multi-agent embodied intelligence.",
+    "abstract_zh": "城市具身智能需要在动态城市中实现异构智能体（如无人机、地面机器人和自动驾驶车辆）之间的协调，因此仿真器为开发和评估此类协调提供了可扩展的基础。然而，现有平台将不同的具身形态隔离开来，并将它们与任务设计和评估解耦。我们提出了“灵境”（Lingjing），这是一个用于开放式城市环境中异构多智能体具身智能的仿真平台。灵境基于地理数据重建并渲染演进中的城市，同步多个物理引擎，并向智能体公开共享的物理和结构化城市状态。其类 Gym 的接口支持用户自定义 ReAct 智能体以及具有可配置星型或广播通信及资源约束的单智能体或多智能体自然语言任务。每个片段都成为可归因的回放，将智能体轨迹、通信与关系图变化、资源消耗及基于引擎的评估相关联，以进行系统性诊断。我们在共享的引擎在环协议下，对九个城市任务中的十二个视觉语言模型进行了评估。受控研究进一步探讨了通信、可扩展性、鲁棒性和失败溯源。结果揭示了在基础映射（Grounding）和长程执行方面存在的持续瓶颈。研究还显示了任务相关的协调权衡，以及增加容量带来的边际效应递减，同时更重的负载会进一步降低成功率。灵境提供了一个统一的测试平台，实现了城市多智能体具身智能中可复现的端到端评估和系统性故障诊断。",
+    "summary_zh": "该论文提出了一个名为“灵境”的仿真平台，旨在解决城市环境中异构多智能体协同工作的开发与评估难题。该系统通过整合地理数据重建、多物理引擎同步及统一的任务接口，支持对智能体进行端到端的性能评估与故障诊断。实验结果揭示了模型在长程执行与任务协调方面存在的瓶颈，为具身智能研究提供了可复现的测试基准。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2608.08045",
+    "version": 1
+  },
+  {
     "arxiv_id": "2608.07468v1",
     "title": "SimWAM: A Simple World Action Model for End-to-End Autonomous Driving",
     "authors": [
