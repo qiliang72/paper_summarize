@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-08-11 20:36 UTC
+Generated: 2026-08-12 20:34 UTC
 
 当前展示 152 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -45,10 +45,10 @@ Generated: 2026-08-11 20:36 UTC
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>4. SimWAM: A Simple World Action Model for End-to-End Autonomous Driving</strong><br><span>Zongchuang Zhao, Xin Zhou, Tianyang Xu, Zhengyang Sun, Kaixuan Zhou, Honglin Li, Dingkang Liang, Xiang Bai</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-08-07</div><div>2026-08-07</div><div><a href="http://arxiv.org/abs/2608.07468v1">2608.07468v1</a> / <a href="https://arxiv.org/pdf/2608.07468v1">PDF</a></div><div>cs.CV</div></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-08-07</div><div>2026-08-11</div><div><a href="http://arxiv.org/abs/2608.07468v2">2608.07468v2</a> / <a href="https://arxiv.org/pdf/2608.07468v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2608.07468v1">v1</a></div><div>cs.CV</div></td>
       <td style="width: 10%; vertical-align: top;">RL</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>世界行动模型（WAMs）通过将视频动态先验迁移至行动预测，提升了端到端自动驾驶的性能，但现有方法在推理阶段需要进行昂贵的未来帧生成。我们提出了 SimWAM，这是一种简单且高效的 WAM，仅将视频生成作为一种训练信号。它利用联合流匹配（Joint Flow Matching）技术，联合训练一个预训练的视频专家和一个轻量级的行动专家。通过采用一种隔离的注意力掩码，使行动预测在推理时独立于未来帧，从而在训练后即可舍弃视频分支，留下一个直接预测轨迹的独立规划器。由于两个专家不共享参数且仅通过统一的注意力接口进行交互，因此可以在不修改学习目标或推理流程的情况下，更换视频主干网络或独立扩展行动专家。此外，我们应用强化学习来优化轨迹模仿之外的组合驾驶奖励。SimWAM 在 NAVSIM 上达到了 91.5 的 PDMS 分数，在显著降低延迟的同时超越了现有的基于 WAM 的规划器，并实现了对 nuScenes 的零样本迁移。这些结果表明，SimWAM 是一个简单而稳健的基准模型，可以从视频生成的进展中获益，以实现高效的自动驾驶。</td>
-      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶中视频动态模型推理成本高的问题，SimWAM 提出将视频生成仅作为训练信号，通过联合流匹配训练轻量级行动专家。该方法实现了训练与推理的分离，在无需未来帧生成的情况下保持了高性能，并支持灵活的架构扩展与强化学习奖励优化。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>世界动作模型（WAMs）通过将视频动态先验迁移到动作预测，提升了端到端自动驾驶的性能，但现有方法在测试阶段需要耗费高昂的未来场景想象成本。我们提出了SimWAM，这是一种简单而有效的WAM，它利用未来视频预测作为训练阶段的监督信号。该方法通过联合流匹配共同训练一个预训练的视频专家和一个轻量级的动作专家。一个独立的注意力掩码使动作预测不再依赖于未来帧，从而在推理时无需显式生成未来帧即可实现轨迹预测。由于两个专家不共享参数且仅通过统一的注意力接口进行交互，因此可以在不修改学习目标或推理流程的情况下替换视频主干或独立缩放动作专家。此外，我们应用强化学习来优化超出轨迹模仿范畴的复合驾驶奖励。SimWAM在NAVSIM上达到了91.5的PDMS得分，在显著降低延迟的同时超越了现有的基于WAM的规划器，并实现了对nuScenes的零样本迁移。这些结果表明SimWAM是一个简单且扎实的基线模型，能够直接从视频生成技术的进步中获益，实现高效的自动驾驶。</td>
+      <td style="width: 20%; vertical-align: top;">该研究针对现有自动驾驶世界动作模型在推理时计算成本高的问题，提出了SimWAM模型。该方法将未来视频预测作为训练监督信号，并通过解耦的注意力机制实现推理时的高效轨迹预测，无需显式生成未来帧。实验结果表明，该模型在保持高精度的同时大幅降低了推理延迟，并展现了良好的跨数据集迁移能力。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>5. Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features</strong><br><span>Sining Ang, Yuguang Yang, Yan Wang</span></td>

@@ -96,9 +96,9 @@
     "summary_zh": "该论文提出了一个名为“灵境”的仿真平台，旨在解决城市环境中异构多智能体协同工作的开发与评估难题。该系统通过整合地理数据重建、多物理引擎同步及统一的任务接口，支持对智能体进行端到端的性能评估与故障诊断。实验结果揭示了模型在长程执行与任务协调方面存在的瓶颈，为具身智能研究提供了可复现的测试基准。"
   },
   {
-    "arxiv_id": "2608.07468v1",
+    "arxiv_id": "2608.07468v2",
     "base_arxiv_id": "2608.07468",
-    "version": 1,
+    "version": 2,
     "title": "SimWAM: A Simple World Action Model for End-to-End Autonomous Driving",
     "authors": [
       "Zongchuang Zhao",
@@ -111,9 +111,9 @@
       "Xiang Bai"
     ],
     "published": "2026-08-07T17:59:09+00:00",
-    "updated": "2026-08-07T17:59:09+00:00",
-    "arxiv_url": "http://arxiv.org/abs/2608.07468v1",
-    "pdf_url": "https://arxiv.org/pdf/2608.07468v1",
+    "updated": "2026-08-11T08:27:03+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.07468v2",
+    "pdf_url": "https://arxiv.org/pdf/2608.07468v2",
     "arxiv_categories": [
       "cs.CV"
     ],
@@ -124,9 +124,9 @@
     "topic_keywords": [
       "RL"
     ],
-    "abstract_en": "World-Action Models (WAMs) improve end-to-end autonomous driving by transferring video dynamics priors to action prediction, but existing methods require costly future generation at inference. We present SimWAM, a simple yet effective WAM that uses video generation purely as a training signal. It co-trains a pretrained video expert and a lightweight action expert with joint flow matching. An isolated attention mask keeps action prediction independent of future frames, allowing the video branch to be discarded after training and leaving a self-contained planner that directly predicts trajectories. Since the two experts share no parameters and interact only through a unified attention interface, the video backbone could be replaced and the action expert scaled independently without modifying the learning objective or inference pipeline. We further apply reinforcement learning to optimize a compositional driving reward beyond trajectory imitation. Our SimWAM achieves $91.5$ PDMS on NAVSIM, surpasses state-of-the-art WAM-based planners with substantially lower latency, and transfers zero-shot to nuScenes. These results position SimWAM as a simple yet solid baseline that could readily benefit from advances in video generation for efficient autonomous driving. The code and model weights are available at https://github.com/H-EmbodVis/SimWAM/",
-    "abstract_zh": "世界行动模型（WAMs）通过将视频动态先验迁移至行动预测，提升了端到端自动驾驶的性能，但现有方法在推理阶段需要进行昂贵的未来帧生成。我们提出了 SimWAM，这是一种简单且高效的 WAM，仅将视频生成作为一种训练信号。它利用联合流匹配（Joint Flow Matching）技术，联合训练一个预训练的视频专家和一个轻量级的行动专家。通过采用一种隔离的注意力掩码，使行动预测在推理时独立于未来帧，从而在训练后即可舍弃视频分支，留下一个直接预测轨迹的独立规划器。由于两个专家不共享参数且仅通过统一的注意力接口进行交互，因此可以在不修改学习目标或推理流程的情况下，更换视频主干网络或独立扩展行动专家。此外，我们应用强化学习来优化轨迹模仿之外的组合驾驶奖励。SimWAM 在 NAVSIM 上达到了 91.5 的 PDMS 分数，在显著降低延迟的同时超越了现有的基于 WAM 的规划器，并实现了对 nuScenes 的零样本迁移。这些结果表明，SimWAM 是一个简单而稳健的基准模型，可以从视频生成的进展中获益，以实现高效的自动驾驶。",
-    "summary_zh": "针对端到端自动驾驶中视频动态模型推理成本高的问题，SimWAM 提出将视频生成仅作为训练信号，通过联合流匹配训练轻量级行动专家。该方法实现了训练与推理的分离，在无需未来帧生成的情况下保持了高性能，并支持灵活的架构扩展与强化学习奖励优化。"
+    "abstract_en": "World-Action Models (WAMs) improve end-to-end autonomous driving by transferring video dynamics priors to action prediction, but existing methods incur costly test-time future imagination. We present SimWAM, a simple yet effective WAM that leverages future-video prediction as a training-time supervision signal. It co-trains a pretrained video expert and a lightweight action expert with joint flow matching. An isolated attention mask keeps action prediction independent of future frames, allowing trajectory prediction without explicit future-frame generation at inference. Since the two experts share no parameters and interact only through a unified attention interface, the video backbone could be replaced and the action expert scaled independently without modifying the learning objective or inference pipeline. We further apply reinforcement learning to optimize a compositional driving reward beyond trajectory imitation. Our SimWAM achieves 91.5 PDMS on NAVSIM, surpasses state-of-the-art WAM-based planners with substantially lower latency, and transfers zero-shot to nuScenes. These results position SimWAM as a simple yet solid baseline that could readily benefit from advances in video generation for efficient autonomous driving. The code and model weights are available at https://github.com/H-EmbodVis/SimWAM/.",
+    "abstract_zh": "世界动作模型（WAMs）通过将视频动态先验迁移到动作预测，提升了端到端自动驾驶的性能，但现有方法在测试阶段需要耗费高昂的未来场景想象成本。我们提出了SimWAM，这是一种简单而有效的WAM，它利用未来视频预测作为训练阶段的监督信号。该方法通过联合流匹配共同训练一个预训练的视频专家和一个轻量级的动作专家。一个独立的注意力掩码使动作预测不再依赖于未来帧，从而在推理时无需显式生成未来帧即可实现轨迹预测。由于两个专家不共享参数且仅通过统一的注意力接口进行交互，因此可以在不修改学习目标或推理流程的情况下替换视频主干或独立缩放动作专家。此外，我们应用强化学习来优化超出轨迹模仿范畴的复合驾驶奖励。SimWAM在NAVSIM上达到了91.5的PDMS得分，在显著降低延迟的同时超越了现有的基于WAM的规划器，并实现了对nuScenes的零样本迁移。这些结果表明SimWAM是一个简单且扎实的基线模型，能够直接从视频生成技术的进步中获益，实现高效的自动驾驶。",
+    "summary_zh": "该研究针对现有自动驾驶世界动作模型在推理时计算成本高的问题，提出了SimWAM模型。该方法将未来视频预测作为训练监督信号，并通过解耦的注意力机制实现推理时的高效轨迹预测，无需显式生成未来帧。实验结果表明，该模型在保持高精度的同时大幅降低了推理延迟，并展现了良好的跨数据集迁移能力。"
   },
   {
     "arxiv_id": "2608.06008v1",
