@@ -1,5 +1,42 @@
 [
   {
+    "arxiv_id": "2608.20111v1",
+    "base_arxiv_id": "2608.20111",
+    "version": 1,
+    "title": "Planning-Oriented End-to-End Autonomous Driving: Architectures, Evaluation, and Emerging Paradigms",
+    "authors": [
+      "Yanchen Guan",
+      "Xingcheng Liu",
+      "Bin Rao",
+      "Chengyue Wang",
+      "Guofa Li",
+      "Yunjian Li",
+      "Lishengsa Yue",
+      "Zhiyong Cui",
+      "Chengzhong Xu",
+      "Zhenning Li"
+    ],
+    "published": "2026-08-20T14:41:36+00:00",
+    "updated": "2026-08-20T14:41:36+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2608.20111v1",
+    "pdf_url": "https://arxiv.org/pdf/2608.20111v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.ET"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "distillation"
+    ],
+    "abstract_en": "End-to-end autonomous driving has evolved from camera-to-control regression toward planning-oriented systems that use structured representations, trajectory-level outputs, and increasingly realistic evaluation protocols. This survey reviews this transition across behavior cloning, conditional imitation learning, privileged distillation, BEV and vectorized planning, unified perception-prediction-planning architectures, world-model-based planners, and vision-language-action systems. We argue that the key distinction in modern end-to-end driving is not whether intermediate representations are used, but whether they are learned, supervised, and evaluated to support safe, feasible, and route-compliant planning. To organize the literature, we synthesize existing methods along four axes: input representation, planning output, supervision signal, and evaluation protocol. We further examine the benchmark shift from open-loop trajectory matching to closed-loop simulation, non-reactive real-log evaluation, long-tail testing, and human-preference-aware metrics. Our analysis highlights that architectural progress is difficult to interpret without benchmark-consistent evaluation, and that displacement-based open-loop metrics alone provide limited evidence for safe and human-aligned driving. We conclude with open challenges in uncertainty-aware planning, learner-expert mismatch, runtime safety assurance, language-action grounding, world-model validation, and reproducible benchmarking.",
+    "abstract_zh": "端到端自动驾驶已从摄像头到控制的回归模型，演变为使用结构化表征、轨迹级输出以及日益逼真的评估协议的规划导向系统。本综述回顾了这一转变过程，涵盖了行为克隆、条件模仿学习、特权蒸馏、BEV与向量化规划、统一感知-预测-规划架构、基于世界模型的规划器以及视觉-语言-动作系统。我们认为，现代端到端驾驶的关键区别不在于是否使用了中间表征，而在于这些表征是否经过学习、监督和评估，以支持安全、可行且符合路线要求的规划。为了整理相关文献，我们从输入表征、规划输出、监督信号和评估协议四个维度对现有方法进行了归纳。我们进一步审视了基准测试从开环轨迹匹配向闭环仿真、非反应式真实日志评估、长尾测试以及基于人类偏好的指标的转变。我们的分析强调，若脱离与基准一致的评估，架构的进步将难以解读，且单纯基于位移的开环指标对于证明安全和符合人类行为的驾驶证据有限。最后，我们总结了在不确定性感知规划、学习者与专家不匹配、运行时安全保障、语言-动作映射、世界模型验证以及可复现基准测试方面所面临的挑战。",
+    "summary_zh": "该论文系统回顾了端到端自动驾驶从简单控制模型向规划导向架构的演进，总结了现有方法的关键分类维度并分析了评估基准的转变。文章指出，未来研究需聚焦于闭环评估与更安全的规划方案，以解决当前领域在真实驾驶场景及基准测试中所面临的挑战。"
+  },
+  {
     "arxiv_id": "2608.12854v1",
     "base_arxiv_id": "2608.12854",
     "version": 1,
