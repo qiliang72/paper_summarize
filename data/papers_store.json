@@ -1,5 +1,113 @@
 [
   {
+    "arxiv_id": "2609.04070v1",
+    "title": "Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving",
+    "authors": [
+      "Ruoyu Yao",
+      "Yusen Xie",
+      "Qingzhao Liu",
+      "Pei Liu",
+      "Zewei Yang",
+      "Yipeng Zhu",
+      "Xiaolong Wang",
+      "Jun Ma"
+    ],
+    "published": "2026-09-03T16:42:11+00:00",
+    "updated": "2026-09-03T16:42:11+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.04070v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.04070v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "abstract_en": "Bridging the gap between the discrete reasoning of Vision-Language Models and the continuous, physics-constrained nature of autonomous driving remains a significant challenge. In this work, we introduce LaPla, a unified Vision-Language-Action (VLA) framework featuring latent-aligned planning to seamlessly ground semantic understanding in precise motion execution. We first design an action tokenizer based on a residual vector-quantized variational autoencoder (VQ-VAE), capturing vehicle kinematics and encoding trajectory features into a structured latent space. Rather than discrete codebook lookups that inevitably introduce quantization errors, LaPla repurposes this representation as a physical prior to bridge the modality gap between high-dimensional semantics and the raw action space. Specifically, given multimodal inputs integrating multi-view images, historical actions, and textual instructions, LaPla incorporates concurrent action queries to causally attend to the multimodal context in a single forward pass, projecting hidden states directly into the pretrained VQ-VAE latent space. The frozen decoder then translates these continuous latents into actions, effectively eliminating quantization errors and ensuring physically plausible trajectories while bypassing time-consuming autoregressive generation. Extensive experiments on the nuScenes benchmark demonstrate that LaPla achieves competitive open-loop performance, reducing long-horizon L2 error by 15.52% compared to state-of-the-art VLA methods. Closed-loop evaluations on the NVIDIA AlpaSim simulator further confirm its superior capability in ensuring smooth driving progress, improving the success rate by 33.34 percentage points with significantly reduced inference latency.",
+    "abstract_zh": "弥合视觉语言模型（VLM）的离散推理与自动驾驶中物理约束连续性之间的差距仍然是一项重大挑战。在这项工作中，我们介绍了LaPla，这是一个统一的视觉-语言-行动（VLA）框架，其特征在于潜在对齐规划（latent-aligned planning），能够将语义理解无缝地基础于精确的运动执行中。我们首先设计了一种基于残差向量量化变分自编码器（VQ-VAE）的动作分词器，旨在捕捉车辆运动学并将轨迹特征编码到结构化的潜在空间中。LaPla并没有依赖会导致量化误差的离散码本查找，而是将这种表征重新用作物理先验，以弥合高维语义与原始行动空间之间的模态差距。具体而言，给定集成了多视图图像、历史动作和文本指令的多模态输入，LaPla结合了并发动作查询，在单次前向传递中因果地关注多模态上下文，并将隐藏状态直接投影到预训练的VQ-VAE潜在空间中。随后，冻结的解码器将这些连续的潜在变量转化为动作，有效消除了量化误差并确保了物理上合理的轨迹，同时避开了耗时的自回归生成。在nuScenes基准测试上的广泛实验表明，LaPla实现了具有竞争力的开环性能，与最先进的VLA方法相比，将长程L2误差降低了15.52%。在NVIDIA AlpaSim模拟器上的闭环评估进一步证实了其在确保平稳驾驶进度方面的卓越能力，成功率提高了33.34个百分点，并显著降低了推理延迟。",
+    "summary_zh": "针对视觉语言模型难以直接输出符合物理约束的自动驾驶动作问题，本文提出了LaPla框架。该方法通过设计基于VQ-VAE的动作分词器实现潜在对齐规划，将多模态语义直接映射到连续的动作潜在空间。实验结果表明，该方法在减少计算延迟的同时，显著提升了自动驾驶轨迹预测的精确度与成功率。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2609.04070",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2609.03602v1",
+    "title": "SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving",
+    "authors": [
+      "Jinyang Wang",
+      "Shiwei Li",
+      "Junjian Wang",
+      "Zhiqiang Deng",
+      "Jianbin Gao",
+      "Yihang Zhao",
+      "Liu Liu",
+      "Yongjia Zhao",
+      "Jinlong Chen",
+      "Huirui Xu",
+      "Yifeng Pan",
+      "Kangwei Liu",
+      "Fan Ren",
+      "Ji Tao",
+      "Minghao Yang"
+    ],
+    "published": "2026-09-03T09:47:51+00:00",
+    "updated": "2026-09-03T09:47:51+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.03602v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.03602v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "abstract_en": "World models (WMs) have demonstrated strong potential for end-to-end autonomous driving by learning predictive representations of future scene dynamics. However, generating future videos during inference introduces substantial computational overhead, leading many recent driving WMs to adopt a single front camera as input for efficient deployment. This design restricts spatial coverage in safety-critical maneuvers such as lane changes, merges, and turns. To address this limitation, we propose SV-WAM, a surround-view world-action model (WAM) that preserves full six-camera observations while maintaining efficient inference. SV-WAM leverages future-video prediction as dense training supervision for action learning within a shared generative model, rather than as an inference-time output. At the core of this design is an action-centered causal mask that prevents action tokens from attending to future-video tokens during joint action-video denoising. Consequently, the video branch can be discarded at deployment, enabling efficient action-only planning. Furthermore, we introduce a differentiable drivable-area compliance regularizer that penalizes vehicle-footprint corners approaching or crossing drivable boundaries, improving planning safety and boundary awareness. Extensive experiments on the closed-loop NAVSIMv2 benchmark and the open-loop nuScenes benchmark demonstrate that SV-WAM achieves state-of-the-art planning performance with low inference latency and competitive zero-shot transfer capability.",
+    "abstract_zh": "世界模型（WMs）通过学习未来场景动态的预测表示，在端到端自动驾驶领域展现出巨大潜力。然而，在推理过程中生成未来视频会引入巨大的计算开销，导致许多近期的驾驶世界模型为了高效部署而仅采用单前置摄像头作为输入。这种设计限制了在变道、合流和转弯等安全关键场景下的空间覆盖能力。为了解决这一局限性，我们提出了SV-WAM，这是一种在保持高效推理的同时保留全六目摄像头观测的环视世界-动作模型（WAM）。SV-WAM利用未来视频预测作为共享生成模型内部动作学习的密集训练监督，而不是作为推理时的输出。该设计的核心是一个以动作为中心的因果掩码，它在联合动作-视频去噪过程中阻止动作标记关注未来视频标记。因此，视频分支可以在部署时被丢弃，从而实现高效的纯动作规划。此外，我们引入了一种可微的可行驶区域合规正则化器，用于惩罚接近或越过可行驶边界的车辆足迹角，从而提高了规划的安全性和边界感知能力。在闭环NAVSIMv2基准测试和开环nuScenes基准测试上的广泛实验表明，SV-WAM以较低的推理延迟实现了最先进的规划性能，并具备卓越的零样本迁移能力。",
+    "summary_zh": "针对现有端到端自动驾驶世界模型在环视覆盖与计算效率之间的权衡问题，本文提出了一种名为SV-WAM的高效环视世界-动作模型。该模型通过在训练中引入视频预测作为监督信号，并配合以动作为中心的因果掩码，实现了在推理阶段仅输出动作规划的轻量化部署。实验表明，该方法在保证较低延迟的同时，显著提升了驾驶规划的安全性与性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2609.03602",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2609.03225v1",
+    "title": "Long-Horizon Consistent and Interaction-Aware World Models for Multi-Style End-to-End Driving",
+    "authors": [
+      "Yuxuan Han",
+      "Kunyuan Wu",
+      "Liyunong Yang",
+      "Zilu Wang",
+      "Cansen Jiang",
+      "Yi Xiao",
+      "Liang Hu"
+    ],
+    "published": "2026-09-03T00:00:39+00:00",
+    "updated": "2026-09-03T00:00:39+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.03225v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.03225v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "End-to-end autonomous driving has increasingly adopted world model-based reinforcement learning frameworks to improve learning efficiency through \\textit{imagined rollouts}. However, existing world models suffer from three key limitations: temporal inconsistency in long-horizon imagined rollouts, inadequate modeling of ego-environment interactions, and limited adaptability to diverse driving styles. To address these challenges, we propose \\textit{StyleDrive}, a world-model-based learning framework that jointly enforces long-horizon consistency, explicitly disentangles interactive traffic states, and supports multi-style policy optimization within a unified learning paradigm. First, we introduce a temporal consistency regularization that integrates historical latent states through gated cross-attention, stabilizing long-horizon imagined rollouts and mitigating error accumulation. Second, we design an explicit state disentanglement module that separates ego-relevant from ego-irrelevant interactive states, enabling more interpretable and efficient decision-making in complex traffic scenarios. Third, we enable multi-style driving behaviors through Group Relative Policy Optimization, which replaces per-step reward optimization with trajectory-wise relative advantages, reducing reward variance and supporting diverse driving styles without retraining. We evaluate StyleDrive on the Bench2Drive closed-loop driving benchmark, achieving a driving score of 88.44 (+17.08 over the previous best world model-based method) and a success rate of 66.82 (+16.58). Furthermore, we deploy StyleDrive on a real automated guided vehicle platform and demonstrate promising sim-to-real transfer capability in dynamic driving scenarios.",
+    "abstract_zh": "端到端自动驾驶越来越多地采用基于世界模型的强化学习框架，通过“想象回放”（imagined rollouts）来提高学习效率。然而，现有的世界模型存在三个主要局限：长程想象回放中的时间不一致性、对自我-环境交互建模不足，以及对多样化驾驶风格的适应性有限。为了应对这些挑战，我们提出了 StyleDrive，这是一个基于世界模型的学习框架，在统一的学习范式下同时实现了长程一致性、显式解耦的交互交通状态，并支持多风格策略优化。首先，我们引入了一种时间一致性正则化方法，通过门控交叉注意力机制整合历史潜在状态，从而稳定长程想象回放并减轻误差累积。其次，我们设计了一个显式状态解耦模块，将与自我相关的交互状态与无关状态分离开来，使得在复杂交通场景下的决策更具可解释性和效率。第三，我们通过群组相对策略优化实现了多风格驾驶行为，用轨迹级相对优势取代了单步奖励优化，在无需重训的情况下降低了奖励方差并支持了多种驾驶风格。我们在 Bench2Drive 闭环驾驶基准上评估了 StyleDrive，获得了 88.44 的驾驶评分（较之前最好的基于世界模型的方法提升了 17.08）和 66.82 的成功率（提升了 16.58）。此外，我们将 StyleDrive 部署在真实的自动导引车平台上，展示了其在动态驾驶场景中良好的模拟到现实（sim-to-real）迁移能力。",
+    "summary_zh": "针对现有自动驾驶世界模型在长程一致性、交互建模及风格适应性上的不足，本文提出了 StyleDrive 框架。该方法通过引入时间一致性正则化、显式状态解耦模块以及群组相对策略优化，显著提升了驾驶决策的稳定性和多样性。实验证明该方法在闭环基准测试中表现卓越，并具备良好的实车迁移潜力。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "RL"
+    ],
+    "base_arxiv_id": "2609.03225",
+    "version": 1
+  },
+  {
     "arxiv_id": "2608.21032v1",
     "title": "Roadside-Cooperative Autonomous Driving: From Data Platform to Vision-Language End-to-End Reasoning",
     "authors": [
