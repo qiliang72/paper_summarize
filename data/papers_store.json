@@ -1,5 +1,35 @@
 [
   {
+    "arxiv_id": "2609.17728v1",
+    "title": "RAF-VLA: Representation Alignment with the Future for End-to-End Autonomous Driving",
+    "authors": [
+      "Dogun Kim",
+      "Yongjae Lee",
+      "Joonhee Lim",
+      "Yeina Lee",
+      "Junhyeok Park",
+      "Moogeun Park",
+      "Dongsuk Kum"
+    ],
+    "published": "2026-09-15T18:39:00+00:00",
+    "updated": "2026-09-15T18:39:00+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.17728v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.17728v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "Recent Vision-Language-Action (VLA) models for autonomous driving have incorporated world modeling by predicting future driving scenes alongside driving actions, demonstrating strong planning performance. Future driving scenes are utilized as dense supervision, encouraging the policy to learn rich internal representations useful for planning. However, these World-Modeling VLAs rely on explicit future generation to learn such representations, thereby introducing two key limitations: additional training burden and inference latency. To address these limitations, we propose RAF-VLA (Representation Alignment with the Future), a VLA-based autonomous driving framework that shapes planning-relevant internal representations through direct guidance from future-frame representations. RAF-VLA employs Future-Aligned Supervised Fine-Tuning, in which a straightforward regularization aligns the policy's hidden states with future-frame representations obtained from a pretrained world encoder while learning driving actions. This simple alignment allows RAF-VLA to avoid the training burden and inference latency associated with future generation. Extensive experiments on the NAVSIM benchmark show that RAF-VLA achieves competitive planning performance against state-of-the-art VLA planners with substantially fewer training samples seen. Moreover, RAF-VLA incurs only 3.8% training overhead and a negligible 1 ms inference overhead.",
+    "abstract_zh": "近期用于自动驾驶的视觉-语言-动作（VLA）模型通过在预测驾驶动作的同时预测未来驾驶场景来整合世界模型，展现出了强大的规划性能。未来驾驶场景被用作密集监督信号，鼓励策略学习对规划有用的丰富内部表示。然而，这些世界建模型VLA依赖于显式的未来生成来学习此类表示，从而引入了两个关键限制：额外的训练负担和推理延迟。为了解决这些限制，我们提出了RAF-VLA（Representation Alignment with the Future），这是一种基于VLA的自动驾驶框架，通过来自未来帧表示的直接引导来塑造与规划相关的内部表示。RAF-VLA采用了“未来对齐监督微调”方法，通过一种简单的正则化手段，在学习驾驶动作的同时，将策略的隐藏状态与从预训练世界编码器获得的未来帧表示进行对齐。这种简单的对齐方式使RAF-VLA避免了与未来生成相关的训练负担和推理延迟。在NAVSIM基准测试上的大量实验表明，RAF-VLA在训练样本量显著减少的情况下，达到了与最先进的VLA规划器相当的规划性能。此外，RAF-VLA仅产生了3.8%的训练开销和可忽略不计的1毫秒推理开销。",
+    "summary_zh": "针对现有世界建模型VLA自动驾驶模型依赖显式未来生成带来的计算负担和延迟问题，该论文提出了RAF-VLA框架。该方法通过将策略隐藏状态与预训练世界编码器的未来帧表示进行直接正则化对齐，在无需生成未来场景的情况下有效提升了规划性能。实验结果证明，该方法在显著降低训练和推理开销的同时，保持了与主流模型相当的规划效果。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [],
+    "base_arxiv_id": "2609.17728",
+    "version": 1
+  },
+  {
     "arxiv_id": "2609.06055v1",
     "title": "DriveZero: End-to-End Driving Beyond Human Demonstrations",
     "authors": [
