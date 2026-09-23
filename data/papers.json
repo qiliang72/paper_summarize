@@ -1,8 +1,47 @@
 [
   {
-    "arxiv_id": "2609.21712v1",
-    "base_arxiv_id": "2609.21712",
+    "arxiv_id": "2609.26299v1",
+    "base_arxiv_id": "2609.26299",
     "version": 1,
+    "title": "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model",
+    "authors": [
+      "Sinuo Wang",
+      "Zichong Gu",
+      "Yuhan Huang",
+      "Wenxin Wen",
+      "Xun Yang",
+      "Yiqing Zhang",
+      "Xingyu Zhang",
+      "Ningyu Che",
+      "Jie Ling",
+      "Qiankun Yu",
+      "Wei Liu",
+      "Jing Xu",
+      "Xinggang Wang"
+    ],
+    "published": "2026-09-22T12:11:18+00:00",
+    "updated": "2026-09-22T12:11:18+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.26299v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.26299v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "RL"
+    ],
+    "abstract_en": "Existing latent world models are typically optimized for future predictability, yet the resulting representations are not necessarily useful for planning in autonomous driving. Predictions are commonly used for pretraining or auxiliary supervision rather than as direct conditioning signals for trajectory generation. We propose ForeDrive, which learns a planning-relevant latent representation and couples it asymmetrically to a Diffusion Transformer (DiT) planner. The planner consumes multi-horizon latent future representations learned with a JEPA-style world model; planning gradients update the shared online encoder, while stop-gradient routing trains the latent predictor with forecasting losses only. Because predicted futures have varying reliability across horizons and BEV trajectories are misaligned with image tokens, we use gated visual fusion, future-status injection, and Trajectory-Adaptive Bias (TAB) to inject future latents as guidance without overriding the current observation. Trained with pure imitation learning and using only the current front-view image as visual input at inference, ForeDrive attains 89.9 PDMS on NAVSIM v1 and 90.0 one-stage EPDMS on NAVSIM v2, without reinforcement learning or an external trajectory scorer.",
+    "abstract_zh": "现有的潜在世界模型通常针对未来可预测性进行优化，但由此产生的表征并不一定对自动驾驶中的规划任务有用。预测通常用于预训练或辅助监督，而非作为轨迹生成的直接调节信号。我们提出了 ForeDrive，它学习了一种与规划相关的潜在表征，并将其非对称地耦合到扩散变换器（DiT）规划器中。该规划器使用通过 JEPA 式世界模型学习的多时间跨度潜在未来表征；规划梯度更新共享的在线编码器，而停止梯度路由仅利用预测损失来训练潜在预测器。由于预测的未来在不同时间跨度下的可靠性各不相同，且鸟瞰图（BEV）轨迹与图像标记未对齐，我们采用了门控视觉融合、未来状态注入和轨迹自适应偏差（TAB）技术，在不覆盖当前观测的情况下引入未来潜在表征作为指导。ForeDrive 仅通过模仿学习训练，且在推理时仅使用当前的正面图像作为视觉输入，在 NAVSIM v1 上达到了 89.9 的 PDMS，在 NAVSIM v2 上达到了 90.0 的单阶段 EPDMS，且无需强化学习或外部轨迹评分器。",
+    "summary_zh": "针对现有世界模型表征在自动驾驶规划中的局限性，本文提出 ForeDrive 框架，通过引入与规划相关的潜在表征并利用扩散变换器进行轨迹生成。该方法通过非对称耦合策略和多种指导机制，在仅依赖模仿学习和单视点图像输入的情况下，实现了自动驾驶规划性能的显著提升。"
+  },
+  {
+    "arxiv_id": "2609.21712v2",
+    "base_arxiv_id": "2609.21712",
+    "version": 2,
     "title": "ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation",
     "authors": [
       "Boni Hu",
@@ -23,15 +62,16 @@
       "Jiaxin Wei",
       "Hao Sun",
       "Feihong Yan",
+      "Yuyao Zhou",
       "Wei Bi",
       "Kaixuan Wang",
       "Zichao Guo",
       "Xiaozhi Chen"
     ],
     "published": "2026-09-18T12:49:01+00:00",
-    "updated": "2026-09-18T12:49:01+00:00",
-    "arxiv_url": "http://arxiv.org/abs/2609.21712v1",
-    "pdf_url": "https://arxiv.org/pdf/2609.21712v1",
+    "updated": "2026-09-22T08:09:23+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.21712v2",
+    "pdf_url": "https://arxiv.org/pdf/2609.21712v2",
     "arxiv_categories": [
       "cs.CV"
     ],
@@ -44,8 +84,8 @@
       "distillation"
     ],
     "abstract_en": "Generative world models offer controllable and repeatable closed-loop simulation for end-to-end and vision-language-action driving policies, but production deployment exposes three unresolved requirements: faithfully reproducing a mixed fisheye-pinhole rig at native resolutions; reconciling causal, per-timestep interaction with long-horizon stability and low latency; and preserving scene identity when a location is revisited. We present ZYT-World, a single architecture that natively generates four fisheye views with field of view > 180° and three pinhole views. Projection-specific Plucker adapters encode camera geometry, ego-motion adaptive layer normalization provides global motion control, and a lightweight pixel-aligned layout conditions traffic participants and signals through instance-level boxes, headings and colors. Heterogeneous training combines full-rig geometric coverage with high-resolution detail. Teacher forcing, causal consistency distillation, self-rollout distribution matching distillation, and RigCritic transform a 40-step bidirectional teacher into a one-step, per-latent streaming generator, with RigCritic evaluating the seven-view rig jointly. A 19M-parameter variational autoencoder decoder (TinyVAE), W8A8 quantization, and our inference engine reduce decoding, backbone, and incremental-execution costs, respectively. Finally, cross-trajectory pairs derived from real captures train a plug-in implicit-memory module that preserves place-specific evidence. On the internal multi-view test set, the one-step model retains more than 90% of the teacher's PSNR and SSIM, while FID, FVD, and LPIPS stay within 11% of the teacher. Under the generator-only timing in Figure 2, it is 107.7 times faster than the 40-step bidirectional teacher. TinyVAE decodes 59.8 times faster than Wan. 30s rollouts and cross-trajectory revisits show the intended long-horizon and memory behavior.",
-    "abstract_zh": "生成式世界模型为端到端及视觉-语言-动作驾驶策略提供了可控且可重复的闭环仿真，但实际部署面临三个未解决的需求：忠实地以原生分辨率复现混合鱼眼-针孔相机模组、协调因果交互与长周期稳定性及低延迟，以及在重访地点时保持场景一致性。我们提出了 ZYT-World，这是一种单一架构，可原生生成四个视场角大于 180° 的鱼眼视图和三个针孔视图。通过投影特定的 Plucker 适配器编码相机几何结构，利用自运动自适应层归一化提供全局运动控制，并使用轻量级像素对齐布局，通过实例级框、朝向和颜色来调节交通参与者和信号。异构训练结合了全模组几何覆盖与高分辨率细节。通过教师强制、因果一致性蒸馏、自回滚分布匹配蒸馏以及 RigCritic，我们将 40 步双向教师模型转化为单步逐潜空间流式生成器，并由 RigCritic 对七视图模组进行联合评估。19M 参数的变分自编码器解码器 (TinyVAE)、W8A8 量化以及我们的推理引擎分别降低了解码、骨干网和增量执行成本。最后，源自真实捕获的跨轨迹对训练了一个插件式隐式记忆模块，以保留特定地点的证据。在内部多视图测试集上，该单步模型保留了教师模型 90% 以上的 PSNR 和 SSIM，且 FID、FVD 和 LPIPS 指标与教师模型的差距在 11% 以内。在仅生成器计时测试中，其速度比 40 步双向教师模型快 107.7 倍，TinyVAE 解码速度比 Wan 快 59.8 倍。30 秒的回滚和跨轨迹重访实验展示了预期的长周期稳定性和记忆行为。",
-    "summary_zh": "针对自动驾驶闭环仿真中混合相机视角生成、长周期稳定性和低延迟的挑战，ZYT-World 提出了一种单架构流式生成器。通过采用投影适配器、轻量级布局控制及多阶段蒸馏策略，该模型实现了高效的原生多视图生成，并显著提升了长周期仿真和场景重访的性能。"
+    "abstract_zh": "生成式世界模型为端到端及视觉-语言-动作驾驶策略提供了可控且可重复的闭环仿真，但实际部署中存在三个未解决的需求：忠实地以原生分辨率重现鱼眼和针孔混合相机阵列；协调因果化的单步交互与长时稳定性及低延迟；以及在重访地点时保持场景身份的一致性。我们提出了ZYT-World，这是一种单一架构，可原生生成四个视场角大于180°的鱼眼视图和三个针孔视图。投影特定的Plucker适配器编码相机几何结构，自我运动自适应层归一化提供全局运动控制，轻量级的像素对齐布局通过实例级边框、朝向和颜色来调节交通参与者和信号。异构训练结合了全阵列几何覆盖与高分辨率细节。通过教师强制、因果一致性蒸馏、自我滚存分布匹配蒸馏和RigCritic评估，我们将40步双向教师模型转化为单步潜空间流式生成器，并由RigCritic对七视图阵列进行联合评估。1900万参数的变分自编码器解码器（TinyVAE）、W8A8量化以及推理引擎分别降低了解码、主干网络和增量执行成本。最后，源自真实采集的跨轨迹对训练了一个插件式隐式记忆模块，以保留特定地点的证据。在内部多视图测试集上，单步模型保留了超过90%的教师模型PSNR和SSIM，而FID、FVD和LPIPS指标保持在教师模型的11%以内。在仅考虑生成器的时间测试中，其速度比40步双向教师模型快107.7倍。TinyVAE的解码速度比Wan快59.8倍。30秒的滚存测试和跨轨迹重访展示了预期的长时性能和记忆行为。",
+    "summary_zh": "针对自动驾驶闭环仿真中多相机阵列生成面临的分辨率、延迟及记忆一致性挑战，本文提出了ZYT-World模型。该方法通过采用投影适配器、轻量级布局调节以及多种蒸馏技术，实现了高效的单步流式多视角图像生成。实验结果表明，该架构在保持高画质的同时显著提升了推理速度，并具备良好的长时稳定性与场景记忆能力。"
   },
   {
     "arxiv_id": "2609.20756v1",
