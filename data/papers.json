@@ -1,8 +1,41 @@
 [
   {
-    "arxiv_id": "2609.26299v1",
-    "base_arxiv_id": "2609.26299",
+    "arxiv_id": "2609.28366v1",
+    "base_arxiv_id": "2609.28366",
     "version": 1,
+    "title": "AnchorReasoning: A Visual Grounding and Causal Reasoning Dataset in Long-Tail Autonomous Driving Scenarios",
+    "authors": [
+      "Zhipeng Bao",
+      "Wenjie Zhao",
+      "Tianle Zhu",
+      "Haohua Que",
+      "Chence Yang",
+      "Geng Yuan",
+      "Qianwen Li"
+    ],
+    "published": "2026-09-23T16:38:06+00:00",
+    "updated": "2026-09-23T16:38:06+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.28366v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.28366v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Vision-language models (VLMs) offer a promising approach to long-tail autonomous driving, but existing driving datasets provide limited supervision for connecting decision-critical visual evidence with reasoning and planning. We introduce AnchorReasoning, a visually grounded reasoning dataset built on WOD-E2E, containing 416,119 annotated frames and 395,379 decision-critical elements across four major categories and 19 fine-grained types. Each frame is organized as a visually grounded chain-of-thought (VG-CoT) that links decision-critical element identification and localization, element attributes and implications, driving-action rationale, and action and trajectory planning. We further develop a curriculum supervised fine-tuning strategy that progressively learns these hierarchical capabilities, together with an object-size-aware grounding metric for evaluating localization quality. Experiments across eight general-purpose, embodied-AI, and AV-specific backbones show that VG-CoT supervision improves grounded reasoning and trajectory prediction. Across models, 5-s ADE and FDE decrease by 7.84 and 11.86, while RFS Frame and Cluster improve by 1.66 and 1.70. These gains are achieved with 18.5 fewer reasoning tokens and 0.32 s/frame lower inference latency on average, demonstrating the value of visually grounded, decision-focused supervision for VLM reasoning and planning in long-tail autonomous driving.",
+    "abstract_zh": "视觉语言模型（VLM）为长尾自动驾驶提供了一种有前景的方案，但现有的驾驶数据集在连接决策关键的视觉证据与推理规划方面提供的监督有限。我们介绍了 AnchorReasoning，这是一个基于 WOD-E2E 构建的视觉基础推理数据集，包含 416,119 帧标注数据和涵盖四大类及 19 个细分类型的 395,379 个决策关键元素。每一帧均组织为视觉基础思维链（VG-CoT），将决策关键元素的识别与定位、元素属性与影响、驾驶行为原理以及动作与轨迹规划联系起来。我们进一步开发了一种课程监督微调策略，逐步学习这些层次化能力，并提出了一种用于评估定位质量的目标尺寸感知基础指标。在八种通用、具身 AI 和自动驾驶专用主干网络上的实验表明，VG-CoT 监督改善了基础推理和轨迹预测效果。在各模型中，5 秒的 ADE 和 FDE 分别降低了 7.84 和 11.86，而 RFS Frame 和 Cluster 分别提升了 1.66 和 1.70。这些性能增益是在平均减少 18.5 个推理 token 和降低 0.32 秒/帧推理延迟的情况下实现的，证明了以决策为中心的视觉基础监督对于长尾自动驾驶中 VLM 推理和规划的价值。",
+    "summary_zh": "针对长尾自动驾驶场景中缺乏决策关键视觉推理数据的问题，本研究提出了 AnchorReasoning 数据集，构建了包含视觉基础思维链的层次化标注体系。通过采用课程监督微调策略和目标尺寸感知评估指标，该方法有效提升了视觉语言模型在复杂驾驶任务中的推理精度与轨迹预测性能，同时降低了推理延迟。"
+  },
+  {
+    "arxiv_id": "2609.26299v2",
+    "base_arxiv_id": "2609.26299",
+    "version": 2,
     "title": "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model",
     "authors": [
       "Sinuo Wang",
@@ -20,9 +53,9 @@
       "Xinggang Wang"
     ],
     "published": "2026-09-22T12:11:18+00:00",
-    "updated": "2026-09-22T12:11:18+00:00",
-    "arxiv_url": "http://arxiv.org/abs/2609.26299v1",
-    "pdf_url": "https://arxiv.org/pdf/2609.26299v1",
+    "updated": "2026-09-23T03:41:55+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.26299v2",
+    "pdf_url": "https://arxiv.org/pdf/2609.26299v2",
     "arxiv_categories": [
       "cs.CV"
     ],
@@ -35,8 +68,8 @@
       "RL"
     ],
     "abstract_en": "Existing latent world models are typically optimized for future predictability, yet the resulting representations are not necessarily useful for planning in autonomous driving. Predictions are commonly used for pretraining or auxiliary supervision rather than as direct conditioning signals for trajectory generation. We propose ForeDrive, which learns a planning-relevant latent representation and couples it asymmetrically to a Diffusion Transformer (DiT) planner. The planner consumes multi-horizon latent future representations learned with a JEPA-style world model; planning gradients update the shared online encoder, while stop-gradient routing trains the latent predictor with forecasting losses only. Because predicted futures have varying reliability across horizons and BEV trajectories are misaligned with image tokens, we use gated visual fusion, future-status injection, and Trajectory-Adaptive Bias (TAB) to inject future latents as guidance without overriding the current observation. Trained with pure imitation learning and using only the current front-view image as visual input at inference, ForeDrive attains 89.9 PDMS on NAVSIM v1 and 90.0 one-stage EPDMS on NAVSIM v2, without reinforcement learning or an external trajectory scorer.",
-    "abstract_zh": "现有的潜在世界模型通常针对未来可预测性进行优化，但由此产生的表征并不一定对自动驾驶中的规划任务有用。预测通常用于预训练或辅助监督，而非作为轨迹生成的直接调节信号。我们提出了 ForeDrive，它学习了一种与规划相关的潜在表征，并将其非对称地耦合到扩散变换器（DiT）规划器中。该规划器使用通过 JEPA 式世界模型学习的多时间跨度潜在未来表征；规划梯度更新共享的在线编码器，而停止梯度路由仅利用预测损失来训练潜在预测器。由于预测的未来在不同时间跨度下的可靠性各不相同，且鸟瞰图（BEV）轨迹与图像标记未对齐，我们采用了门控视觉融合、未来状态注入和轨迹自适应偏差（TAB）技术，在不覆盖当前观测的情况下引入未来潜在表征作为指导。ForeDrive 仅通过模仿学习训练，且在推理时仅使用当前的正面图像作为视觉输入，在 NAVSIM v1 上达到了 89.9 的 PDMS，在 NAVSIM v2 上达到了 90.0 的单阶段 EPDMS，且无需强化学习或外部轨迹评分器。",
-    "summary_zh": "针对现有世界模型表征在自动驾驶规划中的局限性，本文提出 ForeDrive 框架，通过引入与规划相关的潜在表征并利用扩散变换器进行轨迹生成。该方法通过非对称耦合策略和多种指导机制，在仅依赖模仿学习和单视点图像输入的情况下，实现了自动驾驶规划性能的显著提升。"
+    "abstract_zh": "",
+    "summary_zh": "Gemini 总结暂不可用。英文摘要要点预览：Existing latent world models are typically optimized for future predictability, yet the resulting representations are not necessarily useful for planning in autonomous driving. Predictions are commonly used for pretraining or auxiliary supervision rather than ..."
   },
   {
     "arxiv_id": "2609.21712v2",
