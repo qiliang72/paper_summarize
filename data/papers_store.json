@@ -1,5 +1,37 @@
 [
   {
+    "arxiv_id": "2609.34085v1",
+    "title": "AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving",
+    "authors": [
+      "Haoran Zhu",
+      "Wancong Zhang",
+      "Yann LeCun",
+      "Anna Choromanska"
+    ],
+    "published": "2026-09-28T01:22:22+00:00",
+    "updated": "2026-09-28T01:22:22+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2609.34085v1",
+    "pdf_url": "https://arxiv.org/pdf/2609.34085v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "abstract_en": "Autonomous driving requires \\textit{world models} that can understand the physical world, reason and plan, and operate safely. In this paper, we first systematically evaluate existing action-conditioned joint-embedding predictive architecture (JEPA) world models, including LeWM, DINO-WM, and JEPA-WM for end-to-end autonomous driving (E2EAD). To isolate world-model quality from policy learning, we employ a goal-conditioned zero-shot planning setting that evaluates these models using ground-truth future observations as goals, without training any driving policy. We find that existing JEPA-based world models are either accurate for driving but computationally expensive, or computationally efficient but insufficient for planning. To address this trade-off, we propose \\textbf{AD-E2E-JEPA}, which introduces a SIGReg-regularized learnable projector applied to projected patch embeddings. The projector reduces the number of planning patches by $16\\times$ and the embedding dimension by $4\\times$, achieving a $100\\times$ inference speedup while retaining planning performance, with a 0.8-second runtime for an 8-frame rollout over 256 candidate trajectories. \\textit{Without} training any driving policy, the world model itself reaches the goals located 20 meters away on average within the displacement of respectively 4.0/2.8 meters, using world-model rollouts over trajectory vocabularies of respectively 256/8,192 candidates. On the NAVSIMv2 benchmark, it achieves 67.3/72.9 EPDMS with multiplicative safety metrics and 84.1/86.5 EPDMS$^{\\dagger}$ without them in goal-conditioned zero-shot planning. Experiments further show that the self-supervised pretrained projector improves downstream imitation learning performance from 80.2 to 85.4 EPDMS. The source code is available at https://github.com/HaoranZhuExplorer/AD-E2E-JEPA",
+    "abstract_zh": "自动驾驶需要能够理解物理世界、进行推理规划并安全操作的世界模型。本文首先系统地评估了现有的动作条件联合嵌入预测架构（JEPA）世界模型在端到端自动驾驶（E2EAD）中的应用，包括 LeWM、DINO-WM 和 JEPA-WM。为了将世界模型质量与策略学习隔离开来，我们采用了目标条件零样本规划设置，在不训练任何驾驶策略的情况下，利用地面真值未来观测作为目标来评估这些模型。我们发现现有的基于 JEPA 的世界模型要么在驾驶方面准确但计算昂贵，要么计算高效但不足以进行规划。为了解决这一权衡，我们提出了 AD-E2E-JEPA，它引入了一种应用于投影块嵌入的 SIGReg 正则化可学习投影器。该投影器将规划块数量减少了 16 倍，将嵌入维度减少了 4 倍，在保持规划性能的同时实现了 100 倍的推理加速，在 256 条候选轨迹上进行 8 帧展开的运行时间仅为 0.8 秒。在不训练任何驾驶策略的情况下，该世界模型本身在 256/8,192 个候选轨迹词汇表上进行展开，平均能在 4.0/2.8 米的位移内到达 20 米远的目标。在 NAVSIMv2 基准测试中，它在目标条件零样本规划中实现了 67.3/72.9 的 EPDMS（含乘法安全指标）和 84.1/86.5 的 EPDMS$^{\\dagger}$（不含安全指标）。实验进一步表明，自监督预训练的投影器将下游模仿学习的性能从 80.2 提升至 85.4 EPDMS。源代码可在 https://github.com/HaoranZhuExplorer/AD-E2E-JEPA 获取。",
+    "summary_zh": "针对现有自动驾驶 JEPA 世界模型在推理效率与规划精度之间的权衡问题，本文提出了 AD-E2E-JEPA 架构。该模型通过引入 SIGReg 正则化的投影器，在显著提升推理速度的同时保持了良好的零样本规划性能，并有效提升了下游模仿学习的效果。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2609.34085",
+    "version": 1
+  },
+  {
     "arxiv_id": "2609.28969v1",
     "title": "Sim-to-Real Aware End-to-End Learning Environment for Micromobility",
     "authors": [
