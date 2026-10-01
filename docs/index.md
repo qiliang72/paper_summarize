@@ -1,6 +1,6 @@
 # arXiv 自动驾驶论文
 
-Generated: 2026-09-30 23:21 UTC
+Generated: 2026-10-01 23:36 UTC
 
 当前展示 168 篇论文的最新版本。旧版本只保留 arXiv 链接。
 
@@ -24,10 +24,10 @@ Generated: 2026-09-30 23:21 UTC
   <tbody>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>1. RoXDrive: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving via Action-Faithful Rollouts</strong><br><span>Hongbin Lin, Chaoda Zheng, Yiming Yang, Xiangyu Li, Shijia Chen, Jinhao Deng, Kangjie Chen, Dongbin Zhang, Jie Feng, Yu Zhang, Xianming Liu, Shuguang Cui, Boyang Wang, Zhen Li</span></td>
-      <td style="width: 13%; vertical-align: top;"><div>2026-09-29</div><div>2026-09-29</div><div><a href="http://arxiv.org/abs/2609.36851v1">2609.36851v1</a> / <a href="https://arxiv.org/pdf/2609.36851v1">PDF</a></div><div>cs.CV</div></td>
+      <td style="width: 13%; vertical-align: top;"><div>2026-09-29</div><div>2026-09-30</div><div><a href="http://arxiv.org/abs/2609.36851v2">2609.36851v2</a> / <a href="https://arxiv.org/pdf/2609.36851v2">PDF</a></div><div class="old-versions">旧版：<a href="http://arxiv.org/abs/2609.36851v1">v1</a></div><div>cs.CV</div></td>
       <td style="width: 10%; vertical-align: top;">world model, RL</td>
-      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶策略通常通过模仿学习对记录的演示进行训练，而无需观察其自身行为的后果，这导致在闭环真实世界部署中出现因果混淆。为了解决这个问题，强化学习（RL）后训练提供了一种有前景的替代方案，即利用世界模型作为交互式训练环境，实现未来场景生成以改进策略。然而，现有的方法要么依赖于基于重建的模拟器，其反事实交互能力有限；要么采用合成模拟器以实现长视距闭环交互，但却付出了巨大的模拟到现实（sim-to-real）差距的代价。最近，视频世界模型展现出了生成逼真多步未来演进序列的能力，但可能无法忠实地反映动作条件，从而导致动作与视觉的不匹配。在本文中，我们引入了 RoXDrive，这是一个即插即用的闭环强化学习框架，通过识别行为忠实的世界模型演进序列来实现可靠的策略优化。该框架包含两个阶段：1）模型预训练：除了基于模仿的策略预训练外，我们设计了一个行为-视觉忠实度评估器，通过几何感知的辅助轨迹监督进行逆动力学估计，从而对视觉动态是否忠实地反映了条件自动驾驶行为进行长视距评估。2）行为忠实的强化学习后训练：智能体与世界模型进行迭代交互以形成长视距场景演进序列，仅保留行为忠实的序列进行密集的安全感知评分和场景级闭环强化学习后训练。在 nuScenes 和拥有超过 13 万个训练场景的内部数据集上的大量实验证明，该方法在各类规划器中均取得了稳定的收益，在使用 DiffusionDrive 的 nuScenes 数据集上减少了 27.6% 的安全违规，在使用 Qwen3-VL 的内部数据集上减少了 33.7% 的安全违规。</td>
-      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶中模仿学习导致的因果混淆及现有世界模型难以实现行为与视觉一致的问题，论文提出了 RoXDrive 框架。该方法通过引入行为-视觉忠实度评估器，在训练过程中筛选出与动作一致的世界模型演进序列，从而实现更安全可靠的强化学习后训练。实验表明，该方法能有效降低自动驾驶在闭环环境下的安全违规率。</td>
+      <td style="width: 34%; vertical-align: top;"><strong>中文摘要</strong><br>端到端自动驾驶策略通常通过在记录的演示数据上进行模仿学习进行训练，而无需观察其自身行为的后果，这导致在闭环实际部署中产生因果混淆。为了解决这一问题，强化学习（RL）后训练通过利用世界模型作为交互式训练环境来生成未来场景以改进策略，提供了一种有前景的替代方案。然而，现有方法要么依赖基于重构的模拟器，提供有限的反事实交互，要么采用合成模拟器以实现长视野闭环交互，但代价是存在巨大的仿真到现实（sim-to-real）差距。最近，视频世界模型表现出了生成逼真的多步未来预测的能力，但可能无法忠实反映动作条件，导致动作与视觉的不匹配。在本文中，我们引入了RoXDrive，这是一个即插即用的闭环强化学习框架，通过识别动作忠实的世界模型预测结果来实现可靠的策略优化。该框架包含两个阶段：1）模型预训练：除了基于模仿的策略预训练外，我们设计了一个动作-视觉忠实度评估器，利用我们几何感知的辅助轨迹监督进行逆动力学估计，从而能够对视觉动力学是否忠实反映动作条件进行长视野评估。2）动作忠实强化学习后训练：智能体与世界模型进行迭代交互以形成长视野场景预测，并仅保留动作忠实的结果用于密集的安全感知评分和场景级闭环强化学习后训练。在nuScenes和一个包含超过13万个训练场景的内部数据集上的广泛实验表明，该方法在各类规划器中均实现了持续的性能提升，在使用DiffusionDrive于nuScenes上时，安全违规率降低了27.6%，在使用Qwen3-VL于内部数据上时，安全违规率降低了33.7%。</td>
+      <td style="width: 20%; vertical-align: top;">针对端到端自动驾驶中模仿学习导致的因果混淆问题，本文提出了RoXDrive框架，通过引入动作-视觉忠实度评估器筛选高质量的世界模型预测结果。该方法通过在闭环强化学习中仅保留动作忠实的预测进行训练，有效解决了视频生成与动作不匹配的问题，显著提升了自动驾驶策略的安全性和规划能力。</td>
     </tr>
     <tr>
       <td style="width: 23%; vertical-align: top;"><strong>2. AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving</strong><br><span>Haoran Zhu, Wancong Zhang, Yann LeCun, Anna Choromanska</span></td>
