@@ -1,5 +1,35 @@
 [
   {
+    "arxiv_id": "2610.01531v1",
+    "base_arxiv_id": "2610.01531",
+    "version": 1,
+    "title": "Towards Reliable Vision-Language Models for Autonomous Driving",
+    "authors": [
+      "Manasa Mariam Mammen",
+      "Priyanka Mary Mammen",
+      "Zafer Kayatas",
+      "Stefan Wagner"
+    ],
+    "published": "2026-10-01T12:06:13+00:00",
+    "updated": "2026-10-01T12:06:13+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.01531v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.01531v1",
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Vision-Language models (VLMs) are increasingly being explored in autonomous driving for tasks such as scene understanding, driving reasoning, decision-making, and end-to-end driving. As their role becomes more prominent, ensuring their robustness and reliability is increasingly important. In real-world conditions, visual inputs may be degraded by sensor imperfections and environmental conditions, potentially affecting both model predictions and their associated confidence. Such degradation is especially concerning in autonomous driving, where safety-critical decisions require models to make accurate predictions and recognize when their predictions may be unreliable. In this work, we evaluate five VLMs (Qwen3.5-9B, Gemma4-E4B, LLaVA-OneVision-7B, DriveFusion/DriveFusionQA-4B, and NVIDIA Alpamayo-1.5-10B) across four driving-related QA datasets with different visual input settings, including single-frame, multi-view, multi-frame, and monocular inputs. Our results show that the effects of visual corruption vary across models, datasets, and input settings, with changes in accuracy and confidence reliability and also differing across conditions. We then apply Visual Evidence Augmentation ($\\mathrm{V}{\\scriptstyle \\mathrm{EA}}$), a recent inference-time method to examine whether it can improve model reliability under degraded visual conditions. We find that $\\mathrm{V}{\\scriptstyle \\mathrm{EA}}$ improves performance for some models and datasets, although the gains are not consistent across all settings.",
+    "abstract_zh": "视觉-语言模型（VLMs）在自动驾驶领域的场景理解、驾驶推理、决策制定及端到端驾驶等任务中正得到越来越多的探索。随着其作用日益显著，确保其鲁棒性和可靠性变得愈发重要。在现实条件下，视觉输入可能会因传感器缺陷和环境状况而退化，这可能影响模型的预测及其置信度。这种退化在自动驾驶中尤为令人担忧，因为安全关键型决策要求模型不仅能做出准确预测，还要能识别预测何时可能不可靠。在这项工作中，我们在四个与驾驶相关的问答数据集上评估了五种视觉-语言模型（Qwen3.5-9B、Gemma4-E4B、LLaVA-OneVision-7B、DriveFusion/DriveFusionQA-4B 和 NVIDIA Alpamayo-1.5-10B），涵盖了单帧、多视图、多帧和单目输入等不同的视觉输入设置。结果显示，视觉损坏对模型、数据集和输入设置的影响各不相同，准确性和置信度的可靠性也随条件而异。随后，我们应用了一种近期的推理时方法——视觉证据增强（VEA），以检验其能否提高模型在退化视觉条件下的可靠性。我们发现 VEA 在某些模型和数据集上提升了性能，尽管这种增益并非在所有设置中都保持一致。",
+    "summary_zh": "针对自动驾驶中视觉退化影响模型可靠性的问题，本文评估了五种主流视觉-语言模型在多种输入设置下的表现。研究表明视觉损坏对模型性能影响显著且具有差异性，并验证了视觉证据增强方法在部分场景下能有效提升模型性能。"
+  },
+  {
     "arxiv_id": "2609.36851v2",
     "base_arxiv_id": "2609.36851",
     "version": 2,
