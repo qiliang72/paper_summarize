@@ -1,5 +1,72 @@
 [
   {
+    "arxiv_id": "2610.13409v1",
+    "base_arxiv_id": "2610.13409",
+    "version": 1,
+    "title": "ManeuverFlow: Maneuver Hypothesis Generation with Future Evidence for Trajectory Evaluation and Refinement in End-to-End Autonomous Driving",
+    "authors": [
+      "Yuhao Wei",
+      "Yong Chen",
+      "Chen Yang",
+      "Yingchen Wang",
+      "Delin Ouyang",
+      "Lingfeng Qi",
+      "Qi Lan",
+      "Zhanhua Zhang",
+      "Jie Li",
+      "Guofa Li"
+    ],
+    "published": "2026-10-09T11:20:55+00:00",
+    "updated": "2026-10-09T11:20:55+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.13409v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.13409v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "End-to-end planning in complex scenes must model diverse driving intentions and select the most appropriate trajectory using scene context and future risks. However, multi-query regression may collapse to one mode, while anchor-based and generative planners share a scaling bottleneck: small candidate sets limit maneuver coverage or discovery of high-quality trajectories, whereas large sets increase generation and scoring costs. We propose ManeuverFlow to generate trajectories for distinct intentions in one step and evaluate and refine them using current and future evidence. The model selects relevant maneuver modes, draws corresponding noise from the Gaussian mixture prior, and maps it to intention-specific trajectories through a maneuver-routed mixture-of-experts MeanFlow field. Current features and future features predicted by the world model are aggregated along each candidate path into trajectory-specific evidence for PDM-factor prediction. Using the same evidence, the refiner predicts local Frenet residuals for selected candidates; refined and retained candidates are then jointly re-scored for selection. With a lightweight TransFuser-style ResNet-34 backbone, ManeuverFlow achieves 90.6 PDMS and 90.1 EPDMS on NAVSIM v1/v2 navtest, respectively. On WorldEngine's recent 3DGS closed-loop benchmark, it attains the highest listed PDMS$^\\ast$ scores of 75.19 and 74.58 under logged and IDM-controlled traffic, respectively. Code: https://github.com/wyh-autonomy/maneuverflow.",
+    "abstract_zh": "复杂场景下的端到端规划必须利用场景上下文和未来风险来建模多样的驾驶意图，并选择最合适的轨迹。然而，多查询回归方法可能会退化为单一模式，而基于锚点和生成式的规划器则面临扩展性瓶颈：较小的候选集合限制了机动覆盖率或高质量轨迹的发现，而较大的集合则增加了生成和评分的成本。我们提出了ManeuverFlow，它能够一步生成不同意图下的轨迹，并利用当前和未来的证据对其进行评估和优化。该模型选择相关的机动模式，从高斯混合先验中提取相应的噪声，并通过机动路由的专家混合MeanFlow场将其映射为特定意图的轨迹。模型将当前特征与世界模型预测的未来特征沿各候选路径进行聚合，形成用于PDM因子预测的轨迹特定证据。利用相同的证据，优化器为所选候选者预测局部Frenet残差；随后对优化并保留的候选者进行联合重新评分以进行选择。凭借轻量级的TransFuser风格ResNet-34主干网络，ManeuverFlow在NAVSIM v1/v2 navtest上分别达到了90.6的PDMS和90.1的EPDMS。在WorldEngine最近的3DGS闭环基准测试中，它在记录交通和IDM控制交通下分别取得了75.19和74.58的最高PDMS*评分。",
+    "summary_zh": "针对端到端自动驾驶中轨迹生成与评估的扩展性瓶颈，该论文提出了ManeuverFlow框架。该方法通过机动路由的混合专家场生成轨迹，并利用世界模型预测的未来特征进行证据聚合，实现了轨迹的精准评估与精细化调整。实验表明，该模型在多个基准测试中均取得了领先的性能指标。"
+  },
+  {
+    "arxiv_id": "2610.13232v1",
+    "base_arxiv_id": "2610.13232",
+    "version": 1,
+    "title": "FPD-Drive: Future Policy Distillation for End-to-End Autonomous Driving",
+    "authors": [
+      "Li-Heng Chen",
+      "Qifeng Chen",
+      "Chengwei Wu",
+      "Yingjie Zhang",
+      "Sheng Yang",
+      "Hongbo Fu",
+      "Shaoqing Ren"
+    ],
+    "published": "2026-10-09T08:50:25+00:00",
+    "updated": "2026-10-09T08:50:25+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.13232v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.13232v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "End-to-end autonomous driving models are typically trained on real-world driving logs, which record only the trajectory actually executed in each scene. This provides limited supervision for learning alternative valid behaviors. Multi-target supervision can mitigate this limitation, but broader trajectory coverage makes safe candidate selection more challenging. We propose FPD-Drive, an end-to-end planner that distills privileged future knowledge into a visual driving policy to improve both multi-trajectory supervision and safety selection. Specifically, we introduce Future-Privileged Multi-Target Distillation to transfer diverse, high-quality trajectory targets from a teacher with access to recorded future observations to the student. These targets extend supervision beyond the single recorded human trajectory. For candidate selection, we further introduce Safety-Aware Score Correction to correct ranking errors between nearby safe and unsafe candidates and raise underestimated safety scores of safe candidates. At deployment, the student requires neither future observations nor teacher inference. Our base model achieves 94.9 PDMS on NAVSIM v1 navtest and 55.9 EPDMS on NAVSIM v2 navhard. The scaled FPD-Drive-Pro improves these scores to 95.5 PDMS and 58.1 EPDMS, respectively, achieving SOTA performance among the compared methods on both benchmarks. Zero-shot closed-loop evaluation on HUGSIM further yields an HD-Score of 45.1 and RC of 55.3.",
+    "abstract_zh": "端到端自动驾驶模型通常在真实驾驶日志上进行训练，这些日志仅记录了每个场景中实际执行的轨迹，这为学习其他有效行为提供了有限的监督。多目标监督可以缓解这一局限性，但更广泛的轨迹覆盖范围使得安全候选者的选择更具挑战性。我们提出了 FPD-Drive，这是一种端到端规划器，它将特权的未来知识提炼到视觉驾驶策略中，以改善多轨迹监督和安全选择。具体而言，我们引入了“未来特权多目标蒸馏”（Future-Privileged Multi-Target Distillation），将能够访问已记录未来观测结果的教师模型中的多样化、高质量轨迹目标转移给学生模型，从而将监督范围扩展到单一的人类轨迹记录之外。在候选者选择方面，我们进一步引入了“安全感知评分校正”（Safety-Aware Score Correction），以纠正附近安全与不安全候选者之间的排序错误，并提高安全候选者被低估的安全评分。在部署时，学生模型既不需要未来观测数据，也不需要教师模型推理。我们的基础模型在 NAVSIM v1 navtest 上达到了 94.9 的 PDMS，在 NAVSIM v2 navhard 上达到了 55.9 的 EPDMS。扩展后的 FPD-Drive-Pro 将这些分数分别提升至 95.5 PDMS 和 58.1 EPDMS，在两个基准测试中均达到了对比方法中的最佳性能（SOTA）。在 HUGSIM 上的零样本闭环评估进一步产生了 45.1 的 HD-Score 和 55.3 的 RC。",
+    "summary_zh": "该论文针对端到端自动驾驶模型仅能从单一真实轨迹学习的局限性，提出了 FPD-Drive 框架。该方法通过蒸馏特权未来信息实现多目标监督，并引入安全感知评分校正机制以优化候选轨迹的选择，从而显著提升了驾驶策略的安全性和规划性能。"
+  },
+  {
     "arxiv_id": "2610.11583v1",
     "base_arxiv_id": "2610.11583",
     "version": 1,
