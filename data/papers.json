@@ -1,5 +1,147 @@
 [
   {
+    "arxiv_id": "2610.17688v1",
+    "base_arxiv_id": "2610.17688",
+    "version": 1,
+    "title": "OccWAM: Occupancy World-Action Models with Joint Scene-to-Ego Flow Matching",
+    "authors": [
+      "Qihang Huang",
+      "Wenhui Huang",
+      "Collister Chua",
+      "Shiyu Fang",
+      "Zhan Chen",
+      "Songyan Zhang",
+      "Zhidong Wang",
+      "Daiying Tian",
+      "Chen Lv"
+    ],
+    "published": "2026-10-13T04:10:00+00:00",
+    "updated": "2026-10-13T04:10:00+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.17688v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.17688v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Occupancy world models provide a structured, metric representation of future driving scenes, making them a promising basis for end-to-end autonomous driving. However, existing occupancy-aware planners typically couple occupancy prediction and action generation through either hierarchical coupling or parallel multi-task learning. Hierarchical methods use occupancy either as a fully predicted future preceding action generation or as an action-conditioned rollout for trajectory evaluation, whereas parallel multi-task methods predict occupancy alongside planning through a separate branch or auxiliary objective. These interfaces retain either an explicit generation order or a role asymmetry, limiting reciprocal interaction between world prediction and action generation during trajectory formation. We propose OccWAM, an occupancy-native world-action model that jointly generates dense future occupancy and continuous ego trajectories via flow matching conditioned on scene representations. Building on this joint formulation, we introduce scene-to-ego world-action flow matching, a two-stage formulation. The first stage predicts scene-centric occupancy together with an absolute ego trajectory, providing a stable representation of future scene evolution. The same predicted world is then re-indexed into the future ego frames induced by the initial trajectory, where ego motion is represented through adjacent pose increments and a second joint flow refines ego-centric occupancy and motion for action-aligned planning. Unlike video-based world-action models, OccWAM preserves explicit semantic geometry for direct planning reasoning without pixel synthesis. Extensive experiments on Bench2Drive and nuScenes demonstrate state-of-the-art performance in closed-loop driving, open-loop planning, and future occupancy prediction.",
+    "abstract_zh": "占用世界模型为未来的驾驶场景提供了结构化的度量表示，使其成为端到端自动驾驶的有前景的基础。然而，现有的占用感知规划器通常通过分层耦合或并行多任务学习将占用预测与动作生成结合起来。分层方法将占用作为动作生成前完全预测的未来，或作为动作条件的推演用于轨迹评估；而并行多任务方法则通过单独的分支或辅助目标在规划的同时预测占用。这些接口要么保留明确的生成顺序，要么存在角色不对称，限制了轨迹形成过程中世界预测与动作生成之间的相互作用。我们提出了OccWAM，一种占用原生的世界-动作模型，通过以场景表示为条件的流匹配，联合生成密集的未来占用和连续的自我车辆轨迹。基于这种联合表述，我们引入了场景到自我（scene-to-ego）的世界-动作流匹配，这是一种两阶段表述。第一阶段预测以场景为中心的占用情况以及绝对自我轨迹，为未来场景演变提供稳定的表示。随后，相同的预测世界被重新索引到由初始轨迹诱导的未来自我框架中，其中自我运动通过相邻位姿增量表示，第二个联合流细化了以自我为中心的占用和运动，以实现与动作对齐的规划。与基于视频的世界-动作模型不同，OccWAM保留了明确的语义几何结构，无需像素合成即可进行直接的规划推理。在Bench2Drive和nuScenes上的大量实验表明，该模型在闭环驾驶、开环规划和未来占用预测方面均达到了最先进的性能。",
+    "summary_zh": "针对现有占用感知规划方法中世界预测与动作生成交互不足的问题，本文提出了OccWAM模型。该方法采用两阶段流匹配机制，通过联合建模场景占用与自我轨迹，实现了更加紧密且稳定的规划与预测。实验证明，该模型在闭环及开环驾驶任务中均取得了优异的性能。"
+  },
+  {
+    "arxiv_id": "2610.16985v1",
+    "base_arxiv_id": "2610.16985",
+    "version": 1,
+    "title": "AUGUstus: Autonomous Driving VLA Model with Unified Generation and Understanding",
+    "authors": [
+      "Yuqi Ye",
+      "Caigao Jiang",
+      "Zhuonan Wang",
+      "Congyuan Pei",
+      "Chao Qu",
+      "Changhao Peng",
+      "Junhong Lin",
+      "Qize Yu",
+      "Zetian Song",
+      "Guangzhao Fu",
+      "Chongruo Wu",
+      "Shiyu Huang",
+      "Shuchang Zhou",
+      "Honggou Yang",
+      "Wei Gao"
+    ],
+    "published": "2026-10-12T15:42:09+00:00",
+    "updated": "2026-10-12T15:42:09+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.16985v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.16985v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Vision-language-action (VLA) models show strong potential for end-to-end autonomous driving by leveraging world knowledge and understanding to excel in long-tail scenarios. However, current VLAs have two limitations: 1) Degeneration into vision-action (VA) models. For low latency, regression/flow-based methods directly generate actions but underuse VLM understanding, causing unsafe, unexplainable actions. 2) Autoregressive high latency. Autoregressive methods sequentially generate chain-of-thought (CoT) and action tokens, fully leveraging VLM understanding, but high latency hinders deployment. To enable low-latency deployment while using CoT to assist action generation, we propose AUGUstus, an Autonomous-driving VLA model with Unified Generation and Understanding. We unify diffusion-based action generation and autoregressive CoT understanding in one model, where understanding only serves generation. Joint CoT supervision preserves VLM spatial understanding in shared representation for safer, more accurate trajectories. AUGUstus-mode orders action generation before CoT, so CoT supervises reliable actions during training while inference needs only action output, enabling low latency. AUGUstus-GRPO, a unified GRPO algorithm, jointly optimizes action and CoT, improving action performance. Experiments show AUGUstus achieves 94.6 PDMS on NAVSIMv1 and 90.7 EPDMS on NAVSIMv2, SOTA planning without scorer module. On nuScenes, it achieves average L2 error 0.27 m and average collision rate 0.05%, best among compared methods. To validate AUGUstus practicality, we train on in-house data with 512 NVIDIA H800 GPUs for ~2 days, evaluate on an internal 1,000 km dataset, and preliminarily deploy on a real vehicle, achieving 12 Hz operation. Project page: https://augustus-ad.github.io",
+    "abstract_zh": "视觉-语言-动作（VLA）模型通过利用世界知识和理解能力来应对长尾场景，在端到端自动驾驶方面展现出巨大潜力。然而，现有的 VLA 模型存在两个局限性：1）退化为视觉-动作（VA）模型。为了实现低延迟，基于回归或流的方法直接生成动作，但未能充分利用视觉语言模型（VLM）的理解能力，导致动作不安全且不可解释。2）自回归带来的高延迟。自回归方法通过序列化生成思维链（CoT）和动作 Token 来充分利用 VLM 的理解能力，但高延迟阻碍了其部署。为了在利用 CoT 辅助动作生成的同时实现低延迟部署，我们提出了 AUGUstus，一个具有统一生成与理解能力的自动驾驶 VLA 模型。我们将基于扩散的动作生成与自回归的 CoT 理解统一在一个模型中，其中理解仅服务于生成。联合 CoT 监督在共享表示中保留了 VLM 的空间理解能力，从而实现更安全、更准确的轨迹规划。AUGUstus 的模式将动作生成置于 CoT 之前，使得训练期间 CoT 能够监督可靠的动作，而推理时仅需动作输出，从而实现低延迟。我们还提出了统一的 GRPO 算法 AUGUstus-GRPO，用于联合优化动作和 CoT，进而提升动作表现。实验表明，AUGUstus 在 NAVSIMv1 上达到 94.6 PDMS，在 NAVSIMv2 上达到 90.7 EPDMS，无需评分模块即可达到 SOTA 规划性能。在 nuScenes 数据集上，它取得了 0.27 米的平均 L2 误差和 0.05% 的平均碰撞率，优于对比方法。为了验证其实用性，我们在内部数据上使用 512 张 NVIDIA H800 GPU 训练约 2 天，并在 1000 公里的内部数据集上进行评估，同时在实车上进行了初步部署，实现了 12 Hz 的运行速度。",
+    "summary_zh": "针对现有自动驾驶 VLA 模型在低延迟与高质量理解能力之间的权衡问题，该论文提出了 AUGUstus 模型，通过将基于扩散的动作生成与自回归思维链理解统一，实现了低延迟的推理。该模型通过联合 CoT 监督优化轨迹性能，在多项基准测试中表现卓越，并已成功在实车上进行初步部署。"
+  },
+  {
+    "arxiv_id": "2610.16908v1",
+    "base_arxiv_id": "2610.16908",
+    "version": 1,
+    "title": "ConDenseDrive: Knowledge-Dense, Token-Sparse Visual Encoder for End-to-End Autonomous Driving",
+    "authors": [
+      "Shengzhen Li",
+      "Yongkang Li",
+      "Hao Gao",
+      "Chenxi Wu",
+      "Yajing Sun",
+      "Lu Hou",
+      "Wenyu Liu",
+      "Xinggang Wang"
+    ],
+    "published": "2026-10-12T14:56:31+00:00",
+    "updated": "2026-10-12T14:56:31+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.16908v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.16908v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "End-to-end driving requires rich spatiotemporal representations to support scene understanding and trajectory planning under strict latency constraints. However, most systems initialize their visual encoders from generic image pretraining and densely process all patch tokens for each camera view and input frame, limiting both representation quality and inference efficiency. To address these challenges, we present ConDenseDrive, a knowledge-dense and token-sparse visual encoder for end-to-end autonomous driving. Our three-stage framework first makes the encoder knowledge-dense by distilling complementary visual, semantic, and geometric knowledge from three vision foundation models. It then adapts the distilled encoder to multi-frame end-to-end driving and integrates spatiotemporal context into register tokens for planning. Finally, it makes the encoder token-sparse by applying register-guided token compression, reducing redundant patch computation and yielding a 2.0$\\times$ speedup while improving planning performance. ConDenseDrive achieves 94.5 PDMS on NAVSIM v1 and 90.8 EPDMS on NAVSIM v2, and reaches 37.4 HD-Score in zero-shot evaluation on HUGSIM. Extensive experiments and qualitative analyses demonstrate that visual encoder design provides an effective route to reliable and efficient end-to-end driving.",
+    "abstract_zh": "端到端自动驾驶需要在严格的延迟限制下，通过丰富的时空表征来支持场景理解和轨迹规划。然而，大多数系统使用通用的图像预训练来初始化视觉编码器，并对每个摄像机视图和输入帧的所有补丁标记（patch tokens）进行密集处理，这限制了表征质量和推理效率。为了应对这些挑战，我们提出了 ConDenseDrive，这是一种用于端到端自动驾驶的知识密集型、标记稀疏型视觉编码器。我们的三阶段框架首先通过从三个视觉基础模型中蒸馏互补的视觉、语义和几何知识，使编码器达到知识密集。随后，它将蒸馏后的编码器适配到多帧端到端驾驶任务中，并将时空上下文集成到用于规划的寄存器标记（register tokens）中。最后，通过应用寄存器引导的标记压缩，使编码器实现标记稀疏化，在减少冗余补丁计算的同时实现了 2.0 倍的加速，并提升了规划性能。ConDenseDrive 在 NAVSIM v1 上达到 94.5 PDMS，在 NAVSIM v2 上达到 90.8 EPDMS，并在 HUGSIM 的零样本评估中取得了 37.4 的 HD-Score。广泛的实验和定性分析表明，视觉编码器的设计为实现可靠且高效的端到端驾驶提供了一条有效的路径。",
+    "summary_zh": "针对端到端自动驾驶中视觉编码器计算效率低和表征能力不足的问题，本文提出了 ConDenseDrive。该方法通过多模型知识蒸馏增强表征能力，并利用寄存器引导的标记压缩技术实现计算稀疏化。实验表明，该模型在显著提升推理速度的同时，在多项驾驶评估基准上实现了更优的规划性能。"
+  },
+  {
+    "arxiv_id": "2610.14802v1",
+    "base_arxiv_id": "2610.14802",
+    "version": 1,
+    "title": "YOUDrive: Driving Style as a Composable Direction for End-to-End Autonomous Driving",
+    "authors": [
+      "Guantian Zheng",
+      "Lidong Yu",
+      "Tianyu Gao",
+      "Jiaxing Chen",
+      "Jiashu Li",
+      "Chen Lv"
+    ],
+    "published": "2026-10-10T10:52:32+00:00",
+    "updated": "2026-10-10T10:52:32+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.14802v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.14802v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "abstract_en": "End-to-end driving policies can achieve strong task performance while offering limited control over their driving style. Driving style describes how a vehicle accelerates, brakes, and maintains distance. Policies trained without explicit preference conditioning lack a direct mechanism for adjusting these behaviors at inference. We propose YOUDrive, a vision--language--action planner for continuous and composable driving-style control. Each teacher's behavior is distilled into a task vector, a learned parameter update that induces a style direction in the planner's representation. These directions can be scaled and combined at inference without retraining the backbone. Conditioned on these directions, a flow-matching decoder models a multimodal trajectory distribution and generates kinematically feasible motion alternatives. We introduce the Style Alignment Score (SAS) to describe human-referenced kinematic behavior after safety and task gating. On NAVSIM navtest, a single coefficient monotonically controls assertiveness across six teacher-derived personas, while PDMS remains above 0.90 across the tested individual and blended configurations, reaching 0.954. Further analyses reveal systematic policy-specific kinematics after controlling for scene context, whereas the evaluated discrete style labels provide limited additional explanatory power. Code, checkpoints, and the metric will be released.",
+    "abstract_zh": "端到端驾驶策略在实现强大任务性能的同时，对驾驶风格的控制能力有限。驾驶风格描述了车辆如何加速、制动和保持距离。未经显式偏好调节训练的策略在推理时缺乏直接调整这些行为的机制。我们提出了YOUDrive，这是一个用于连续且可组合驾驶风格控制的视觉-语言-动作规划器。我们将每个教师的行为蒸馏为任务向量，即一种学习到的参数更新，旨在规划器的表征中诱导出一个风格方向。这些方向可以在推理时进行缩放和组合，而无需重新训练骨干网络。在这些方向的调节下，流匹配解码器对多模态轨迹分布进行建模，并生成运动学上可行的运动方案。我们引入了风格对齐得分（SAS），用于描述在经过安全和任务筛选后的人类参考运动学行为。在NAVSIM navtest测试中，单个系数即可单调控制六种教师派生角色在驾驶激进程度上的表现，同时PDMS在测试的个体和混合配置下均保持在0.90以上，最高达到0.954。进一步分析表明，在控制场景上下文后，存在系统性的策略特定运动学特征，而所评估的离散风格标签提供的解释力有限。相关代码、检查点和指标将会发布。",
+    "summary_zh": "针对端到端自动驾驶中驾驶风格难以直接调节的问题，该论文提出了YOUDrive，通过将教师行为蒸馏为可组合的任务向量，实现了对驾驶风格的连续控制。该方法利用流匹配解码器生成运动学上可行的轨迹，在保持高性能的同时，允许推理阶段灵活调节驾驶行为的激进程度。"
+  },
+  {
     "arxiv_id": "2610.13409v1",
     "base_arxiv_id": "2610.13409",
     "version": 1,
