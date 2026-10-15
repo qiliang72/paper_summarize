@@ -1,5 +1,39 @@
 [
   {
+    "arxiv_id": "2610.20609v1",
+    "base_arxiv_id": "2610.20609",
+    "version": 1,
+    "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
+    "authors": [
+      "Shaoyuan Xie",
+      "Zihan Zhang",
+      "Jingxuan Wang",
+      "Jiashu Qu",
+      "Xiaoqing Liang",
+      "Lingdong Kong",
+      "Junchi Lu",
+      "Henrik I. Christensen",
+      "Qi Alfred Chen"
+    ],
+    "published": "2026-10-14T17:59:56+00:00",
+    "updated": "2026-10-14T17:59:56+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.20609v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.20609v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型在自动驾驶领域正受到关注，它们继承了大型语言模型（LLMs）的常识先验，并将导航接口从固定的指令集扩展为自由形式的自然语言指令。然而，这种开放式接口暴露了一个新的脆弱面：粗心的驾驶员可能会发出在当前场景下不安全的指令，恶意用户也可能故意发出危险指令。我们提出了第一个同时评估导航遵循、冲突意识以及对抗鲁棒性的基准套件。现有的 VLA 模型在上述两方面均表现不足：SimLingo 在闭环中无法完成任何语言指令下的变道，且所有模型在面对冲突信号时性能都会急剧下降。我们提出了 SafeDriveVLA，这是第一个自动驾驶 VLA 模型，它（1）明确预测三级导航合规模式，以将冲突推理与动作生成解耦；（2）利用导航条件下的世界模型幻象（dreaming）来指导这一预测。与以往推出专家或规划动作的世界模型不同，我们的模型专注于严格遵循导航信号，从而展示何时遵循指令是安全的。SafeDriveVLA 在 Bench2Drive 上达到了 88.16 的驾驶得分（DS）和 68.64% 的成功率（SR），与最好的 SimLingo 变体相比，闭环语言遵循能力提升了 49.3%，在不安全指令下的碰撞次数从 60 次减少到 38 次。视频演示可在我们的项目页面观看。",
+    "summary_zh": "针对开放式语言指令可能引发的不安全自动驾驶行为，本文提出了 SafeDriveVLA 模型。该模型通过引入导航合规模式预测和导航条件下的世界模型幻象，有效实现了冲突推理与动作生成的解耦。实验证明，该方法在提升导航遵循能力的同时，显著增强了系统在面对不安全指令时的安全性。"
+  },
+  {
     "arxiv_id": "2610.17688v1",
     "base_arxiv_id": "2610.17688",
     "version": 1,
