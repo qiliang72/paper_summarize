@@ -1,5 +1,43 @@
 [
   {
+    "arxiv_id": "2610.30319v1",
+    "title": "TerraTransfer++: Demonstration-Free End-to-End Planner",
+    "authors": [
+      "Zikang Xiong",
+      "Weixin Li",
+      "Zhouchonghao Wu",
+      "Akshay Rangesh",
+      "Saarth Bonde",
+      "Grantland Hall",
+      "Chen Tang",
+      "Yihan Hu",
+      "Wei Zhan"
+    ],
+    "published": "2026-10-21T18:31:28+00:00",
+    "updated": "2026-10-21T18:31:28+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.30319v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.30319v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "abstract_en": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all existing paradigms: imitation learning requires fleet-scale driving logs whose behavior distribution only thinly covers the safety-critical tail; closed-loop reinforcement learning in a photorealistic simulator, while offering diverse behaviors, is bottlenecked by sample-efficiency, per-step cost of rendering, and a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: at millions of rollout steps per second, one can obtain a state distribution with natural diversity in collisions, near-misses, and recoveries that no driving log contains, and a highly reactive policy emerges from a basic driving-quality reward. Our approach exploits this asymmetry. We pretrain a single policy by self-play, distill its rollouts into a flow-matching trajectory teacher that also plans, and train lightweight adapters on a frozen pretrained vision backbone to reproduce the latent space of either teacher through the action KL divergence, a batch-relational low-rank structural loss, and, for the planner, a trajectory-matching loss. Every target traces back to the self-play policy, so alignment never supervises against a logged trajectory: a paired dataset of (image, scene-state) frames suffices, with no need for the curated expert demonstrations that imitation pretraining is built on. From this one self-play teacher we obtain two end-to-end students: a closed-loop policy that outperforms every published imitation-based end-to-end method on the photorealistic 3D Gaussian splatting closed-loop benchmark HUGSim, and a planner that reaches 59.4 EPDMS on NAVSIM navhard, above every published method including DriveZero-Scale (57.1), and 95.5 PDMS on navtest, without human demonstrations.",
+    "abstract_zh": "端到端自动驾驶在基准测试和实际部署中均已达到顶尖水平。然而，其标准训练范式在所有现有模式下都十分昂贵：模仿学习需要大规模驾驶日志，其行为分布仅能覆盖极少数的安全关键情况；而在逼真模拟器中进行的闭环强化学习，虽然能提供多样化行为，但受限于样本效率、每步渲染成本以及大型视觉骨干网络的计算开销。向量化模拟器中的自我博弈改变了这一经济性：通过每秒数百万次的采样步数，可以获得包含驾驶日志中不存在的碰撞、近距离避让和恢复等自然多样化的状态分布，并从基本的驾驶质量奖励中衍生出高度响应的策略。我们的方法利用了这种非对称性。我们通过自我博弈预训练单一策略，将其轨迹蒸馏为一种既能规划又能执行的流匹配教师模型，并在冻结的预训练视觉骨干网络上训练轻量级适配器，通过动作KL散度、批次关系低秩结构损失以及轨迹匹配损失来重现教师模型的潜在空间。所有目标都溯源于自我博弈策略，因此对齐过程无需监督已记录的轨迹：仅需（图像，场景状态）对齐数据集即可，无需模仿学习预训练所依赖的精选专家演示。通过这一自我博弈教师模型，我们获得了两个端到端学生模型：一个在逼真3D高斯溅射闭环基准测试HUGSim上表现优于所有已发布模仿学习方法的闭环策略，以及一个在NAVSIM navhard上达到59.4 EPDMS（超过了包括DriveZero-Scale在内的所有已发布方法）且在navtest上达到95.5 PDMS的规划器，且全程无需人工演示。",
+    "summary_zh": "针对端到端自动驾驶对昂贵人工演示数据的依赖，该论文提出了一种基于自我博弈的无演示训练框架TerraTransfer++。该方法通过自我博弈生成多样化轨迹并将其蒸馏给学生模型，从而在无需人工示教的情况下，在闭环基准测试和规划任务中均实现了优于现有方法的性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation",
+      "RL"
+    ],
+    "base_arxiv_id": "2610.30319",
+    "version": 1
+  },
+  {
     "arxiv_id": "2610.20609v1",
     "title": "SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving",
     "authors": [
