@@ -1,5 +1,34 @@
 [
   {
+    "arxiv_id": "2610.34466v1",
+    "base_arxiv_id": "2610.34466",
+    "version": 1,
+    "title": "IntNet: A Communication-Driven Multi-Agent Reinforcement Learning Framework for Cooperative Autonomous Driving",
+    "authors": [
+      "Leandro Parada",
+      "Kevin Yu",
+      "Panagiotis Angeloudis"
+    ],
+    "published": "2026-10-25T17:38:49+00:00",
+    "updated": "2026-10-25T17:38:49+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.34466v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.34466v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.LG"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "abstract_en": "Achieving safety in autonomous driving through Multi-Agent Reinforcement Learning (MARL) is a critical yet challenging task due to non-stationarity, partial observability, and the need for effective coordination among agents. Although earlier cooperative MARL methods have aimed to improve coordination by sharing encoded state observations, we find these strategies are insufficient in safety-critical scenarios. To address this gap, we present IntNet, a novel MARL framework that enhances safety by incorporating the transmission of vehicle intent and adaptive communication scheduling into a unified end-to-end learning paradigm, jointly optimising all components for safe coordination. Central to our approach is an observation prediction module that enables agents to forecast subsequent policy outputs, which they can then share across a vehicle-to-vehicle network. Our model-free architecture employs a Graph Attention Network to process incoming messages and a scheduler component to dynamically optimise the communication graph for bandwidth efficiency. We compare IntNet against state-of-the-art communicative MARL methods in complex urban environments with both autonomous and human-operated vehicles, achieving improved coordination, lower collision rates, and reducing communication efforts by up to 60\\%. Through extensive experiments, we assess the framework's learning efficiency, scalability, and the balance between information sharing and bandwidth usage for collision-free trajectories.",
+    "abstract_zh": "通过多智能体强化学习（MARL）实现自动驾驶的安全性是一项关键且具挑战性的任务，原因在于环境的非平稳性、部分可观测性以及智能体间有效协作的必要性。尽管早期的协作式 MARL 方法旨在通过共享编码后的状态观测来改善协作，但我们发现这些策略在安全关键场景下是不够的。为了填补这一空白，我们提出了 IntNet，这是一种新颖的 MARL 框架，通过将车辆意图传输和自适应通信调度集成到一个统一的端到端学习范式中，共同优化所有组件以实现安全协作，从而提高安全性。我们方法的核心是一个观测预测模块，使智能体能够预测后续的策略输出，进而通过车联网络进行共享。我们的无模型架构采用图注意力网络来处理传入消息，并使用调度器组件动态优化通信图以提高带宽效率。我们在包含自动驾驶车辆和人类驾驶车辆的复杂城市环境中，将 IntNet 与最先进的通信式 MARL 方法进行了比较，结果显示该方法实现了更好的协作，降低了碰撞率，并将通信开销减少了高达 60%。通过大量实验，我们评估了该框架的学习效率、可扩展性以及在实现无碰撞轨迹时信息共享与带宽使用之间的平衡。",
+    "summary_zh": "针对自动驾驶在复杂协作场景下的安全挑战，本文提出了 IntNet 框架，通过引入意图预测共享与自适应通信调度机制来优化多智能体间的协作。该方法利用图注意力网络处理通信，在实现高效协同并显著降低通信带宽需求的同时，有效降低了碰撞率。"
+  },
+  {
     "arxiv_id": "2610.30319v1",
     "base_arxiv_id": "2610.30319",
     "version": 1,
