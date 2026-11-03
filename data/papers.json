@@ -1,5 +1,33 @@
 [
   {
+    "arxiv_id": "2610.40935v1",
+    "base_arxiv_id": "2610.40935",
+    "version": 1,
+    "title": "Let LiDAR Decide Where to Look: Geometry-Measured Token Selection for Efficient Sparse Latent World Models",
+    "authors": [
+      "Zeping Zhang",
+      "Zhuoya Zhao",
+      "Robert Laganière"
+    ],
+    "published": "2026-10-29T20:11:34+00:00",
+    "updated": "2026-10-29T20:11:34+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2610.40935v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.40935v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Vision-centric autonomous driving models encode thousands of image tokens per frame, yet most depict sky, buildings, or empty road---content irrelevant to planning. Worse, these tokens dilute the planner's attention: we show that randomly discarding 75% of tokens already outperforms the dense model, because the planner can concentrate on the remaining driving-critical content. Building on this finding, we present Geometry-Aware Token Selection (GATS), which uses LiDAR and radar point projections to select a small fraction of image tokens before the vision backbone runs. Because the selector operates on measured 3D geometry rather than visual features, the backbone encodes only the selected patches, cutting end-to-end FLOPs by up to $18\\times$. Each kept token receives a 3D anchor from its LiDAR point and is fed to a self-supervised latent world model that predicts future features and 3D displacements without box annotations. At 25% budget, GATS achieves a 3-sec L2 displacement error of 0.520 m on nuScenes and an EPDMS of 88.9 on NAVSIM---surpassing the dense baseline (0.573 m / 85.9) at $6.6\\times$ fewer total FLOPs. At an extreme 10% budget (24 GFLOPs, $18\\times$ reduction), it still beats the dense baseline on both nuScenes (0.537 m vs. 0.573 m L2) and NAVSIM (87.9 vs. 85.9 EPDMS). On 739 intent-critical scenarios, GATS covers 95.8% of hazardous vehicles and achieves a 0.09% collision rate---73.5% lower than the dense model (0.34%).",
+    "abstract_zh": "以视觉为中心的自动驾驶模型每一帧会编码数以千计的图像标记，但其中大部分描绘的是天空、建筑物或空旷道路等与规划无关的内容。更糟糕的是，这些标记会分散规划器的注意力：研究表明，随机丢弃75%的标记其效果反而优于密集模型，因为规划器可以集中关注剩余的驾驶关键内容。基于这一发现，我们提出了几何感知标记选择（GATS），该方法利用激光雷达和雷达点投影，在视觉骨干网络运行前选择一小部分图像标记。由于选择器是基于测量的三维几何而非视觉特征进行操作，骨干网络仅对选定的图块进行编码，从而将端到端的计算量（FLOPs）降低了高达18倍。每个保留的标记都会从其激光雷达点获得一个三维锚点，并被输入到一个自监督的潜在世界模型中，该模型可以在无需框注释的情况下预测未来特征和三维位移。在25%的计算预算下，GATS在nuScenes数据集上的3秒L2位移误差为0.520米，NAVSIM上的EPDMS为88.9，以减少6.6倍的总计算量超越了密集基线（0.573米/85.9）。在极端的10%预算下（24 GFLOPs，18倍减少），它在nuScenes（0.537米对0.573米L2）和NAVSIM（87.9对85.9 EPDMS）上依然优于密集基线。在739个意图关键场景中，GATS覆盖了95.8%的危险车辆，并将碰撞率降至0.09%，比密集模型（0.34%）降低了73.5%。",
+    "summary_zh": "针对自动驾驶模型中冗余图像标记消耗计算资源的问题，本文提出了几何感知标记选择（GATS）方法，利用激光雷达几何信息在编码前筛选关键区域。该方法通过显著减少处理的图像标记数量，在大幅降低计算开销的同时，在规划任务和安全性指标上均超过了传统的密集模型。"
+  },
+  {
     "arxiv_id": "2610.34466v1",
     "base_arxiv_id": "2610.34466",
     "version": 1,
