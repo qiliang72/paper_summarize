@@ -1,5 +1,100 @@
 [
   {
+    "arxiv_id": "2611.02526v1",
+    "base_arxiv_id": "2611.02526",
+    "version": 1,
+    "title": "INTERACT: Learning Interaction-Aware World Dynamics from Driving Videos for Autonomous Driving",
+    "authors": [
+      "Zhan Chen",
+      "Songyan Zhang",
+      "Wenhui Huang",
+      "Zirui Li",
+      "Zhidong Wang",
+      "Qihang Huang",
+      "Shiyu Fang",
+      "Chen Lv"
+    ],
+    "published": "2026-11-02T04:55:48+00:00",
+    "updated": "2026-11-02T04:55:48+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.02526v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.02526v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "distillation"
+    ],
+    "abstract_en": "Safe autonomous driving requires more than recognizing the current scene: the ego vehicle must anticipate how surrounding traffic participants will evolve under its own motion. However, existing end-to-end driving models typically encode scenes into dense visual or BEV features, leaving object-level interactions implicit. We propose (INTERACT INTERaction-aware Action-Conditioned Trajectory learning), a three-stage framework that learns a slot-based object-centric world model from unlabeled driving videos and transfers it to trajectory planning. INTERACT first learns recurrent slots that group dense visual features into temporally structured scene-entity representations without object annotations. It then infers latent ego actions from slot context and video transitions, and uses them to condition future slot prediction, capturing how ego motion and surrounding entities co-evolve. Finally, the learned slots, latent actions, and future slot predictions are distilled into a trajectory planner to guide trajectory generation and selection. Extensive experiments on NAVSIM and nuScenes validate the effectiveness of INTERACT. In particular, it achieves state-of-the-art performance on NAVSIM, with improvements in safety-critical collision metrics.",
+    "abstract_zh": "安全自动驾驶不仅需要识别当前场景，还要求自车能够预测周围交通参与者在自身运动影响下的演变情况。然而，现有的端到端驾驶模型通常将场景编码为密集的视觉或鸟瞰图（BEV）特征，使得对象层面的交互保持隐式。我们提出了INTERACT（交互感知动作条件轨迹学习），这是一个三阶段框架，旨在从无标签的驾驶视频中学习基于槽位（slot-based）的对象中心世界模型，并将其迁移到轨迹规划中。INTERACT首先学习循环槽位，在无需对象标注的情况下将密集视觉特征分组为具有时间结构的场景实体表征；接着从槽位上下文和视频转换中推断潜在的自车动作，并利用这些动作来条件化未来槽位预测，从而捕捉自车运动与周围实体如何共同演化；最后，将学到的槽位、潜在动作和未来预测蒸馏到轨迹规划器中，以指导轨迹的生成与选择。在NAVSIM和nuScenes上的大量实验验证了INTERACT的有效性。特别是在NAVSIM上，该模型取得了最先进的性能，并在安全关键碰撞指标上有所提升。",
+    "summary_zh": "针对现有自动驾驶模型难以显式建模对象交互的问题，该论文提出了一种基于槽位的交互感知世界模型框架INTERACT。该方法通过从无标签视频中学习对象中心表征并引入动作条件预测，实现了对环境演化的建模，在提升轨迹规划安全性和性能方面表现优异。"
+  },
+  {
+    "arxiv_id": "2611.00596v1",
+    "base_arxiv_id": "2611.00596",
+    "version": 1,
+    "title": "X-World 1.6: Building Controllable Virtual Cities with World Models",
+    "authors": [
+      " XPeng",
+      " :",
+      "Boyang Wang",
+      "Boyi Sun",
+      "Chaoda Zheng",
+      "Dongbin Zhang",
+      "Guangfeng Jiang",
+      "Hanlong Chen",
+      "Hongbin Lin",
+      "Jianlei Zheng",
+      "Jinhao Deng",
+      "Kai Yang",
+      "Kangjie Chen",
+      "Linkun Xu",
+      "Minqi Wang",
+      "Puyi Wang",
+      "Rongliang Cheng",
+      "Ruixin Liu",
+      "Shijia Chen",
+      "Shuang Deng",
+      "Sijia Chen",
+      "Sin Wai Choo",
+      "Tianyuan Xie",
+      "Xiangyu Li",
+      "Xianming Liu",
+      "Xingjie Liu",
+      "Xinlong Zheng",
+      "Xuejie Lv",
+      "Xuezhi Yang",
+      "Yi Guo",
+      "Yixiao Zeng",
+      "Yu Zhang",
+      "Yuecheng Ma",
+      "Yuhao Wang",
+      "Yuqi Zhang",
+      "Yuxin Peng"
+    ],
+    "published": "2026-10-31T03:45:22+00:00",
+    "updated": "2026-10-31T03:45:22+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.00596v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.00596v1",
+    "arxiv_categories": [
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Deploying generative world models for end-to-end closed-loop evaluation and policy learning requires precise scenario control, consistent observations, and sustained generation quality during extended interactions. This report presents \\emph{X-World~1.6}, advancing X-World~1.0 toward a more reliable and versatile driving simulator. The upgraded base model offers finer-grained control over traffic semantics, including traffic lights and road markings, together with improved spatial consistency across cameras. Virtual City capabilities broaden scenario construction through a family of models conditioned on diverse 2D and 3D references, including support for generating multi-camera future videos from a single image. An enhanced post-training framework enables efficient causal, few-step generation with stronger temporal coherence, better quality retention over longer rollouts, and improved alignment with human preferences. We also introduce a dedicated evaluation suite to support systematic assessment and guide model iteration. Together, these upgrades expand the scenarios X-World can simulate and improve the efficiency and reliability of its generated observations, supporting broader use in autonomous-driving development.",
+    "abstract_zh": "将生成式世界模型应用于端到端的闭环评估和策略学习，需要精确的场景控制、一致的观测结果以及在长时间交互过程中维持高质量的生成能力。本报告介绍了 X-World 1.6，它推动了 X-World 1.0 向更可靠、更多功能的驾驶模拟器发展。升级后的基础模型提供了对交通语义（包括交通灯和道路标线）更细粒度的控制，并增强了多摄像头之间的空间一致性。虚拟城市功能通过一系列以多样化 2D 和 3D 参考为条件的模型扩展了场景构建能力，包括支持从单张图像生成多摄像头的未来视频。增强的后训练框架实现了高效的因果、少步生成，具有更强的时间相干性、在更长回放中更好的质量保持，以及与人类偏好更佳的对齐。我们还引入了专门的评估套件，以支持系统化评估并指导模型迭代。综上所述，这些升级扩展了 X-World 可以模拟的场景，提高了生成观测的效率和可靠性，从而支持其在自动驾驶开发中的更广泛应用。",
+    "summary_zh": "为了提升自动驾驶仿真中场景控制与长期生成的一致性，X-World 1.6 引入了更细粒度的交通语义控制、多视角空间一致性优化以及高效的因果生成框架。该研究通过增强的后训练方法和配套的评估套件，显著提升了虚拟城市场景生成的质量与可靠性，为端到端自动驾驶开发提供了更有效的仿真支持。"
+  },
+  {
     "arxiv_id": "2610.40935v1",
     "base_arxiv_id": "2610.40935",
     "version": 1,
