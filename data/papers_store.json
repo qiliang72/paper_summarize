@@ -1,5 +1,35 @@
 [
   {
+    "arxiv_id": "2611.05072v1",
+    "title": "Trajectory Evaluation via Rollout-Free World Model for End-to-end Autonomous Driving",
+    "authors": [
+      "Junzhe Wang",
+      "Jinqing Zhang",
+      "Qingjie Liu"
+    ],
+    "published": "2026-11-03T15:36:04+00:00",
+    "updated": "2026-11-03T15:36:04+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.05072v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.05072v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "abstract_en": "Although existing candidate trajectory evaluators have substantially improved end-to-end planning accuracy, their underlying mechanism remains suboptimal. Model-based evaluators typically make scoring future-aware by explicitly predicting candidate-conditioned future states over the planning horizon, which we term rollout. However, rollout incurs high inference cost and accumulates prediction errors. We argue that planning does not require reconstructing a full future scene for each candidate, but only future-relevant information for reliable comparison. We therefore propose RFWorld, a Rollout-Free World model for end-to-end trajectory evaluation. RFWorld constructs a shared scene memory and shapes it into a future-readable representation via lightweight training-time temporal readout with semantic supervision, keeping training overhead low. At inference time, candidate trajectories directly query the shared memory via sparse spatial readout for scoring, reducing computation by roughly the planning horizon times the number of candidate trajectories, while avoiding recursive rollout errors. Experiments on NAVSIM and Bench2Drive show that RFWorld learns a more planning-aligned world representation and achieves state-of-the-art performance.",
+    "abstract_zh": "尽管现有的候选轨迹评估器已显著提升了端到端规划的准确性，但其底层机制仍非最优。基于模型的评估器通常通过在规划范围内显式预测候选条件下的未来状态（即“展开”/rollout）来对评分进行未来感知。然而，展开过程会带来高昂的推理成本并累积预测误差。我们认为规划无需为每个候选轨迹重建完整的未来场景，仅需获取可靠比较所需的未来相关信息。因此，我们提出了RFWorld，一种用于端到端轨迹评估的无展开（Rollout-Free）世界模型。RFWorld构建了一个共享场景记忆，并通过带有语义监督的轻量级训练时时序读取机制将其塑造为可读取未来的表征，从而保持较低的训练开销。在推理阶段，候选轨迹通过稀疏空间读取直接查询共享记忆进行评分，这减少了约“规划范围乘以候选轨迹数量”倍的计算量，并避免了递归展开带来的误差。在NAVSIM和Bench2Drive上的实验表明，RFWorld学习到了更符合规划需求的世界表征，并取得了SOTA性能。",
+    "summary_zh": "针对端到端自动驾驶中传统轨迹评估器因递归展开（rollout）导致的计算成本高及误差累积问题，本文提出了RFWorld无展开世界模型。该方法通过构建共享场景记忆并利用稀疏读取机制直接评估轨迹，在显著降低计算复杂度的同时避免了预测误差的传递，在多项基准测试中达到了领先水平。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "base_arxiv_id": "2611.05072",
+    "version": 1
+  },
+  {
     "arxiv_id": "2611.02526v1",
     "title": "INTERACT: Learning Interaction-Aware World Dynamics from Driving Videos for Autonomous Driving",
     "authors": [
