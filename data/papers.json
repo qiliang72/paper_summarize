@@ -1,5 +1,34 @@
 [
   {
+    "arxiv_id": "2611.11856v1",
+    "base_arxiv_id": "2611.11856",
+    "version": 1,
+    "title": "DeltaForge: A Post-hoc Mixture-of-Experts VLA for Multi-Domain Autonomous Driving",
+    "authors": [
+      "Bingzhang Wang",
+      "Mo Poorsartep",
+      "Yasaman Esfandiari"
+    ],
+    "published": "2026-11-09T04:24:28+00:00",
+    "updated": "2026-11-09T04:24:28+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.11856v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.11856v1",
+    "arxiv_categories": [
+      "cs.LG",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Fleets of driving vision-language-action (VLA) models are developed one domain at a time: each operator finetunes a shared base model on private data, producing specialized experts that are costly to consolidate into a single model. Weight merging loses accuracy as heterogeneous domains accumulate, and dense mixture-of-experts routing is prohibitively expensive to combine them. We present DeltaForge, to our knowledge the first post-hoc mixture-of-experts VLA for driving, which consolidates N independently finetuned per-domain models into a single multi-domain model from their weights and a small proxy set alone. When different operators finetune the same base model, their weight updates end up sharing a lot of structure. We exploit this by decomposing all the updates together using singular value decomposition (SVD), splitting each one into a shared part (the same across all domains) and a tiny domain-specific part. The router then only needs to work with those tiny domain-specific pieces, not the full expert weights, which is what keeps the approach efficient. Then two cooperating clip-level blind routers, one over the VLM reasoning experts and one over the flow-matching dynamics experts, are trained from soft labels on the proxy dataset. Across six diverse domains spanning urban, off-road, and highway driving on cars, trucks, and all-terrain vehicles (ATVs), DeltaForge approaches the accuracy of the per-domain experts and surpasses every merging, routing, centralized, and federated baseline at close to single-model parameter and compute cost. Adding a new domain requires only projecting its weight update onto the shared basis with no end-to-end retraining needed. The resulting model also generalizes to domain combinations it was never explicitly trained on.",
+    "abstract_zh": "驾驶视觉-语言-动作（VLA）模型通常是针对特定领域逐个开发的：每个运营商在私有数据上对共享基础模型进行微调，从而产生难以整合到单一模型中的专用专家模型。随着异构领域的增加，权重合并会导致精度损失，而密集型专家混合路由的整合成本又极其昂贵。我们提出了 DeltaForge，据我们所知，这是首个用于自动驾驶的事后专家混合（post-hoc MoE）VLA 模型，它仅通过权重和一个小型代理数据集，就能将 N 个独立微调的领域模型整合为一个多领域模型。当不同运营商微调同一基础模型时，它们的权重更新往往共享大量结构。我们通过奇异值分解（SVD）共同分解所有更新，将每个更新拆分为共享部分（跨领域相同）和微小的领域特定部分，从而利用了这一特性。路由器随后仅需处理这些微小的领域特定部分，而非完整的专家权重，这保证了方法的效率。此外，我们在代理数据集的软标签上训练了两个协作的片段级盲路由器，分别针对视觉语言模型（VLM）推理专家和流匹配动力学专家。在涵盖城市、越野和高速公路等六个不同领域（包括汽车、卡车和全地形车）的测试中，DeltaForge 的精度接近各领域专家模型，且在参数量和计算成本接近单模型的情况下，超越了所有合并、路由、集中式和联邦学习基线。添加新领域仅需将其权重更新投影到共享基上，无需进行端到端的再训练。最终生成的模型还能泛化至从未明确训练过的领域组合。",
+    "summary_zh": "针对自动驾驶 VLA 模型难以高效整合多个领域模型的问题，DeltaForge 提出了一种事后专家混合方法，通过 SVD 分解权重更新来提取共享结构，从而在极低的计算成本下实现领域整合。该方法仅需少量代理数据即可完成训练，不仅在性能上超越了多种基线模型，还支持高效添加新领域且具备良好的泛化能力。"
+  },
+  {
     "arxiv_id": "2611.05072v1",
     "base_arxiv_id": "2611.05072",
     "version": 1,
