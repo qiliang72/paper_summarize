@@ -1,5 +1,101 @@
 [
   {
+    "arxiv_id": "2611.22880v1",
+    "title": "Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving",
+    "authors": [
+      "Guoqing Wang",
+      "Pin Tang",
+      "Xiangxuan Ren",
+      "Chao Ma"
+    ],
+    "published": "2026-11-17T14:53:49+00:00",
+    "updated": "2026-11-17T14:53:49+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.22880v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.22880v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "abstract_en": "Recent progress in integrating vision-language-action (VLA) models with world modeling has significantly advanced end-to-end autonomous driving by allowing systems to reason about imagined futures instead of merely reacting to current observations. However, most world VLA models generate future frames at the pixel level with plenty of dense visual tokens. Although such generated futures can be visually plausible, they preserve many driving-irrelevant appearance details, i.e., only a small portion of the tokens directly encode critical planning-relevant factors, such as agent geometry, motion dynamics, and interactions. This introduces a significant performance bottleneck. An important question thus arises: what world state should a world VLA model reason over to support planning beyond pixel-level prediction? We argue that planning-oriented world modeling should focus on a compact and structured agent-centric latent state that captures the interactions between objects in the driving scene over time. As such, we introduce AgentWorld, an agent-centric VLA world model that uses discrete agent tokens jointly for reasoning and trajectory planning. Each token is dynamically grounded to a surrounding agent associated with its object's state, such as semantic identity, 3D geometry, motion, and interaction context. AgentWorld learns these tokens through three key processes: explicit geometric grounding, reasoning-oriented supervised fine-tuning, and agent-oriented reinforcement learning. Extensive open-loop and closed-loop experiments under diverse driving scenarios show that AgentWorld enhances planning capabilities, fully exploits visual evidence and agent dynamics, and yields interpretable agent-centric world states.",
+    "abstract_zh": "近期将视觉-语言-动作 (VLA) 模型与世界模型相结合的研究，通过允许系统推理想象的未来而非仅仅对当前观测做出反应，显著推动了端到端自动驾驶的发展。然而，大多数世界 VLA 模型在像素级别生成未来帧，包含大量密集的视觉 Token。尽管这些生成的未来画面在视觉上合理，但它们保留了许多与驾驶无关的外观细节，即只有一小部分 Token 直接编码了关键的规划相关因素，如主体几何结构、运动动力学和交互。这引入了显著的性能瓶颈。因此，一个重要的问题随之产生：世界 VLA 模型应基于何种世界状态进行推理以支持超越像素级预测的规划？我们认为，面向规划的世界建模应聚焦于一种紧凑且结构化的以主体为中心（Agent-Centric）的潜在状态，以捕获驾驶场景中物体随时间的变化交互。为此，我们引入了 AgentWorld，这是一种以主体为中心的 VLA 世界模型，它联合使用离散主体 Token 进行推理和轨迹规划。每个 Token 都动态地与周围主体及其对象状态（如语义身份、3D 几何、运动和交互上下文）相关联。AgentWorld 通过三个关键过程学习这些 Token：显式几何接地、面向推理的监督微调以及面向主体的强化学习。在不同驾驶场景下进行的大量开环和闭环实验表明，AgentWorld 增强了规划能力，充分利用了视觉证据和主体动力学，并产生了可解释的以主体为中心的世界状态。",
+    "summary_zh": "针对现有 VLA 模型在像素级预测中保留过多无关细节导致规划效率低的问题，本文提出了 AgentWorld 模型。该模型通过采用紧凑且结构化的以主体为中心的潜在状态，并结合几何接地、监督微调和强化学习等过程，实现了更高效的轨迹规划与更具解释性的场景建模。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "RL"
+    ],
+    "base_arxiv_id": "2611.22880",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2611.22691v1",
+    "title": "Making the World React Realistically: A Closed-Loop Interactive World Model for Autonomous Driving",
+    "authors": [
+      "Jia Hu",
+      "Yang Chang",
+      "Panqu Wang",
+      "Zhijun Fu",
+      "Chang Liu",
+      "Changjian Yu",
+      "Jintao Lai"
+    ],
+    "published": "2026-11-17T12:39:42+00:00",
+    "updated": "2026-11-17T12:39:42+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.22691v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.22691v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "abstract_en": "World models (WMs) generate driving scenarios beyond recorded logs, enabling the training and evaluation of autonomous driving systems in unseen interactions. However, existing WMs struggle to ensure both behavioral realism and visual fidelity, since they overlook the relationship between vehicle interactions and the ego visual observations. We propose a closed-loop interactive WM that couples behavior modeling and visual rendering. First, imitation-learned background-vehicle (BV) policies are fine-tuned with multi-agent reinforcement learning in the closed loop against an end-to-end ego planner that reacts to the rendered images, so that their interaction behaviors match those in real logs. Second, the viewpoints exposed by these interactions guide a per-Gaussian diagnosis of each 3D Gaussian vehicle asset, which attenuates view-dependent colors on under-observed Gaussians and fills never-observed surfaces with generated Gaussians, while preserving the observed appearance. Third, signal lights are rendered according to the driving intentions of the vehicles, by an editor that learns the light states unobserved for a vehicle through counterfactual fine-tuning with a light-state classifier. On long-tail closed-loop scenarios, our method reduces the divergence from real-world interaction behaviors by 85% and improves novel-view vehicle PSNR by 2.0dB over the state-of-the-art WM. The significance of BV light signaling in WMs is shown, as the rendered signal lights conveying BV driving intentions indirectly impact ego driving behaviors in a quarter of the scenarios.",
+    "abstract_zh": "世界模型（WMs）能够生成超出记录日志的驾驶场景，从而支持在未见过的交互中训练和评估自动驾驶系统。然而，现有的世界模型难以同时确保行为真实性和视觉保真度，因为它们忽略了车辆交互与自车视觉观测之间的关系。我们提出了一种闭环交互式世界模型，将行为建模与视觉渲染相结合。首先，背景车辆（BV）策略通过模仿学习进行初始化，随后在闭环中与对渲染图像做出反应的端到端自车规划器进行多智能体强化学习微调，以使交互行为与真实日志相符。其次，这些交互产生的视点引导对每个三维高斯车辆资产进行逐高斯诊断，在保留观测到的外观的同时，减弱观测不足高斯上的视角相关颜色，并用生成的高斯填充从未观测到的表面。第三，通过一个编辑器根据车辆的驾驶意图渲染信号灯，该编辑器通过基于灯光状态分类器的反事实微调，学习车辆未观测到的灯光状态。在长尾闭环场景中，我们的方法将与真实世界交互行为的偏差降低了85%，并将新视角下的车辆峰值信噪比（PSNR）比最先进的世界模型提高了2.0dB。研究结果表明了背景车辆信号灯在世界模型中的重要性，渲染的信号灯传达的驾驶意图间接影响了四分之一场景中的自车驾驶行为。",
+    "summary_zh": "针对现有世界模型难以平衡驾驶场景行为真实性与视觉保真度的问题，本文提出了一种闭环交互式世界模型，将背景车辆的行为建模与视觉渲染相耦合。该方法通过多智能体强化学习和三维高斯诊断，显著提升了交互行为的真实性及渲染质量，有效支持了长尾场景下的自动驾驶评估。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model",
+      "RL"
+    ],
+    "base_arxiv_id": "2611.22691",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2611.21851v1",
+    "title": "AR-WAM: efficient streaming world-action modeling for autonomous driving",
+    "authors": [
+      "Baiting Luo",
+      "Shatadal Mishra",
+      "Ahmadreza Moradipari",
+      "Nejib Ammar"
+    ],
+    "published": "2026-11-16T20:16:08+00:00",
+    "updated": "2026-11-16T20:16:08+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.21851v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.21851v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "abstract_en": "Autonomous driving requires anticipating how traffic will evolve while responding quickly to new observations. Video foundation models offer the first ability, but repeated history encoding and iterative video generation make them costly to use for driving. We present AR-WAM, an efficient streaming world-action model that combines autoregressive temporal modeling with single-pass future conditioning. Because its video backbone is causal, AR-WAM updates its visual context incrementally, reusing past computation and conditioning future prediction on observed motion. We further hypothesize that future features computed from recent observations can improve generalization in dynamic traffic without iterative video generation. AR-WAM therefore obtains these features in one forward pass and uses them to condition trajectory generation, and reinforcement learning then improves the policy through direct optimization of driving rewards. With a single front camera, AR-WAM achieves 91.5 PDMS after supervised training and 94.0 after reinforcement learning on NAVSIM-v1, outperforming the compared strong end-to-end world-action models. In a dynamic setting of continuous driving, supervised AR-WAM keeps its visual history across decisions and outperforms strong world-action baselines.",
+    "abstract_zh": "自动驾驶既需要预测交通演变，又需快速响应新观察。视频基础模型虽具备预测能力，但其重复的历史编码和迭代视频生成过程在驾驶场景中成本高昂。我们提出了 AR-WAM，这是一种高效的流式世界-动作模型，结合了自回归时序建模与单次前向的未来条件化。由于其视频主干是因果的，AR-WAM 可增量更新视觉上下文，复用以往计算并将未来预测建立在已观测运动的基础上。我们进一步假设，从近期观测中计算出的未来特征无需迭代视频生成即可提高动态交通中的泛化能力。因此，AR-WAM 在单次前向传递中获取这些特征并用于条件化轨迹生成，随后通过强化学习直接优化驾驶奖励来改进策略。在仅使用单前视摄像头的情况下，AR-WAM 在 NAVSIM-v1 上经监督训练后达到 91.5 PDMS，强化学习后达到 94.0，优于同类主流端到端世界-动作模型。在连续驾驶的动态环境中，受监督的 AR-WAM 能在决策过程中保持视觉历史，并超越了现有的强大基准模型。",
+    "summary_zh": "针对自动驾驶中视频基础模型计算成本高昂的问题，该论文提出了一种高效的流式世界-动作模型 AR-WAM。该模型利用因果视频主干和单次前向的未来条件化技术，在减少计算开销的同时实现了更佳的轨迹规划和驾驶性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "base_arxiv_id": "2611.21851",
+    "version": 1
+  },
+  {
     "arxiv_id": "2611.19138v1",
     "title": "SuperGlance: Driving at a Glance with a Vision-Language Model",
     "authors": [
