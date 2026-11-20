@@ -1,5 +1,101 @@
 [
   {
+    "arxiv_id": "2611.24719v1",
+    "title": "DRIFT: Detachable Reasoning for Runtime-Flexible and Efficient End-to-End Driving",
+    "authors": [
+      "Emad Aghajanzadeh",
+      "Bethany Anne Wong",
+      "Leonhard Kunze",
+      "Moritz Thoma",
+      "Maximilian Forstenhäusler",
+      "Nael Fasfous",
+      "Manoj Rohit Vemparala",
+      "Pierpaolo Mori",
+      "Christos Anagnostopoulos",
+      "Daniel Mueller-Gritschneder",
+      "Ulf Schlichtmann"
+    ],
+    "published": "2026-11-18T16:40:13+00:00",
+    "updated": "2026-11-18T16:40:13+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.24719v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.24719v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "abstract_en": "The integration of vision-language models (VLMs) into end-to-end (E2E) autonomous driving has demonstrated strong potential by providing scene description and reasoning capabilities. However, VLMs are computationally expensive, and switching language reasoning on and off at runtime without hurting closed-loop performance has not been demonstrated, which hinders practical adoption. To address these issues, we propose DRIFT, an E2E autonomous driving framework that integrates a lightweight language model (LM) for visual question answering and action commentary. By efficiently projecting intermediate driving representations into the language embedding space, we demonstrate that a compact LM (<150M parameters) can achieve strong scene description and action commentary. Furthermore, we introduce a runtime-flexible planning module that is trained on surrogate reasoning features distilled from the LM and can be conditioned on either the LM or the surrogate reasoning features at inference. This design enables bypassing the LM entirely when required by deployment constraints, without sacrificing driving performance. With only 255M parameters, DRIFT reaches up to a Driving Score (DS) of 97.03 and a Success Rate of 89.39% (mean over three runs) on Bench2Drive by interleaving its LM and surrogate reasoning at a chosen reasoning rate. This is on par with the strongest non-language models while being far more compact than existing VLM-based models. DRIFT further achieves competitive results on the real-world NAVSIM and AlpaSim benchmarks at significantly lower computational cost than existing VLM-based approaches. Project page: https://drift-e2e.github.io/",
+    "abstract_zh": "视觉语言模型（VLM）集成到端到端（E2E）自动驾驶中，通过提供场景描述和推理能力展现了巨大潜力。然而，VLM 计算成本高昂，且在不损害闭环性能的前提下在运行时切换语言推理功能尚未得到充分验证，这阻碍了其实际应用。为了解决这些问题，我们提出了 DRIFT，这是一种集成了轻量级语言模型（LM）的 E2E 自动驾驶框架，用于视觉问答和行动解说。通过将中间驾驶表征高效投影到语言嵌入空间，我们证明了一个紧凑的语言模型（少于 1.5 亿参数）即可实现出色的场景描述和行动解说。此外，我们引入了一个运行时灵活的规划模块，该模块在从语言模型蒸馏的代理推理特征上进行训练，并能在推理时根据语言模型或代理推理特征进行条件设置。这种设计使得在部署约束需要时，可以在不牺牲驾驶性能的情况下完全绕过语言模型。DRIFT 总参数仅为 2.55 亿，通过在选定的推理频率下交替使用语言模型和代理推理，在 Bench2Drive 基准测试中驾驶得分（DS）达到 97.03，成功率达到 89.39%（三次运行平均值）。这不仅与最强的非语言模型表现相当，而且比现有的 VLM 模型更加紧凑。DRIFT 在真实世界的 NAVSIM 和 AlpaSim 基准测试中也取得了具有竞争力的结果，且计算成本远低于现有的 VLM 模型。",
+    "summary_zh": "针对端到端自动驾驶中 VLM 计算成本高昂且难以灵活启用的问题，DRIFT 框架引入了轻量级语言模型和可绕过的规划模块。该方法通过将驱动表征映射至语言空间并使用代理推理特征进行训练，在保持高性能的同时实现了运行时的计算效率与灵活性。实验表明，该模型在多个基准测试中以极低的参数量实现了与先进模型相当的驾驶表现。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "distillation"
+    ],
+    "base_arxiv_id": "2611.24719",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2611.24376v1",
+    "title": "Teaching VLMs What to Say, Not How to Reason: Rethinking Counterfactual Reasoning in Autonomous Driving",
+    "authors": [
+      "Hayeon Oh",
+      "Donghwan Lee"
+    ],
+    "published": "2026-11-18T13:06:24+00:00",
+    "updated": "2026-11-18T13:06:24+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.24376v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.24376v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "End-to-end autonomous driving systems have been shown to suffer from shortcut learning and causal confusion, limiting their ability to generalize robustly under distribution shift. To mitigate these limitations, recent works based on Vision-Language Models (VLMs) have explored incorporating linguistic reasoning capabilities into driving decision-making, reporting improvements in driving performance. In particular, counterfactual (CF) reasoning has been proposed to enable self-reflective, high-level causal understanding. However, it remains unclear whether the language-based reasoning mitigates shortcut learning or merely shifts it from visual representations to linguistic patterns, creating an illusion of causal understanding. Moreover, existing approaches often conflate intervention-based reasoning with CF reasoning, leaving the effects of genuine CF reasoning unexplored. In this work, we examine what CF reasoning actually induces in VLM-based autonomous driving and observe that it shifts the action distribution toward more conservative behaviors while increasing uncertainty in reasoning and decision-making. This effect persists under reinforcement fine-tuning, suggesting that it is not merely a transient artifact. Furthermore, visual attention analysis shows that CF reasoning does not alter visual grounding, while causal intervention experiments reveal that masking causally relevant and non-causal factors in accident scenarios results in comparable decision change rates. Overall, these results suggest that CF reasoning does not induce genuine causal reasoning grounded in visual evidence. Instead, it acts as a linguistic shortcut that reshapes the action distribution, teaching models what to say but not how to reason, highlighting a gap between language-based reasoning and causal understanding in autonomous driving.",
+    "abstract_zh": "端到端自动驾驶系统已被证明存在捷径学习和因果混淆问题，限制了其在分布偏移下的鲁棒泛化能力。为了缓解这些局限性，近期基于视觉语言模型（VLM）的研究探索了将语言推理能力引入驾驶决策，并报告了驾驶性能的提升。其中，反事实（CF）推理被提出用于实现自我反思的高级因果理解。然而，目前尚不清楚基于语言的推理是真正缓解了捷径学习，还是仅仅将其从视觉表征转移到了语言模式上，从而制造了因果理解的错觉。此外，现有方法往往将基于干预的推理与反事实推理混为一谈，使得真正的反事实推理效果未得到充分探讨。本研究分析了反事实推理在基于VLM的自动驾驶中实际诱导的结果，发现它使动作分布向更保守的行为偏移，同时增加了推理和决策的不确定性。这种影响在强化学习微调后依然存在，表明它并非单纯的瞬态伪影。此外，视觉注意力分析显示反事实推理并未改变视觉定位，而因果干预实验表明，在事故场景中遮蔽因果相关和非相关因素会导致相似的决策改变率。总的来说，这些结果表明反事实推理并未诱导出基于视觉证据的真正因果推理。相反，它作为一种语言捷径重塑了动作分布，教会了模型“说什么”，却未教会模型“如何推理”，凸显了自动驾驶中基于语言的推理与因果理解之间的差距。",
+    "summary_zh": "本文探讨了自动驾驶领域中基于视觉语言模型的反事实推理有效性问题。研究发现，反事实推理并未建立真正的视觉因果关联，而是作为一种语言捷径调整了模型的输出分布，导致模型仅学会了“说什么”而非“如何推理”。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "RL"
+    ],
+    "base_arxiv_id": "2611.24376",
+    "version": 1
+  },
+  {
+    "arxiv_id": "2611.24254v1",
+    "title": "FedE2E: One-Shot Federated Learning for End-to-End Autonomous Driving with Closed-Loop Evaluation",
+    "authors": [
+      "Tao Lian",
+      "Antonio M. López"
+    ],
+    "published": "2026-11-18T11:32:35+00:00",
+    "updated": "2026-11-18T11:32:35+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.24254v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.24254v1",
+    "arxiv_categories": [
+      "cs.AI",
+      "stat.ML"
+    ],
+    "abstract_en": "Federated learning enables collaborative model training without sharing datasets. However, existing federated learning methods for autonomous driving typically require multi-round communication and lack closed-loop evaluation, while one-shot methods mainly focus on perception tasks. To address these limitations, we propose \\method, a one-shot federated learning method for end-to-end autonomous driving. It comprises multi-client calibration, anchor-based feature alignment, and token-wise consensus distillation to distill knowledge from heterogeneous models. Closed-loop evaluation on Bench2Drive demonstrates the effectiveness of \\method in both one-shot and multi-round federated learning. In the one-shot setting, it achieves a Driving Score of 55.85, which is 4.07 points higher than prior work. In the multi-round setting, it reaches 60.35 after five communication rounds, the best performance among all compared methods under the same number of communication rounds.",
+    "abstract_zh": "联邦学习实现了在不共享数据集的情况下进行协作模型训练。然而，现有的自动驾驶联邦学习方法通常需要多轮通信且缺乏闭环评估，而一次性（one-shot）方法主要关注感知任务。为了解决这些局限性，我们提出了 FedE2E，一种用于端到端自动驾驶的一次性联邦学习方法。它包含多客户端校准、基于锚点的特征对齐以及基于 Token 的共识蒸馏，以从异构模型中提取知识。在 Bench2Drive 上的闭环评估证明了 FedE2E 在一次性和多轮联邦学习中的有效性。在一次性设置下，其驾驶评分为 55.85，比现有工作高出 4.07 分。在多轮设置下，经过五轮通信后达到 60.35 分，是相同通信轮数下所有对比方法中的最佳性能。",
+    "summary_zh": "该研究针对端到端自动驾驶中现有联邦学习方法通信需求高且缺乏闭环评估的问题，提出了 FedE2E 一次性联邦学习框架。通过多客户端校准、特征对齐和共识蒸馏技术，该方法能有效利用异构模型知识，在闭环评测基准中显著提升了驾驶性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "base_arxiv_id": "2611.24254",
+    "version": 1
+  },
+  {
     "arxiv_id": "2611.22880v1",
     "title": "Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving",
     "authors": [
@@ -94,6 +190,44 @@
     ],
     "base_arxiv_id": "2611.21851",
     "version": 1
+  },
+  {
+    "arxiv_id": "2611.19138v2",
+    "title": "SuperGlance: Driving at a Glance with a Vision-Language Model",
+    "authors": [
+      "Jieyuan Pei",
+      "Xin Yan",
+      "Mingwei Xu",
+      "Haiyi Zhang",
+      "Siyu Zou",
+      "Zhangyi Hu",
+      "Zhuoxuan Li",
+      "Yuguang Yang",
+      "Rongjunchen Zhang",
+      "Cheng Chi",
+      "Hui Xiong",
+      "Yan Wang"
+    ],
+    "published": "2026-11-14T03:59:37+00:00",
+    "updated": "2026-11-18T02:30:43+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.19138v2",
+    "pdf_url": "https://arxiv.org/pdf/2611.19138v2",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "Autonomous driving is turning to vision-language-action models (VLAs). They answer and plan by decoding, one step at a time. Each step is another forward pass, so a plan can take over a second of GPU time. Embodied AI often pairs such a slow, reasoning System 2 with a fast System 1 that acts. Human drivers plan at a glance, with System 1. Faster designs usually put System 1 outside the vision-language model (VLM), in a planner without its abilities. Yet before a VLM writes its first token, it has already read the scene into one hidden state. We show that, once trained, this hidden state is enough to drive and to answer questions about what the model sees. SuperGlance reads it to turn a decoder-only VLM into an encoder-style driving policy. Its linear head scores a fixed set of 5,273 candidate trajectories. With the set fixed, rewards are computed offline, so supervised targets can be reward-weighted and reinforcement learning maximizes the exact expected reward. Before and during policy training, multiple-choice training keeps the VLM's visual abilities in one pass, so the policy still answers questions about driving scenes. Training questions are built against shortcuts. Each must be answered right in two option orders. Against drift, a KL term keeps each stage near its starting model. One pass offers VLAs a more plausible path to System 1. SuperGlance answers visual multiple-choice questions as well as its base VLM does by decoding. It plans in 84 ms of GPU time, six times faster than Qwen-Drive-1.0, and at least as well on NAVSIM, PAI-AV and WOD-E2E. In AlpaSim closed loop, km per at-fault incident holds for both planners up to a 300-ms delay and drops beyond. With GPU time charged as delay, SuperGlance's lead over Qwen-Drive-1.0 grows from 2.8 to 3.9 times. Delayed by 1.2 s, our model falls below Qwen-Drive-1.0 at its own 518 ms.",
+    "abstract_zh": "自动驾驶正转向视觉-语言-动作（VLA）模型。这些模型通过逐个解码来回答和规划，每一步都需要进行一次前向传播，因此生成一个规划可能耗时超过一秒。具身智能通常将这种缓慢的推理“系统 2”与快速行动的“系统 1”配对。人类驾驶员通过“系统 1”一瞥即可完成规划。更快速的设计通常将“系统 1”置于视觉-语言模型（VLM）之外，通过一个不具备 VLM 能力的规划器实现。然而，在 VLM 输出第一个标记之前，它已经将场景读取为一个隐藏状态。我们证明，一旦训练完成，该隐藏状态足以用于驾驶并回答关于模型所见场景的问题。SuperGlance 通过读取此隐藏状态，将仅含解码器的 VLM 转化为编码器风格的驾驶策略。其线性头对 5,273 条候选轨迹进行评分。由于集合固定，奖励可以在离线计算，从而使监督目标可以进行奖励加权，强化学习也能最大化精确的期望奖励。在策略训练前后，通过多选题训练使 VLM 在单次传递中保持其视觉能力，确保策略仍能回答关于驾驶场景的问题。训练问题针对捷径问题进行了构建，每个问题必须在两种选项顺序下均回答正确。为防止偏移，通过 KL 散度项使每个阶段保持在起始模型附近。单次传递为 VLA 提供了一条更可行的“系统 1”路径。SuperGlance 在回答视觉多选题方面的表现与基础 VLM 的解码能力相当。它在 84 毫秒的 GPU 时间内完成规划，比 Qwen-Drive-1.0 快六倍，且在 NAVSIM、PAI-AV 和 WOD-E2E 上的表现至少相当。在 AlpaSim 闭环测试中，两个规划器的每责任事故公里数在延迟 300 毫秒内保持一致，超过此值后下降。若将 GPU 时间计为延迟，SuperGlance 相较于 Qwen-Drive-1.0 的领先优势从 2.8 倍扩大至 3.9 倍。在延迟 1.2 秒时，我们模型的表现低于 Qwen-Drive-1.0 在 518 毫秒延迟时的表现。",
+    "summary_zh": "针对现有 VLA 模型规划推理缓慢的问题，SuperGlance 提出了一种利用 VLM 已有隐藏状态实现快速驾驶规划的方法。该方法通过将 VLM 转化为编码器风格的策略并直接对候选轨迹进行评分，在保持视觉理解能力的同时大幅提升了推理速度。实验表明，该系统在保证驾驶性能的前提下，显著降低了 GPU 推理延迟。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "RL"
+    ],
+    "base_arxiv_id": "2611.19138",
+    "version": 2
   },
   {
     "arxiv_id": "2611.19138v1",
