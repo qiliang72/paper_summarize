@@ -1,5 +1,36 @@
 [
   {
+    "arxiv_id": "2611.25604v1",
+    "title": "PAD: Policy-Aware Data Valuation for Autonomous Driving",
+    "authors": [
+      "Chengkai Xu",
+      "Yicheng Guo",
+      "Jiaqi Liu",
+      "Yiming Cui",
+      "Shiyu Fang",
+      "Peng Hang",
+      "Hao Zhang",
+      "Jian Sun"
+    ],
+    "published": "2026-11-19T06:53:22+00:00",
+    "updated": "2026-11-19T06:53:22+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.25604v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.25604v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "abstract_en": "End-to-end autonomous driving increasingly depends on scaling training demonstrations, yet data growth does not guarantee proportional gains. However, additional data do not guarantee better policies: a demonstration that benefits one planner may be redundant or harmful to another. Existing curation methods typically infer data value from intrinsic sample properties or training-dependent proxies that do not measure downstream policy utility. To address this, we introduce \\textbf{Policy-Aware Data Valuation (PAD)}, a framework that assigns each candidate demonstration a utility specific to the target driving policy. PAD combines scene-level calibration feedback with projected policy gradients and a regularized approximation of local training geometry, producing scalable influence-based values for the policy. A controlled group-removal study establishes the directional fidelity of these values, while cross-planner analysis shows that the same candidate pool induces markedly different rankings across planner families. On DiffusionDrive, PAD improves EPDMS over real-only training by $3.5$ points on NavTest and $5.0$ points on NavHard. Policy-specific curation consistently outperforms real-only and full-pool training across diffusion-, regression-, and flow-matching-based planners while substantially reducing scene-level regressions. These results establish policy-aware data valuation as a basis for replacing indiscriminate data accumulation with targeted policy improvement, enabling more efficient and reliable scaling of autonomous-driving systems.",
+    "abstract_zh": "端到端自动驾驶越来越依赖于扩大训练演示数据的规模，但数据量的增长并不一定能带来相应的性能提升。事实上，额外的数据并不能保证生成更好的策略：对一个规划器有益的演示数据，对另一个规划器来说可能是冗余甚至有害的。现有的筛选方法通常从样本的内在属性或依赖于训练的代理指标中推断数据价值，而这些指标无法衡量下游策略的效用。为了解决这个问题，我们引入了策略感知数据评估（PAD）框架，该框架为每个候选演示分配一个针对目标驾驶策略的特定效用值。PAD 将场景级校准反馈与投影策略梯度以及局部训练几何的正则化近似相结合，为策略生成可扩展的基于影响力的评估值。受控的组移除研究确立了这些价值的方向忠实度，而跨规划器分析表明，同一个候选数据池在不同的规划器系列中会产生截然不同的排名。在 DiffusionDrive 上，PAD 在 NavTest 和 NavHard 数据集上将 EPDMS 分别提升了 3.5 点和 5.0 点。策略特定的数据筛选在扩散模型、回归模型和流匹配模型驱动的规划器中，均始终优于仅使用真实数据训练和全量数据池训练，并显著减少了场景级的回归问题。这些结果确立了策略感知数据评估作为一种基础方法，能够取代不加区分的数据积累，实现有针对性的策略改进，从而推动自动驾驶系统更高效、更可靠的扩展。",
+    "summary_zh": "该论文针对自动驾驶中数据质量不一的问题，提出了一种策略感知数据评估（PAD）框架，通过结合场景校准反馈与投影策略梯度来量化演示数据对特定规划器的效用。实验表明，该方法能有效筛选出对目标策略最有价值的数据，在多种规划器架构中实现了性能提升，并降低了大规模数据训练带来的无效冗余。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [],
+    "base_arxiv_id": "2611.25604",
+    "version": 1
+  },
+  {
     "arxiv_id": "2611.24719v1",
     "title": "DRIFT: Detachable Reasoning for Runtime-Flexible and Efficient End-to-End Driving",
     "authors": [
@@ -66,6 +97,34 @@
     ],
     "base_arxiv_id": "2611.24376",
     "version": 1
+  },
+  {
+    "arxiv_id": "2611.24254v2",
+    "title": "FedE2E: One-Shot Federated Learning for End-to-End Autonomous Driving with Closed-Loop Evaluation",
+    "authors": [
+      "Tao Lian",
+      "Antonio M. López"
+    ],
+    "published": "2026-11-18T11:32:35+00:00",
+    "updated": "2026-11-19T11:51:49+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.24254v2",
+    "pdf_url": "https://arxiv.org/pdf/2611.24254v2",
+    "arxiv_categories": [
+      "cs.AI",
+      "stat.ML"
+    ],
+    "abstract_en": "Federated learning enables collaborative model training without sharing datasets. However, existing federated learning methods for autonomous driving typically require multi-round communication and lack closed-loop evaluation, while one-shot methods mainly focus on perception tasks. To address these limitations, we propose \\method, a one-shot federated learning method for end-to-end autonomous driving. It comprises multi-client calibration, anchor-based feature alignment, and token-wise consensus distillation to distill knowledge from heterogeneous models. Closed-loop evaluation on Bench2Drive demonstrates the effectiveness of \\method in both one-shot and multi-round federated learning. In the one-shot setting, it achieves a Driving Score of 55.85, which is 4.07 points higher than prior work. In the multi-round setting, it reaches 60.35 after five communication rounds, the best performance among all compared methods under the same number of communication rounds.",
+    "abstract_zh": "联邦学习能够在不共享数据集的情况下实现协作模型训练。然而，现有的自动驾驶联邦学习方法通常需要多轮通信，且缺乏闭环评估，而一次性（one-shot）方法主要集中在感知任务上。为了解决这些局限性，我们提出了 FedE2E，这是一种用于端到端自动驾驶的一次性联邦学习方法。它包含多客户端校准、基于锚点的特征对齐以及基于标记的共识蒸馏，旨在从异构模型中提取知识。在 Bench2Drive 上的闭环评估证明了 FedE2E 在一次性和多轮联邦学习中的有效性。在一次性设置下，该方法获得了 55.85 分的驾驶评分，比之前的工作高出 4.07 分。在多轮设置下，它在五轮通信后达到了 60.35 分，在相同通信轮数下表现优于所有对比方法。",
+    "summary_zh": "针对端到端自动驾驶中联邦学习存在的高通信成本和缺乏闭环评估问题，该论文提出了 FedE2E 一次性联邦学习框架。通过多客户端校准、特征对齐和共识蒸馏技术，该方法实现了异构模型的高效协作训练，并在 Bench2Drive 基准测试中显著提升了驾驶性能。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "distillation"
+    ],
+    "base_arxiv_id": "2611.24254",
+    "version": 2
   },
   {
     "arxiv_id": "2611.24254v1",
