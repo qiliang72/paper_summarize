@@ -1,5 +1,128 @@
 [
   {
+    "arxiv_id": "2611.31240v1",
+    "base_arxiv_id": "2611.31240",
+    "version": 1,
+    "title": "Pruning Autonomous Driving VLAs: What to Preserve for Reasoning and Action",
+    "authors": [
+      "Seongchan Kim",
+      "Soowon Son",
+      "Sangoh Kim",
+      "Hyunah Ko",
+      "Eunbeen Hong",
+      "Hyunkoo Lee",
+      "Sanghyun Lee",
+      "WonJun Moon",
+      "Kihong Kim",
+      "Dongyeon Son",
+      "Woongchan Nam",
+      "Seungryong Kim"
+    ],
+    "published": "2026-11-23T18:59:52+00:00",
+    "updated": "2026-11-23T18:59:52+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.31240v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.31240v1",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "abstract_en": "Reasoning vision-language-action (VLA) models for autonomous driving use chain-of-thought (CoT) reasoning to guide action generation, but incur substantial memory and computational costs. We study structured pruning for these models, focusing on preserving both scene understanding and trajectory prediction. Our analysis of Taylor importance in Alpamayo-1.5-10B shows that reasoning and trajectory objectives assign different importance to the same vision-language model (VLM) structures. In the action expert, MLP channels exhibit more stable importance rankings across denoising steps than query heads, and a small fraction of channels accounts for most of the measured importance. Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods. At a higher reduction of 30.0%, MoOP degrades much less than every other method, as it is the only one whose reasoning does not collapse. Removing 93.75% of expert MLP channels increases total parameter reduction to 39.4%, with nearly unchanged open-loop errors relative to VLM-only pruning and competitive closed-loop performance. The resulting model achieves a 1.37x end-to-end inference speedup and 36.6% lower peak memory than the dense model, without post-pruning fine-tuning.",
+    "abstract_zh": "用于自动驾驶的推理视觉-语言-动作 (VLA) 模型利用思维链 (CoT) 推理来指导动作生成，但会带来高昂的内存和计算成本。我们研究了这些模型的结构化剪枝，重点在于同时保留场景理解和轨迹预测能力。通过对 Alpamayo-1.5-10B 进行泰勒重要性分析，我们发现推理和轨迹目标对相同的视觉-语言模型 (VLM) 结构赋予了不同的重要性。在动作专家模块中，MLP 通道在去噪步骤中比查询头表现出更稳定的重要性排名，且极少数通道占据了大部分测量出的重要性。基于这些发现，我们提出了 MoOP 方法，该方法结合了两个目标的重要性排名进行 VLM 剪枝，并汇总分步重要性来选择一组固定的专家 MLP 通道。在参数减少 24.0% 的情况下，仅剪枝 VLM 的 MoOP 方法在驾驶任务中的表现与最强基线相当或略优，同时保留了 94.0% 的 LingoQA 得分，远超其他方法。在 30.0% 的更高压缩比下，MoOP 的性能下降幅度远小于其他所有方法，且是唯一没有发生推理崩溃的模型。移除 93.75% 的专家 MLP 通道可将总参数减少量提升至 39.4%，其开环误差与仅剪枝 VLM 相比几乎无变化，且表现出极具竞争力的闭环性能。最终模型在无需剪枝后微调的情况下，实现了 1.37 倍的端到端推理加速，峰值内存占用较稠密模型降低了 36.6%。",
+    "summary_zh": "本文针对自动驾驶 VLA 模型计算成本高的问题，提出了一种名为 MoOP 的结构化剪枝方法。该方法通过整合推理和轨迹预测的目标重要性，实现了对 VLM 结构及专家 MLP 通道的精准剪枝。实验表明，该方法在显著提升推理速度和降低内存占用的同时，仍能保持优秀的场景推理和动作控制能力。"
+  },
+  {
+    "arxiv_id": "2611.30511v1",
+    "base_arxiv_id": "2611.30511",
+    "version": 1,
+    "title": "AXE: AlpaSim E2E Closed Loop Challenge Technical Report",
+    "authors": [
+      "Joonhee Lim",
+      "Seonmyeong Lee",
+      "Sihwan Hwang",
+      "Hanbin Jang",
+      "Hiwon Shin",
+      "Dogun Kim",
+      "Hyelin Jo",
+      "Hyeonjun Jeong",
+      "Yongjae Lee",
+      "Junseong Kwak",
+      "Junhyeok Park",
+      "Satyam Mishra",
+      "Juyeb Shin",
+      "Uisung Kim",
+      "Hyeonseo Kim",
+      "Saparkhan Kassymbekov",
+      "Hailemichael Molla Gashaw",
+      "Abi Rahman Syamil",
+      "Mingyu Kim",
+      "Hyeongjun Kim",
+      "Yeina Lee",
+      "Moogeun Park",
+      "Dongsuk Kum"
+    ],
+    "published": "2026-11-23T11:30:01+00:00",
+    "updated": "2026-11-23T11:30:01+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.30511v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.30511v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "RL"
+    ],
+    "abstract_en": "This report presents a comprehensive pipeline for developing an end-to-end (E2E) autonomous driving model for the Physical AI AV Track. The framework consists of data curation, HD map auto-labelling, data-driven imitation learning, and simulator-based reinforcement learning. To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving. Trained on NVIDIA NuRec and the NVIDIA PAI-AV dataset, our method scores a fixed vocabulary of trajectory candidates for collision, drivable-area compliance, and progress learned from simulated rollouts, and selects the best candidate that passes the filter. This design highlights the effectiveness of combining E2E planning with perception-based trajectory filtering for safe and reliable closed-loop autonomous driving.",
+    "abstract_zh": "本报告提出了一个用于 Physical AI AV 赛道的端到端（E2E）自动驾驶模型开发综合流程。该框架包含数据筛选、高精地图自动标注、数据驱动的模仿学习以及基于模拟器的强化学习。为确保闭环环境下的安全性，我们引入了一种基于选择的端到端规划方法，利用目标检测和鸟瞰图（BEV）分割技术来过滤掉可能导致碰撞或偏离道路的轨迹候选。我们的方法在 NVIDIA NuRec 和 NVIDIA PAI-AV 数据集上进行训练，对固定的轨迹候选集进行评分，考虑碰撞风险、可行驶区域合规性以及通过模拟滚动学习到的进度，并选择通过过滤器且得分最优的候选轨迹。该设计凸显了将端到端规划与基于感知的轨迹过滤相结合，对于实现安全可靠的闭环自动驾驶的有效性。",
+    "summary_zh": "本文针对端到端自动驾驶闭环控制问题，提出了一种结合数据驱动模仿学习与模拟器强化学习的开发框架。该方法通过引入基于感知结果的轨迹过滤机制，确保了规划路径的安全性和可靠性，有效提升了自动驾驶系统在闭环环境中的表现。"
+  },
+  {
+    "arxiv_id": "2611.30438v1",
+    "base_arxiv_id": "2611.30438",
+    "version": 1,
+    "title": "ROSE-Drive: Runtime Orchestration and System Evolution for Autonomous Driving",
+    "authors": [
+      "Qihang Huang",
+      "Zhidong Wang",
+      "Zirui Li",
+      "YuJie Yan",
+      "Jingsong Liang",
+      "Shiyu Fang",
+      "Collister Chua",
+      "Zhan Chen",
+      "Chen Lv"
+    ],
+    "published": "2026-11-23T10:30:51+00:00",
+    "updated": "2026-11-23T10:30:51+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.30438v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.30438v1",
+    "arxiv_categories": [
+      "cs.RO"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM",
+      "distillation"
+    ],
+    "abstract_en": "End-to-end driving models have made substantial progress, yet reliable closed-loop driving in complex traffic remains challenging. Beyond improving individual models, system-level orchestration offers a complementary approach by coordinating driving capabilities and computation. We introduce ROSE-Drive (Runtime Orchestration and System Evolution), a model-agnostic framework that jointly orchestrates driving execution and computation. It coordinates frozen driving models with driving skills, perception tools, and feedback controllers. A distilled vision-language model (VLM) proposes driving tasks and scene relations. Shared physical state and persistent tasks support capability composition, task continuity, and adaptive scheduling. The orchestrator combines model and skill outputs across control channels, maintains task responsibility through handover, and uses execution feedback to select controllers, reuse valid motion references, and schedule model inference. Offline revisions use execution records to refine skills and their coordination through a stable task interface. Successive system stages inherit these revisions while model, perception, and VLM weights remain fixed. Evaluations with four driving models on Bench2Drive v0.0.3, Bench2Drive v0.0.4, and Fail2Drive show accumulated capability and transfer before target-benchmark revision. On held-out Longest6, driving score (DS) rises from 25 to 52 for AutoMoT and from 22 to 47 for SimLingo across system stages, while both systems skip new model inference on over 71% of control steps.",
+    "abstract_zh": "端到端自动驾驶模型已取得显著进展，但在复杂交通环境下的可靠闭环驾驶仍具挑战性。除了改进单一模型外，系统级编排通过协调驾驶能力和计算资源提供了一种互补方案。我们提出了ROSE-Drive（运行时编排与系统演进），这是一种与模型无关的框架，用于联合编排驾驶执行与计算。它将冻结的驾驶模型与驾驶技能、感知工具及反馈控制器进行协调。一个蒸馏后的视觉语言模型（VLM）负责提出驾驶任务和场景关系。共享的物理状态和持久化任务支持能力组合、任务连续性和自适应调度。编排器结合跨控制通道的模型与技能输出，通过交接维持任务责任，并利用执行反馈来选择控制器、重用有效的运动参考及调度模型推理。离线修订利用执行记录通过稳定的任务接口来优化技能及其协调。后续系统阶段继承这些修订，同时模型、感知和VLM的权重保持不变。在Bench2Drive v0.0.3、v0.0.4和Fail2Drive上对四种驾驶模型的评估显示，在目标基准修订前实现了能力积累与迁移。在未见过的Longest6数据集上，随着系统阶段的演进，AutoMoT的驾驶分数（DS）从25提升至52，SimLingo从22提升至47，同时两个系统在超过71%的控制步骤中跳过了新的模型推理。",
+    "summary_zh": "针对端到端自动驾驶在复杂环境下的可靠性挑战，本文提出了ROSE-Drive框架，通过联合编排驾驶模型、技能和感知工具实现系统级优化。该方法利用蒸馏VLM进行任务规划，并结合执行反馈进行动态调度和技能演进，显著提升了驾驶性能并大幅减少了推理计算需求。"
+  },
+  {
     "arxiv_id": "2611.25604v1",
     "base_arxiv_id": "2611.25604",
     "version": 1,
