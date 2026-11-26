@@ -1,5 +1,39 @@
 [
   {
+    "arxiv_id": "2611.32483v1",
+    "base_arxiv_id": "2611.32483",
+    "version": 1,
+    "title": "CodeWAM: A Code World Action Model for End-to-End Autonomous Driving",
+    "authors": [
+      "Zhisheng Chen",
+      "Jinpeng Wang",
+      "Beicheng Lou",
+      "Zhengwei Xie",
+      "Hao Wu",
+      "Rui Qian",
+      "Kun Wang",
+      "Vivian W. H. Wong"
+    ],
+    "published": "2026-11-24T12:11:29+00:00",
+    "updated": "2026-11-24T12:11:29+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.32483v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.32483v1",
+    "arxiv_categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "world model"
+    ],
+    "abstract_en": "Driving world models anticipate action consequences through representations of how the world evolves. For autonomous driving, these representations must capture both the surrounding scene and the ego vehicle's motion under a candidate plan. We propose CodeWAM, a driving world model that incorporates executable code as part of its world representation. Code represents ego dynamics by expressing how the vehicle state evolves under plan execution, while a learned visual model captures scene-dependent consequences. Executing the code produces a candidate-conditioned motion sequence, which is evaluated relative to the prior plan and recorded motion history. The resulting execution consequences and learned scene outcomes jointly represent the candidate's future, enabling the planner to assess both what a plan may lead to and how the vehicle transitions into that future. The selected plan becomes part of the next decision's execution context, linking successive choices within the model. CodeWAM achieves 93.6 PDMS on NAVSIM v1 navtest, 92.1 EPDMS on v2 navtest, and 50.6 EPDMS on NAVHARD. Further experiments demonstrate improved pairwise execution consistency and gains on Hydra-MDP and DrivoR without additional training, supporting executable code as a complementary representation for driving world models.",
+    "abstract_zh": "驾驶世界模型通过表现世界如何演变来预见行动后果。对于自动驾驶而言，这些表征必须同时捕捉周围场景以及在候选计划下自车的运动。我们提出了 CodeWAM，这是一种将可执行代码作为其世界表征一部分的驾驶世界模型。代码通过表达车辆状态在计划执行下如何演变来表示自车动力学，而学习到的视觉模型则捕捉与场景相关的后果。执行代码会产生一个候选条件下的运动序列，并根据先前的计划和记录的运动历史进行评估。由此产生的执行后果与学习到的场景结果共同代表了候选计划的未来，使规划器能够评估计划可能导致的后果以及车辆如何过渡到该未来。选定的计划成为下一次决策执行上下文的一部分，从而在模型内连接了连续的选择。CodeWAM 在 NAVSIM v1 navtest 上达到 93.6 PDMS，在 v2 navtest 上达到 92.1 EPDMS，并在 NAVHARD 上达到 50.6 EPDMS。进一步的实验表明，该模型在无需额外训练的情况下提高了成对执行的一致性，并在 Hydra-MDP 和 DrivoR 上取得了增益，这证明了可执行代码作为驾驶世界模型补充表征的有效性。",
+    "summary_zh": "针对自动驾驶中的未来预测问题，本文提出了 CodeWAM 模型，将可执行代码与视觉模型结合以表征自车动力学及场景演变。该方法通过代码显式建模运动轨迹，提升了规划的评估能力及决策的一致性，并在多个基准测试中验证了其有效性。"
+  },
+  {
     "arxiv_id": "2611.31240v1",
     "base_arxiv_id": "2611.31240",
     "version": 1,
