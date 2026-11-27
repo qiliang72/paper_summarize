@@ -1,5 +1,33 @@
 [
   {
+    "arxiv_id": "2611.34614v1",
+    "title": "Commit2Drive: Perception-Grounded Language Decisions as Commitments for Trajectory Planning in Vision-Language-Action Driving Models",
+    "authors": [
+      "Zikai Zhang",
+      "Hubert P. Shum",
+      "Toby Breckon"
+    ],
+    "published": "2026-11-25T16:01:47+00:00",
+    "updated": "2026-11-25T16:01:47+00:00",
+    "arxiv_url": "http://arxiv.org/abs/2611.34614v1",
+    "pdf_url": "https://arxiv.org/pdf/2611.34614v1",
+    "arxiv_categories": [
+      "cs.CV"
+    ],
+    "abstract_en": "Vision-Language-Action (VLA) models introduce language reasoning into end-to-end autonomous driving. They output a language decision together with a trajectory, which makes the planner more interpretable. However, in existing methods the language decision is either an independent output or an index that selects among similar candidate trajectories, and its annotations are not verified against the trajectory. As a result, the language decision and the trajectory are often inconsistent in closed-loop driving. To address this, we propose Commit2Drive, a framework that imposes the language decision as a consistency constraint on trajectory planning. The decision is a commitment, a maneuver class with a continuous parameter that one deterministic rule reads from any trajectory, and it is grounded in facts reported by the perception of the model itself. A Maneuver Bank maps the commitment to a code with a kinematic meaning, and consistency losses train the planner to execute every admissible decision of a scene, so that the trajectory follows the decision. An automatic data pipeline supplies the supervision. Decisions are labeled from the future motion of the expert, counterfactual executions train the decision and the trajectory together, and rule-based functions with a Vision-Language Model (VLM) generate, review and refine the language annotations. The code is a lookup that involves no hidden state of the language model, so Commit2Drive is extensible to rule-based decisions, which the same planner executes without retraining. Commit2Drive uses a 0.5B language model and runs closed-loop inference online on a single consumer graphics card. On Bench2Drive, Commit2Drive reaches a Driving Score (DS) of 78.50 and a Success Rate (SR) of 55.91% with a lightweight model, which is competitive with the state of the art, and greatly reduces the language-action inconsistency. Code will be released soon.",
+    "abstract_zh": "视觉-语言-动作（VLA）模型将语言推理引入端到端自动驾驶，它们在输出轨迹的同时输出语言决策，提高了规划器的可解释性。然而，现有方法中的语言决策要么是独立输出，要么是用于从候选轨迹中进行选择的索引，且其标注并未与轨迹进行一致性验证，导致在闭环驾驶中语言决策与轨迹常不一致。为解决这一问题，我们提出了Commit2Drive框架，将语言决策作为轨迹规划的一致性约束。该决策是一种承诺，即一种带有连续参数的机动类别，可由确定性规则从任意轨迹中读取，并基于模型自身感知所报告的事实。机动库（Maneuver Bank）将该承诺映射为具有运动学意义的代码，一致性损失函数通过训练使规划器执行场景中的每一项可行决策，从而确保轨迹遵循决策。自动数据流水线提供了监督信号：决策根据专家未来的运动进行标注，反事实执行用于联合训练决策与轨迹，基于规则的函数与视觉-语言模型（VLM）协同生成、审查并优化语言标注。该代码采用查找表形式，不涉及语言模型的隐藏状态，因此Commit2Drive可扩展至基于规则的决策，且无需重新训练即可由同一规划器执行。Commit2Drive使用0.5B参数的语言模型，可在单张消费级显卡上实现实时闭环推理。在Bench2Drive测试集上，Commit2Drive凭借轻量化模型取得了78.50的驾驶得分（DS）和55.91%的成功率（SR），表现达到行业领先水平，并显著降低了语言与动作之间的不一致性。相关代码即将发布。",
+    "summary_zh": "针对VLA自动驾驶模型中语言决策与运动轨迹不一致的问题，本文提出了Commit2Drive框架，将语言决策定义为对轨迹具有约束力的承诺。该方法引入机动库与一致性损失函数，确保轨迹遵循语言决策，并通过自动化数据管线和轻量化模型设计，实现了高效的闭环自动驾驶规划。",
+    "domain_keywords": [
+      "autonomous driving",
+      "end-to-end"
+    ],
+    "topic_keywords": [
+      "VLM"
+    ],
+    "base_arxiv_id": "2611.34614",
+    "version": 1
+  },
+  {
     "arxiv_id": "2611.32483v1",
     "title": "CodeWAM: A Code World Action Model for End-to-End Autonomous Driving",
     "authors": [
